@@ -4,9 +4,9 @@ title: "Course support"
 
 Most of you will need help at some point and we want to make sure you can identify when that is without getting too frustrated and feel comfortable seeking help.
 
-## Lectures and labs
+## Lectures
 
-If you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.
+If you have a question during lecture, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.
 
 ## Office hours
 
@@ -18,27 +18,27 @@ Have a question that can't wait for office hours? Prefer to write out your quest
 
 ## Email
 
-Please refrain from emailing any course content questions (those should go to Slack), and only use email for questions about personal matters that may not be appropriate for the public course forum (e.g., illness, accommodations, etc.). For such matters, you may email Dr. Mine Çetinkaya-Rundel at [mc301\@duke.edu](mailto:mc301@duke.edu).
+Please refrain from emailing any course content questions (those should go to Slack), and only use email for questions about personal matters that may not be appropriate for the public course forum (e.g., illness, accommodations, etc.). For such matters, you may email Dr. Greg Chism at [gchism\@arizona.edu](#0).
 
-If there is a question that's not appropriate for the public forum, you are welcome to email me directly. **If you email me, please include "STA 313" in the subject line.** Barring extenuating circumstances, I will respond to STA 313 emails within 48 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.
+If there is a question that's not appropriate for the public forum, you are welcome to email me directly. **If you email me, please include "INFO 526" in the subject line.** Barring extenuating circumstances, I will respond to INFO 526 emails within 48 hours Monday - Friday. I do not respond to emails sent Friday evening - Sunday, nor would I expect you to.
 
 ## Academic support
 
-There are times may need help with the class that is beyond what can be provided by the teaching team. In those instances, I encourage you to visit the Academic Resource Center. The [Academic Resource Center (ARC)](https://arc.duke.edu) offers free services to all students during their undergraduate careers at Duke. Services include Learning Consultations, Peer Tutoring and Study Groups, ADHD/LD Coaching, Outreach Workshops, and more. Because learning is a process unique to every individual, they work with each student to discover and develop their own academic strategy for success at Duke. Contact the ARC to schedule an appointment. Undergraduates in any year, studying any discipline can benefit! Contact [ARC\@duke.edu](mailto:arc@duke.edu), 919-684-5917.
+There are times may need help with the class that is beyond what can be provided by the teaching team. In those instances, I encourage you to visit the Academic Resource Center. The [Student Success & Retention Innovation (SOS)](https://sos.arizona.edu/) offers free services to all students during their graduate careers at UArizona. Services include Learning Consultations, Peer Tutoring and Study Groups, ADHD/LD Coaching, and more. Because learning is a process unique to every individual, they work with each student to discover and develop their own academic strategy for success at UArizona.
 
 ## Mental health and wellness
 
-Student mental health and wellness are of primary importance at Duke, and the university offers resources to support students in managing daily stress and self-care. Duke offers several resources for students to seek assistance on coursework and to nurture daily habits that support overall well-being, some of which are listed below.
+Student mental health and wellness are of primary importance at UArizona, and the university offers resources to support students in managing daily stress and self-care. Campus Health offers several resources for students to seek assistance on coursework and to nurture daily habits that support overall well-being, some of which are listed below. For medical appointments, call (520) 621-9202. For After Hours care, call (520) 570-7898. For the Counseling & Psych Services (CAPS) 24/7 hotline, call (520) 621-3334
 
--   **The Academic Resource Center:** (919) 684-5917, [theARC\@duke.edu](mailto:theARC@duke.edu), or [arc.duke.edu](https://arc.duke.edu).
+-   **Academic advising:** If you have questions about your academic progress this semester, or your chosen degree program, consider contacting your department\'s academic advisor(s).  Your academic advisor and the [Advising Resource Center](https://advising.arizona.edu/) can guide you toward university resources to help you succeed.
 
--   **DuWell:** (919) 681-8421, provides Moments of Mindfulness (stress management and resilience building) and meditation programming to assist students in developing a daily emotional well-being practice. To see schedules for programs please see <https://studentaffairs.duke.edu/duwell>. All are welcome and no experience necessary.
+-   **Spiritual Wellness:** CAPS: (520) 621-3334, provides Moments of Mindfulness (stress management and resilience building) and meditation programming to assist students in developing a daily emotional well-being practice. To see schedules for programs please see <https://caps.arizona.edu/spiritual-wellness>. All are welcome and no experience necessary.
 
-If your mental health concerns and/or stressful events negatively affect your daily emotional state, academic performance, or ability to participate in your daily activities, many resources are available to help you through difficult times. Duke encourages all students to access these resources.
+If your mental health concerns and/or stressful events negatively affect your daily emotional state, academic performance, or ability to participate in your daily activities, many resources are available to help you through difficult times. UArizona encourages all students to access these resources.
 
--   **DukeReach:** Provides comprehensive outreach services to identify and support students in managing all aspects of well-being. If you have concerns about a student's behavior or health visit the website for resources and assistance: <http://studentaffairs.duke.edu/dukereach>.
--   **Counseling and Psychological Services (CAPS):** CAPS services include individual and group counseling services, psychiatric services, and workshops. To initiate services, walk-in/call-in 9-4 M,W,Th,F and 9-6 Tuesdays. CAPS also provides referral to off-campus resources for specialized care. (919) 660-1000 or [https://students.duke.edu/wellness/caps](https://students.duke.edu/wellness/caps/).
--   **TimelyCare:** (formerly known as Blue Devils Care) An online platform that is a convenient, confidential, and free way for Duke students to receive 24/7 mental health support through TalkNow and scheduled counseling: <https://bluedevilscare.duke.edu>.
+-   **Student Supporter Hub:** Provides comprehensive services to identify and support students in managing all aspects of well-being. If you have concerns about a student's behavior or health visit the website for resources and assistance: <https://caps.arizona.edu/student-supporter>.
+-   **Counseling & Psychological Services (CAPS):** CAPS services include individual and group counseling services, psychiatric services, and workshops. To initiate services, walk-in/call-in 8am-4:30pm M,Tu,Th,F and 9am-4:30pm Wednesdays; (520) 621-3334. CAPS also provides referral to off-campus resources for specialized care: <https://caps.arizona.edu/caps-student-support-outreach-request>.
+-   **Crisis Support:** After-hours crisis callers may speak with a licensed counselor by pressing 1 when prompted by the automatic message: <https://caps.arizona.edu/crisis-resources-hotlines>.
 
 ## Course costs
 
@@ -47,18 +47,14 @@ If your mental health concerns and/or stressful events negatively affect your da
 
 If you are having difficulty with costs associated with this course, here are some resources:
 
--   [Contact the financial aid office](https://financialaid.duke.edu/contact "https://financialaid.duke.edu/contact") (whether or not you are on aid). They have loans and resources for connecting students with programs on campus that might be able to help alleviate these costs.
+-   [Contact the financial aid office](https://financialaid.arizona.edu/ "https://financialaid.arizona.edu/") (whether or not you are on aid). They have loans and resources for connecting students with programs on campus that might be able to help alleviate these costs.
 
--   DukeLIFE offers [course materials assistance](https://dukelife.duke.edu/programs/course-materials-assistance/ "https://dukelife.duke.edu/programs/course-materials-assistance/") for eligible students. Please note that students who are eligible for DukeLIFE benefits are notified prior to the start of the semester; program resources are limited.
+-   For course-specific technology needs such as Digital Voice Recorder, HD Video Camera, TI-84 Plus CE, DSLR camera kit, Tripod, Microphones, iPad Mini, a Handheld Projector, or a GoPro, [you can reserve rental equipment](https://lib.arizona.edu/borrow/tech) from the Link.
 
--   Duke Libraries offers textbook rentals through the [Top Textbook Program](https://library.duke.edu/course-support/course-reserves/textbooks/about), where you can rent out a textbook for 3 hours at a time.
+## **Assistance with Zoom or D2L**
 
--   For course-specific technology needs such as Digital Voice Recorder, HD Video Camera, TI-84 Plus CE, DSLR camera kit, Tripod, Shotgun Mic, iPad Mini 4, a Handheld Projector, or a GoPro, [you can reserve rental equipment](https://library.duke.edu/using/technology-lending) from the Link.
+For technical help with D2L or Zoom, contact the Duke OIT Service Desk at [it.arizona.edu/get-support](https://it.arizona.edu/get-support). You can also access the self-service help documentation for Zoom [here](https://oit.duke.edu/help/articles/kb0029318) and for D2L [here](https://help.d2l.arizona.edu/).
 
-## **Assistance with Zoom or Sakai**
-
-For technical help with Sakai or Zoom, contact the Duke OIT Service Desk at [oit.duke.edu/help](https://oit.duke.edu/help). You can also access the self-service help documentation for Zoom [here](https://oit.duke.edu/help/articles/kb0029318) and for Sakai [here](https://sakai-duke.screenstepslive.com/s/sakai_support).
-
-Note that we will be making minimal use of Sakai in this course (primarily for announcements and grade book). All assignment submission will take place on GitHub and conversation on Slack.
+Note that we will be making minimal use of D2L in this course (primarily for announcements and grade book). All assignment submission will take place on GitHub and conversation on Slack.
 
 Zoom will be used for online office hours as well as as a backup option should we need to hold the course online instead of in person.

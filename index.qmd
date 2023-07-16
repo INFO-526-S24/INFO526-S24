@@ -1,6 +1,6 @@
 ---
-title: "STA 313: Advanced Data Visualization"
-subtitle: "Dr. Mine Çetinkaya-Rundel"
+title: "INFO 526: Data Visualization & Analysis"
+subtitle: "Dr. Greg Chism"
 execute:
   freeze: false
 editor_options: 
@@ -18,7 +18,7 @@ library(googlesheets4)
 library(gt)
 library(tidyverse)
 gs4_deauth()
-d <- read_sheet("https://docs.google.com/spreadsheets/d/1Qj2rcIqFGwOosr9Yiyo-MaeFSZ7KOYNn8Ph1kebgDuY/edit?usp=sharing")
+d <- read_sheet("https://docs.google.com/spreadsheets/d/1tXrWNd7kucBNZwHm5wRXel7j09Lf8pKPtWvIgz2OmVo/edit?usp=sharing")
 ```
 
 ```{r}
@@ -65,6 +65,15 @@ d |>
     due ~ px(200)
   ) |>
   cols_label(
-    what = ""
+    what = "",
+    week = "Week",
+    date = "Date", 
+    due = "Due",
+    topic = "Topic",
+    prepare = "Prepare",
+    due = "Due"
+  ) |>
+  tab_options(
+    table.font.names = "Raleway",
   )
 ```

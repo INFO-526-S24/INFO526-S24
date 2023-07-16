@@ -6,9 +6,10 @@ project:
 
 website:
   page-navigation: true
-  title: "STA 313"
-  description: "Homepage for STA 313 - Advanced Data Visualization at Duke University, Spring 2023."
+  title: "INFO 526"
+  description: "Homepage for INFO 526 - Data Visualization and Analysis at The University of Arizona, Fall 2023."
   site-url: "http://vizdata.org/"
+  favicon: /images/logo.png
 
   repo-url: https://github.com/vizdata-s23/vizdata-s23
   repo-actions: [edit, issue]
@@ -19,7 +20,7 @@ website:
     image: "images/twitter-card.png"
 
   sidebar:
-    background: "#f1de67" # Arylide Yellow
+    background: "#378DBD" # Oasis
     logo: "images/logo.png"
     pinned: true
     align: center
@@ -31,7 +32,7 @@ website:
         href: https://cmgr.oit.duke.edu/containers
         text: "RStudio Containers"
       - icon: person-fill
-        text: "Sakai"
+        text: "D2L"
         menu:
           - text: Announcements
             url: https://sakai.duke.edu/portal/directtool/e0d406f3-bd6a-41fe-a2e9-18bfecebeed0/
@@ -99,19 +100,19 @@ website:
 
   page-footer:
     right: "This page is built with 💛 and [Quarto](https://quarto.org/)."
-    left: "&copy; Copyright 2023, Mine Çetinkaya-Rundel"
-    background: "#f1de67" # Arylide Yellow
+    left: "&copy; Copyright 2023, Greg Chism"
+    background: "#378DBD" # Azurite
 
 format:
   html:
     theme:
       light: [cosmo, style/sta313.scss]
       dark: [cosmo, style/sta313.scss, style/dark.scss]
-    linkcolor: "#866fa3" # Glossy Grape
+    linkcolor: "#EF4056" # Azurite
     toc: true
     code-copy: true
     code-overflow: wrap
-    mainfont: "Atkinson Hyperlegible"
+    mainfont: "Montserrat"
 
 execute:
   freeze: auto

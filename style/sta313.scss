@@ -1,10 +1,12 @@
 /*-- scss:defaults --*/
 
-@import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Montserrat&display=swap';
 
-$font-family: "Atkinson Hyperlegible", sans-serif;
-$link-color: #866fa3;
-$hover-color: lighten($link-color, 40%);
+@import 'https://fonts.googleapis.com/css2?family=Raleway&display=swap';
+
+$font-family: "Montserrat", sans-serif;
+$link-color: #8B0015;
+$hover-color: lighten($link-color, 20%);
 
 /*-- scss:rules --*/
 

@@ -7,13 +7,15 @@ format:
 
 ## Course description
 
-STA 313 - Advanced Data Visualization is all about the art and science of visualizing data. Three themes (what, why, and how) will run alongside each other as we cycle through the course topics. In "what" we focus on specific types of visualizations for a particular purpose (e.g. maps for spatial data, Sankey diagrams for proportions, etc.) as well as the tooling to produce them (e.g. specific R packages). In "how" we focus on the process -- each visualization starts with a design (which we'll often ask you to do with a rough sketch accompanied by pseudo code), then often needs pre-processing of the data (wrangling, reshaping, joining, etc. to get it into a tidy, rectangular format for visualization), then attributes of the data are mapped to plot aesthetics, then the creator of the visualization needs to make a series of strategic decisions about visual encoding (e.g. accessibility concerns), and finally creating effective visualizations requires post-processing for visual appeal as well as annotation. In "why" we discuss the theory that ties the "how" and the "what" together, often focusing on the grammar of graphics. Like any data analysis, data visualization is also an iterative process. We don't expect you to land on the perfect visualization on the first try, so we promote the iterative process via critical and constructive review of one's own and each others' work. Independent modules will also touch on topics such as using statistical graphics for visual inference, creating data-based art, and a review of the literature on non-visual approaches to representing data.
+INFO 526 - Data Visualization is a blend of art and science. Throughout this course, we'll focus on three aspects: what, why, and how. 'What' relates to choosing appropriate visualizations and tools for specific purposes, such as maps for spatial data or R packages for tooling. 'How' involves the process from design to execution, starting with a rough sketch and pseudocode, data pre-processing, aesthetic mapping, strategic decision-making, and ending with post-processing for visual appeal. 'Why' delves into the theory linking 'what' and 'how', often emphasizing the grammar of graphics. We encourage an iterative approach, learning through critique and repeated trials. Additional modules will cover statistical graphics, data-based art, and non-visual data representation.
 
-The course will focus on the use of the R statistical programming language and introduce you to a variety of modern data visualization packages in R. In addition, you will continue to use hone their data science workflow skills that they acquired in pre-requisite courses by working with Git and GitHub for version control and collaboration.
+This course provides an overview of the various concepts and skills required for effective data visualization. It presents principles of graphic design, programming skills, and statistical knowledge required to build compelling visualizations that communicate effectively to target audiences. Visualization skills addressed in this course include choosing appropriate colors, shapes, variable mappings, and interactivity based on principles of color perception, pre-attentive processing, and accessibility.
 
 ## Prerequisites
 
-This course assumes that this is not your first interaction with working with data in R, using RStudio, and along with version control with Git, and collaboration on GitHub. Any of the following courses meet the prerequisite for the course: STA 198, STA 199, or STA 210. The course will start with a quick review of the relevant technologies.
+Strong quantitative, statistical, and analytical reasoning abilities are needed to succeed in this course.
+
+This course assumes that this is not your first interaction with working with data in R (or Python), using RStudio (or Jupyter), and along with version control with Git, and collaboration on GitHub. The course will start with a quick review of the relevant technologies.
 
 ## Learning goals
 
@@ -35,11 +37,11 @@ Readings for the course will come from the following textbooks. All of them are 
 
 ## Course community
 
-### Duke Community Standard
+### UArizona Community Standard
 
-All students must adhere to the [Duke Community Standard (DCS)](https://studentaffairs.duke.edu/conduct/about-us/duke-community-standard): Duke University is a community dedicated to scholarship, leadership, and service and to the principles of honesty, fairness, and accountability. Citizens of this community commit to reflect upon these principles in all academic and non-academic endeavors, and to protect and promote a culture of integrity.
+All students must adhere to the [UArizona Student Rights & Responsibilities](https://deanofstudents.arizona.edu/student-rights-responsibilities#:~:text=The%20Code%20of%20Academic%20Integrity%20and%20Student%20Code,conduct%20expected%20within%20the%20University%20of%20Arizona%20community.): The University of Arizona is a community dedicated to scholarship, leadership, and service and to the principles of honesty, fairness, and accountability. Citizens of this community commit to reflect upon these principles in all academic and non-academic endeavors, and to protect and promote a culture of integrity.
 
-To uphold the Duke Community Standard, students agree:
+To uphold the UArizona Community Standard, students agree:
 
 -   I will not lie, cheat, or steal in my academic endeavors;
 
@@ -47,39 +49,35 @@ To uphold the Duke Community Standard, students agree:
 
 -   I will act if the Standard is compromised.
 
-```{=html}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_KN97j30ST4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-```
 ### Inclusive community
 
-It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students' learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. It is my intent to present materials and activities that are respectful of diversity and in alignment with [Duke's Commitment to Diversity and Inclusion](https://provost.duke.edu/initiatives/commitment-to-diversity-and-inclusion). Your suggestions are encouraged and appreciated. Please let me know ways to improve the effectiveness of the course for you personally, or for other students or student groups.
+It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students' learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. It is my intent to present materials and activities that are respectful of diversity and in alignment with [UArizona's Commitment to Diversity and Inclusion](https://provost.arizona.edu/content/diversity-inclusion). Your suggestions are encouraged and appreciated. Please let me know ways to improve the effectiveness of the course for you personally, or for other students or student groups.
 
 Furthermore, I would like to create a learning environment for my students that supports a diversity of thoughts, perspectives and experiences, and honors your identities. To help accomplish this:
 
--   If you have a name that differs from those that appear in your official Duke records, please let me know! You'll be able to note this in the Getting to know you survey.
+-   If you have a name that differs from those that appear in your official UArizona records, please let me know! You'll be able to note this in the Getting to know you survey.
 -   If you feel like your performance in the class is being impacted by your experiences outside of class, please don't hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your academic dean is an excellent resource.
 -   I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please let me or a member of the teaching team know.
 
 ### Pronouns
 
-Pronouns are meaningful tools to communicate identities and experiences, and using pronouns supports a campus environment where all community members can thrive. Please update your gender pronouns in Duke Hub. You can learn more at the [Center for Sexual and Gender Diversity's website](https://students.duke.edu/belonging/icr/csgd/pronouns/).
+Pronouns are meaningful tools to communicate identities and experiences, and using pronouns supports a campus environment where all community members can thrive. You can learn more about pronouns at the [Office of Diversity & Inclusion's website](https://diversity.arizona.edu/pronouns).
 
 ### Accessibility
 
 If there is any portion of the course that is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations.
 
-The [Student Disability Access Office (SDAO)](https://access.duke.edu/students) is available to ensure that students are able to engage with their courses and related assignments. Students should be in touch with the Student Disability Access Office to [request or update accommodations](https://access.duke.edu/requests) under these circumstances.
+The [Disability Resource Center](https://drc.arizona.edu/) is available to ensure that students are able to engage with their courses and related assignments. Students should be in touch with the Disability Resource Center to [request or update accommodations](https://drc.arizona.edu/students/connect-drc) under these circumstances.
 
 ### Communication
 
 All lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website: [vizdata.org](https://vizdata.org/ "STA 313 - Spring 2023 - Course website").
 
-I will regularly send course announcements via email and Sakai, make sure to check one or the other of these regularly. If an announcement is sent Monday through Thursday, I will assume that you have read the announcement by the next day. If an announcement is sent on a Friday or over the weekend, I will assume that you have read it by Monday.
+I will regularly send course announcements via email and D2L, make sure to check one or the other of these regularly. If an announcement is sent Monday through Thursday, I will assume that you have read the announcement by the next day. If an announcement is sent on a Friday or over the weekend, I will assume that you have read it by Monday.
 
 ### Where to get help
 
--   If you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.
+-   If you have a question during lecture, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.
 -   The teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!
 -   Outside of class and office hours, any general questions about course content or assignments should be posted on the course Slack. There is a chance another student has already asked a similar question, so please check the other posts on Slack before adding a new question. If you know the answer to a question posted on Slack, I encourage you to respond!
 
@@ -91,11 +89,11 @@ I want to make sure that you learn everything you were hoping to learn from this
 
 -   I want you to learn lots of things from this class, but I primarily want you to stay healthy, balanced, and grounded during this crisis.
 
-## Lectures and lab
+## Lectures
 
-The goal of both the lectures and the labs is for them to be as interactive as possible. My role as instructor is to introduce you new tools and techniques, but it is up to you to take them and make use of them. A lot of what you do in this course will involve writing code, and coding is a skill that is best learned by doing. Therefore, as much as possible, you will be working on a variety of tasks and activities throughout each lecture and lab. Attendance will not be taken during class but you are expected to attend all lecture and lab sessions and meaningfully contribute to in-class exercises and discussion.
+The goal of the lectures is for them to be as interactive as possible. My role as instructor is to introduce you new tools and techniques, but it is up to you to take them and make use of them. A lot of what you do in this course will involve writing code, and coding is a skill that is best learned by doing. Therefore, as much as possible, you will be working on a variety of tasks and activities throughout each lecture and lab. Attendance will not be taken during class but you are expected to attend all lecture and lab sessions and meaningfully contribute to in-class exercises and discussion.
 
-You are expected to bring a laptop to each class so that you can take part in the in-class exercises. Please make sure your laptop is fully charged before you come to class as the number of outlets in the classroom will not be sufficient to accommodate everyone. See \[Technology accommodations\] if you need a loaner laptop.
+You are expected to bring a laptop to each class so that you can take part in the in-class exercises. Please make sure your laptop is fully charged before you come to class as the number of outlets in the classroom will not be sufficient to accommodate everyone. See the [UArizona Libraries loaner technology](https://lib.arizona.edu/borrow/tech/laptops) if you need a loaner laptop.
 
 ## Assessment
 
@@ -179,9 +177,11 @@ Please abide by the following as you work on assignments in this course:
 
 -   **Sharing and reusing code:** I am well aware that a huge volume of code is available on the web to solve any number of problems. Unless I explicitly tell you not to use something, the course's policy is that you may make use of any online resources (e.g. RStudio Community, StackOverflow) but you must explicitly cite where you obtained any code you directly use (or use as inspiration). Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. On individual assignments you may not directly share code with another student in this class, and on team assignments you may not directly share code with another team in this class.
 
-Regardless of course delivery format, it is the responsibility of all students to understand and follow all Duke policies, including academic integrity (e.g., completing one's own work, following proper citation of sources, adhering to guidance around group work projects, and more). Ignoring these requirements is a violation of the Duke Community Standard. Any questions and/or concerns regarding academic integrity can be directed to the Office of Student Conduct and Community Standards at [conduct\@duke.edu](mailto:conduct@duke.edu).
+-   **Generative AI (e.g., ChatGPT):** I am additionally aware of the potential code AI for coding (I taught a workshop on it...). While these tools are amazing, learners should be aware of the impacts that using such tools can have on core competency. David Humphrey, a computer science professor, [**wrote about ChatGPT and its potentially negative impacts on core learning.**](https://blog.humphd.org/cheatgpt/) It is a good read about the pitfalls of using generative AI in an educational context. By using a generative AI, learners may miss the opportunity to discover how something works and why things are done that way. It is also important to note that the iSchool generally bans utilizing ChatGPT and generative AI in our [Academic Integrity Policy](https://ischool.arizona.edu/sites/ischool.arizona.edu/files/iSchool%20Policy%20on%20Academic%20Integrity%20in%20Computing%202023%20-%20approved%20by%20faculty%20vote%20April%202023.pdf#:~:text=UArizona%20iSchool%20Instructors%20are%20expected%20to%20help%20students,prohibited%20in%20some%20courses%20are%20allowed%20in%20others.).
 
-Any violations in academic honesty standards as outlined in the [Duke Community Standard](https://studentaffairs.duke.edu/conduct/about-us/duke-community-standard) and those specific to this course will automatically result in a 0 for the assignment and will be reported to the [Office of Student Conduct](https://studentaffairs.duke.edu/conduct) for further action.
+Regardless of course delivery format, it is the responsibility of all students to understand and follow all UArizona policies, including academic integrity (e.g., completing one's own work, following proper citation of sources, adhering to guidance around group work projects, and more). Ignoring these requirements is a violation of the UArizona Student Rights & Responsibilities. Any questions and/or concerns regarding academic integrity can be directed to the Dean of Students Office through the [online form](https://arizona-advocate.symplicity.com/public_report/index.php/pid301329?).
+
+Any violations in academic honesty standards as outlined in the UArizona [Student Rights & Responsibilities](https://deanofstudents.arizona.edu/student-rights-responsibilities) and those specific to this course will automatically result in a 0 for the assignment and will be reported to the Dean of Students Office for further action.
 
 ### Late work & extensions
 
@@ -191,7 +191,7 @@ Policy on late work depends on the particular course component:
 
 -   Reading quizzes: Late quizzes are not accepted and there are no make ups for missed quizzes.
 
--   Homework assignments: GitHub repositories will be closed to contributions at the deadline. If you need to submit your work late, send a DM on Slack to Jackie Du (our Head TA) to reopen your repository.
+-   Homework assignments: GitHub repositories will be closed to contributions at the deadline. If you need to submit your work late, send a DM on Slack to me to reopen your repository.
 
     -   Late, but same day (before midnight): -10% of available points
 
@@ -215,35 +215,43 @@ Policy on late work depends on the particular course component:
 
 ### Waiver for extenuating circumstances
 
-If there are circumstances that prevent you from completing a lab or homework assignment by the stated due date, you may email the Head TA (Jackie Du, [mailto:jacquelyn.du\@duke.edu](jacquelyn.du@duke.edu)) before the deadline to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide explanation. This waiver may only be used for once in the semester, so only use it for a truly extenuating circumstance.
+If there are circumstances that prevent you from completing a lab or homework assignment by the stated due date, you may email me ([mailto:gchism\@arizona.edu](jacquelyn.du@duke.edu)) before the deadline to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide explanation. This waiver may only be used for once in the semester, so only use it for a truly extenuating circumstance.
 
 If there are circumstances that are having a longer-term impact on your academic performance, please let your academic dean know, as they can be a resource. Please let me know if you need help contacting your academic dean.
 
 ### Regrade requests
 
-Regrade requests must be made within one week of when the assignment is returned, and must be typed up and submitted via email to the course Head TA (Jackie Du). These will be considered if points were tallied incorrectly or if you feel your answer is correct but it was marked wrong. No regrade will be made to alter the number of points deducted for a mistake. There will be no grade changes after the second project presentations. Note that during the regrade process your score could go up or go down or not change.
+Regrade requests must be made within one week of when the assignment is returned, and must be typed up and submitted via email to me. These will be considered if points were tallied incorrectly or if you feel your answer is correct but it was marked wrong. No regrade will be made to alter the number of points deducted for a mistake. There will be no grade changes after the second project presentations. Note that during the regrade process your score could go up or go down or not change.
 
 *No grades will be changed after the project presentations.*
 
 ### Attendance policy
 
-Responsibility for class attendance rests with individual students. Since regular and punctual class attendance is expected, students must accept the consequences of failure to attend. More details on Trinity attendance policies are available [here](https://trinity.duke.edu/undergraduate/academic-policies/class-attendance-and-missed-work).
+Responsibility for class attendance rests with individual students. Since regular and punctual class attendance is expected, students must accept the consequences of failure to attend.
 
-However, there may be many reasons why you cannot be in class on a given day, particularly with possible extra personal and academic stress and health concerns this semester. All course lectures will be recorded and available to enrolled students after class. If you miss a lecture, make sure to watch the recording and review the material before the next class session. Lab time is dedicated to working on your homework assignments and collaborating with your teammates on your project. If you miss a lab session, make sure to communicate with your team about how you can make up your contribution. Given the technologies we use in the course, this is straightforward to do asynchronously. If you know you're going to miss a lab session and you're feeling well enough to do so, notify your teammates ahead of time. Overall these policies are put in place to ensure communication between team members, respect for each others' time, and also to give you a safety net in the case of illness or other reasons that keep you away from attending class.
+However, there may be many reasons why you cannot be in class on a given day, particularly with possible extra personal and academic stress and health concerns this semester. All course lectures will be recorded and available to enrolled students after class. If you miss a lecture, make sure to watch the recording and review the material before the next class session. Overall this policy is put in place to ensure communication between team members, respect for each others' time, and also to give you a safety net in the case of illness or other reasons that keep you away from attending class.
 
 Note that attendance and participation is part of your grade as well.
 
+The UA\'s policy concerning Class Attendance, Participation, and Administrative Drops is available at <https://catalog.arizona.edu/policy/class-attendance-and-participation>
+
+The UA policy regarding absences for any sincerely held religious belief, observance or practice will be accommodated where reasonable: <http://policy.arizona.edu/human-resources/religious-accommodation-policy>.
+
+Absences pre-approved by the UA Dean of Students (or dean\'s designee) will be honored. See <https://deanofstudents.arizona.edu/policies/attendance-policies-and-practices>
+
 ### Attendance policy related to COVID symptoms, exposure, or infection
 
-Student health, safety, and well-being are the university's top priorities. To help ensure your well-being and the well-being of those around you, please do not come to class if you have symptoms related to COVID-19, have had a known exposure to COVID-19, or have tested positive for COVID-19. If any of these situations apply to you, you must follow university guidance related to the ongoing COVID-19 pandemic and current health and safety protocols. If you are experiencing any COVID-19 symptoms, contact student health at 919-681-9355. To keep the university community as safe and healthy as possible, you will be expected to follow these guidelines. Please reach out to me and your academic dean as soon as possible if you need to quarantine or isolate so that we can discuss arrangements for your continued participation in class.
+Student health, safety, and well-being are the university's top priorities. To help ensure your well-being and the well-being of those around you, please do not come to class if you have symptoms related to COVID-19, have had a known exposure to COVID-19, or have tested positive for COVID-19. If any of these situations apply to you, you must follow university guidance related to the ongoing COVID-19 pandemic and current health and safety protocols. If you are experiencing any COVID-19 symptoms, contact student health at (520) 621-9202. To keep the university community as safe and healthy as possible, you will be expected to follow these and the [university guidelines on COVID-19 mitigation](http://www.covid19.arizona.edu/). Please reach out to me and your academic dean as soon as possible if you need to quarantine or isolate so that we can discuss arrangements for your continued participation in class.
+
+Notify your instructor(s) if you will be missing up to one week of course meetings and/or assignment deadlines
+
+If you must miss the equivalent of more than one week of class and have an emergency, the Dean of Students is the proper office to contact ([DOS-deanofstudents\@email.arizona.edu](mailto:DOS-deanofstudents@email.arizona.edu)). The Dean of Students considers the following as qualified emergencies: the birth of a child, mental health hospitalization, domestic violence matter, house fire, hospitalization for physical health (concussion/emergency surgery/coma/COVID-19 complications/ICU), death of immediate family, Title IX matters, etc.
+
+Please understand that there is no guarantee of an extension when you are absent from class and/or miss a deadline.
 
 ### Inclement weather policy
 
 In the event of inclement weather or other connectivity-related events that prohibit class attendance, I will notify you how we will make up missed course content and work. This might entail holding the class on Zoom synchronously or watching a recording of the class.
-
-### Policy on video recording course content
-
-All lectures will be recorded and available on Panopto, so students should not need to create their own recordings of lectures. If you feel that you need record the lectures yourself, you must get permission from me ahead of time and these recordings should be used for personal study only, no for distribution. The full policy on recording of lectures falls under the Duke University Policy on Intellectual Property Rights, available at [provost.duke.edu/sites/default/files/FHB_App_P.pdf](https://provost.duke.edu/sites/default/files/FHB_App_P.pdf). Unauthorized distribution is a cause for disciplinary action by the Judicial Board.
 
 ## Accommodations
 
@@ -259,13 +267,13 @@ Students are permitted by university policy to be absent from class to observe a
 
 ## Important dates
 
--   **Wednesday, January 11:** Classes begin, Monday schedule (no class for us)
--   **Wednesday, January 25:** Drop/add ends
--   **Friday, February 24:** Mid-semester grades reported
--   **Saturday - Sunday, March 11 - 19**: Spring Break (continuing, but limited course support available)
--   **Wednesday, March 29:** Last day to withdraw with W
--   **Wednesday, April 26**: Classes end
--   **Thursday - Sunday, April 27 - 30**: Reading period
--   **Thursday, May 4, 2-5pm**: Project 2 presentations
+-   **Monday, August 21:** Classes begin, Monday schedule
+-   **Monday, August 28:** Drop/add ends
+-   **Monday,** **September 4:** Labor Day, no class
+-   **Sunday, September 17:** Last day to drop without a W (withdraw)
+-   **Sunday, October 29**: Last day to withdraw from a class online through UAccess
+-   **Friday, November 10**: Veteran's Day, limited support available
+-   **Thursday - Sunday, November 23 - 26**: Thanksgiving recess, no support available
+-   **Monday, December 11**: Project 2 presentations
 
-For more important dates, see the full [Duke Academic Calendar](https://registrar.duke.edu/spring-2023-academic-calendar).
+For more important dates, see the full [UArizona Academic Calendar](https://catalog.arizona.edu/2023-2024-academic-calendar).
