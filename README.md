@@ -1,4 +1,4 @@
-# Advanced Data Visualization
+# Data Analysis and Visualization
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c4603230-bf22-492f-a51a-02cca66b3a8f/deploy-status)](https://app.netlify.com/sites/vizdata-s23/deploys)
 
