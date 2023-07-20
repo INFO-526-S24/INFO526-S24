@@ -8,7 +8,7 @@ website:
   page-navigation: true
   title: "INFO 526"
   description: "Homepage for INFO 526 - Data Visualization and Analysis at The University of Arizona, Fall 2023."
-  site-url: "http://vizdata.org/"
+  site-url: "http://datavizaz.org/"
   favicon: /images/logo.png
 
   repo-url: https://github.com/INFO526-DataViz
