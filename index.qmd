@@ -1,5 +1,5 @@
 ---
-title: "INFO 526: Data Visualization & Analysis"
+title: "INFO 526: Data Analysis & Visualization"
 subtitle: "Dr. Greg Chism"
 execute:
   freeze: false

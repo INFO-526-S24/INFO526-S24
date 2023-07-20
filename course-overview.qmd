@@ -2,9 +2,9 @@
 title: "Course overview"
 ---
 
-This is the homepage for INFO 526 - Data Visualization and Analysis taught by [Dr. Greg Chism](https://gregtchism.com) in Fall 2023 at The University of Arizona. All course materials will be posted on this site.
+This is the homepage for INFO 526 - Data Analysis and Visualization taught by [Dr. Greg Chism](https://gregtchism.com) in Fall 2023 at The University of Arizona. All course materials will be posted on this site.
 
-You can find the course syllabus [here](/syllabus) and the course schedule [here](/).
+You can find the course syllabus [here](/course-syllabus.html) and the course schedule [here](/).
 
 ## Class meetings
 

@@ -1,15 +1,15 @@
 /*-- scss:defaults --*/
 
 // fonts
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
 
 
 $font-family-sans-serif: "Montserrat", sans-serif;
 $font-family-monospace: "Source Code Pro", monospace;
-$presentation-heading-color: #1E5288; /* Pantone Midnight - Fall 2022 */
-$link-color: #EF4056;
+$presentation-heading-color: #1E5288; /* Azurite */
+$link-color: #EF4056; /* Bloom */
 $code-color: #1E5288;
 $code-block-font-size: 0.7em;
 $presentation-h2-font-size: 1.4em !default;
@@ -74,8 +74,8 @@ details>summary {
   padding-bottom: 3px;
   margin-bottom: 6px;
   margin-top: 6px;
-  border-left: solid 5px #AB0520;
-  background-color: #E2E9EB;
+  border-left: solid 5px #AB0520; /* Arizona Red */
+  background-color: #E2E9EB; /* Cool Gray */
 }
 
 b, strong {

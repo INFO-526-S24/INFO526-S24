@@ -8,14 +8,19 @@ The website is live at [vizdata.org](http://www.vizdata.org/).
 
 ## Colors
 
--   `#a493ba` - Glossy Grape
--   `#f1de67` - Arylide Yellow
--   `#464a53` - Charcoal
--   `#ffffff` - White
+-   `#8B0015` - Chili
+-   `#EF4056` - Bloom
+-   `#AB0520` - Arizona Red
+-   `#378DBD` - Oasis
+-   `#1E5288` - Azurite
+-   `#FFFFFF` - White
+-   `#E2E9EB` - Cool Gray
 -   `#2A9BB7` - Blue Green
 
 ### Disclosure
 
 This content is derived from the course website for STA 313 - Advanced Data Visualization at Duke University, taught by Dr. Mine Çetinkaya-Rundel.
 
-Licensed under <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" width="150" height="50"/> [CC BY](https://creativecommons.org/licenses/by/4.0/)
+[![](https://licensebuttons.net/l/by-sa/4.0/88x31.png){alt="Creative Commons License"}](https://creativecommons.org/licenses/by-sa/4.0/)
+
+This online work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). Visit [here](https://github.com/dukestatsciintrods/blob/master/LICENSE.md) for more information about the license.

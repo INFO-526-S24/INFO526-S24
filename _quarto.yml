@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: docs
   resources:
-    - sta313-s23-syllabus.pdf
+    - info526-f23-syllabus.pdf
 
 website:
   page-navigation: true
@@ -11,36 +11,31 @@ website:
   site-url: "http://vizdata.org/"
   favicon: /images/logo.png
 
-  repo-url: https://github.com/vizdata-s23/vizdata-s23
+  repo-url: https://github.com/INFO526-DataViz
   repo-actions: [edit, issue]
 
   open-graph: true
-  twitter-card:
-    creator: "@minebocek"
-    image: "images/twitter-card.png"
 
   sidebar:
+    title: "INFO 526 F23"
     background: "#378DBD" # Oasis
     logo: "images/logo.png"
     pinned: true
     align: center
     tools:
       - icon: github
-        href: https://github.com/vizdata-s23/vizdata-s23
+        href: https://github.com/INFO526-DataViz
         text: "GitHub organization"
       - icon: code-square
-        href: https://cmgr.oit.duke.edu/containers
-        text: "RStudio Containers"
+        href: https://https://posit.cloud/
+        text: "Posit Cloud"
       - icon: person-fill
         text: "D2L"
         menu:
           - text: Announcements
-            url: https://sakai.duke.edu/portal/directtool/e0d406f3-bd6a-41fe-a2e9-18bfecebeed0/
           - text: Zoom meetings
-            url: https://sakai.duke.edu/portal/directtool/c3f055cb-2cdc-4527-a88e-b75d1162784c/
           - text: Gradebook
-            url: https://sakai.duke.edu/portal/directtool/3ec6ed6c-6bc7-4758-917b-431e0b5b39c7/
- 
+
     style: docked
     search: true
     collapse-level: 1
@@ -63,51 +58,21 @@ website:
             text: FAQ
       - section: "Computing"
         contents:
-          - href: computing/computing-access.qmd
-            text: Access
           - href: computing/computing-troubleshooting.qmd
             text: Troubleshooting
           - href: computing/computing-cheatsheets.qmd
             text: Cheatsheets
-      - section: "Projects"
-        contents:
-          - href: project/project-1.qmd
-          - href: project/project-2.qmd
-          - href: project/project-tips-resources.qmd
-            text: Tips + resources
-      - section: "HW"
-        contents:
-          - href: https://github.com/vizdata-s23/hw-01#homework-01
-            text: HW 01
-          - href: https://github.com/vizdata-s23/hw-02#homework-02
-            text: HW 02
-          - href: https://github.com/vizdata-s23/hw-03#homework-03
-            text: HW 03
-          - href: https://github.com/vizdata-s23/hw-04#homework-04
-            text: HW 04
-          - href: https://github.com/vizdata-s23/hw-04#homework-05
-            text: HW 05
-          - href: https://github.com/vizdata-s23/hw-04#homework-06
-            text: HW 06
-      - section: "Student work"
-        contents:
-          - href: student-work/thank-you.qmd
-            text: Thank you cards
-          - href: student-work/ugly-plot.qmd
-            text: Ugly plots
-          - href: student-work/project-1.qmd
-            text: Project 1
 
   page-footer:
     right: "This page is built with 💛 and [Quarto](https://quarto.org/)."
     left: "&copy; Copyright 2023, Greg Chism"
-    background: "#378DBD" # Azurite
+    background: "#378DBD" # Oasis
 
 format:
   html:
     theme:
-      light: [cosmo, style/sta313.scss]
-      dark: [cosmo, style/sta313.scss, style/dark.scss]
+      light: [cosmo, style/info526.scss]
+      dark: [cosmo, style/info526.scss, style/dark.scss]
     linkcolor: "#EF4056" # Azurite
     toc: true
     code-copy: true

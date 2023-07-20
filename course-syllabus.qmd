@@ -7,15 +7,17 @@ format:
 
 ## Course description
 
-INFO 526 - Data Visualization is a blend of art and science. Throughout this course, we'll focus on three aspects: what, why, and how. 'What' relates to choosing appropriate visualizations and tools for specific purposes, such as maps for spatial data or R packages for tooling. 'How' involves the process from design to execution, starting with a rough sketch and pseudocode, data pre-processing, aesthetic mapping, strategic decision-making, and ending with post-processing for visual appeal. 'Why' delves into the theory linking 'what' and 'how', often emphasizing the grammar of graphics. We encourage an iterative approach, learning through critique and repeated trials. Additional modules will cover statistical graphics, data-based art, and non-visual data representation.
+INFO 526 - This course provides an overview of the various concepts and skills required for effective data visualization. It presents principles of graphic design, programming skills, and statistical knowledge required to build compelling visualizations that communicate effectively to target audiences. Visualization skills addressed in this course include choosing appropriate colors, shapes, variable mappings, and interactivity based on principles of color perception, pre-attentive processing, and accessibility.
 
-This course provides an overview of the various concepts and skills required for effective data visualization. It presents principles of graphic design, programming skills, and statistical knowledge required to build compelling visualizations that communicate effectively to target audiences. Visualization skills addressed in this course include choosing appropriate colors, shapes, variable mappings, and interactivity based on principles of color perception, pre-attentive processing, and accessibility.
+### Introduction
+
+Data Visualization is a blend of art and science. Throughout this course, we'll focus on three aspects: what, why, and how. 'What' relates to choosing appropriate visualizations and tools for specific purposes, such as maps for spatial data or R packages for tooling. 'How' involves the process from design to execution, starting with a rough sketch and pseudocode, data pre-processing, aesthetic mapping, strategic decision-making, and ending with post-processing for visual appeal. 'Why' delves into the theory linking 'what' and 'how', often emphasizing the grammar of graphics. We encourage an iterative approach, learning through critique and repeated trials. Additional modules will cover statistical graphics, data-based art, and non-visual data representation.
 
 ## Prerequisites
 
 Strong quantitative, statistical, and analytical reasoning abilities are needed to succeed in this course.
 
-This course assumes that this is not your first interaction with working with data in R (or Python), using RStudio (or Jupyter), and along with version control with Git, and collaboration on GitHub. The course will start with a quick review of the relevant technologies.
+This course assumes that this is not your first interaction with working with data in R, using RStudio, and along with version control with Git, and collaboration on GitHub. The course will start with a quick review of the relevant technologies.
 
 ## Learning goals
 
@@ -33,7 +35,7 @@ Readings for the course will come from the following textbooks. All of them are 
 1.  `[ggplot2-book]` Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen. [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/). (in progress) 3rd edition. Springer, 2022.
 2.  `[socviz]` Kieran Healy. [Data Visualization: A Practical Introduction](https://socviz.co/). Princeton University Press, 2018.
 3.  `[fdv]` Claus O. Wilke. [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/). O'Reilly Media, 2019.
-4.  `[r4ds]` Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. [R for Data Science](https://r4ds.hadley.nz/). (in progress) 2nd edition. O'Reilly, 2022.
+4.  `[r4ds]` Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. [R for Data Science](https://r4ds.hadley.nz/). 2nd edition. O'Reilly, 2022.
 
 ## Course community
 
@@ -59,9 +61,15 @@ Furthermore, I would like to create a learning environment for my students that 
 -   If you feel like your performance in the class is being impacted by your experiences outside of class, please don't hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your academic dean is an excellent resource.
 -   I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please let me or a member of the teaching team know.
 
-### Pronouns
+### Preferred Name & Pronoun
 
-Pronouns are meaningful tools to communicate identities and experiences, and using pronouns supports a campus environment where all community members can thrive. You can learn more about pronouns at the [Office of Diversity & Inclusion's website](https://diversity.arizona.edu/pronouns).
+This course affirms people of all gender expressions and gender identities. If you prefer to be called a different name than what is on the class roster, please let me know. Feel free to correct instructors on your preferred gender pronoun. If you have any questions or concerns, please do not hesitate to contact me directly in class or via email (instructor email). If you wish to change your preferred name or pronoun in the UAccess system, please use the following guidelines:
+
+**Preferred name:** University of Arizona students may choose to identify themselves within the University community using a preferred first name that differs from their official/legal name. A student\'s preferred name will appear instead of the person\'s official/legal first name in select University-related systems and documents, provided that the name is not being used for the purpose of misrepresentation. Students are able to update their preferred names in UAccess.
+
+**Pronouns:** Students may designate pronouns they use to identify themselves. Instructors and staff are encouraged to use pronouns for people that they use for themselves as a sign of respect and inclusion. Students are able to update and edit their pronouns in UAccess.
+
+More information on updating your preferred name and pronouns is available on the Office of the Registrar site at [https://www.registrar.arizona.edu/records-enrollment/personal-information/updating-personal-information(link is external)](https://www.registrar.arizona.edu/records-enrollment/personal-information/updating-personal-information).
 
 ### Accessibility
 
@@ -165,6 +173,8 @@ You are expected to make use of the provided GitHub repository as their central 
 
 **TL;DR: Don't cheat!**
 
+Students are expected to abide by The University of Arizona Code of Academic Integrity. 'The guiding principle of academic integrity is that a student's submitted work must be the student's own.' If you have any questions regarding what acceptable practice under this Code is, please ask an Instructor.
+
 Please abide by the following as you work on assignments in this course:
 
 -   **Collaboration:** Only work that is clearly assigned as team work should be completed collaboratively.
@@ -179,9 +189,7 @@ Please abide by the following as you work on assignments in this course:
 
 -   **Generative AI (e.g., ChatGPT):** I am additionally aware of the potential code AI for coding (I taught a workshop on it...). While these tools are amazing, learners should be aware of the impacts that using such tools can have on core competency. David Humphrey, a computer science professor, [**wrote about ChatGPT and its potentially negative impacts on core learning.**](https://blog.humphd.org/cheatgpt/) It is a good read about the pitfalls of using generative AI in an educational context. By using a generative AI, learners may miss the opportunity to discover how something works and why things are done that way. It is also important to note that the iSchool generally bans utilizing ChatGPT and generative AI in our [Academic Integrity Policy](https://ischool.arizona.edu/sites/ischool.arizona.edu/files/iSchool%20Policy%20on%20Academic%20Integrity%20in%20Computing%202023%20-%20approved%20by%20faculty%20vote%20April%202023.pdf#:~:text=UArizona%20iSchool%20Instructors%20are%20expected%20to%20help%20students,prohibited%20in%20some%20courses%20are%20allowed%20in%20others.).
 
-Regardless of course delivery format, it is the responsibility of all students to understand and follow all UArizona policies, including academic integrity (e.g., completing one's own work, following proper citation of sources, adhering to guidance around group work projects, and more). Ignoring these requirements is a violation of the UArizona Student Rights & Responsibilities. Any questions and/or concerns regarding academic integrity can be directed to the Dean of Students Office through the [online form](https://arizona-advocate.symplicity.com/public_report/index.php/pid301329?).
-
-Any violations in academic honesty standards as outlined in the UArizona [Student Rights & Responsibilities](https://deanofstudents.arizona.edu/student-rights-responsibilities) and those specific to this course will automatically result in a 0 for the assignment and will be reported to the Dean of Students Office for further action.
+Students are encouraged to share intellectual views and discuss freely the principles and applications of course materials. However, graded work/exercises must be the product of independent effort unless otherwise instructed. Students are expected to adhere to the UA Code of Academic Integrity as described in the UA General Catalog. See: [https://deanofstudents.arizona.edu/policies/code-academic-integrity(link is external)](https://deanofstudents.arizona.edu/policies/code-academic-integrity).
 
 ### Late work & extensions
 
@@ -225,6 +233,10 @@ Regrade requests must be made within one week of when the assignment is returned
 
 *No grades will be changed after the project presentations.*
 
+### "Incomplete" grade
+
+The grade of "I" may be awarded only at the end of a term, when all but a minor portion of the course work has been satisfactorily completed. The grade of I is not to be awarded in place of a failing grade or when the student is expected to repeat the course; in such a case, a grade other than I must be assigned. Students should make arrangements with the instructor to receive an incomplete grade before the end of the term, ..., If the incomplete is not removed by the instructor within one year the I grade will revert to a failing grade.
+
 ### Attendance policy
 
 Responsibility for class attendance rests with individual students. Since regular and punctual class attendance is expected, students must accept the consequences of failure to attend.
@@ -233,11 +245,11 @@ However, there may be many reasons why you cannot be in class on a given day, pa
 
 Note that attendance and participation is part of your grade as well.
 
-The UA\'s policy concerning Class Attendance, Participation, and Administrative Drops is available at <https://catalog.arizona.edu/policy/class-attendance-and-participation>
+The UA's policy concerning Class Attendance, Participation, and Administrative Drops is available at <https://catalog.arizona.edu/policy/class-attendance-and-participation>
 
 The UA policy regarding absences for any sincerely held religious belief, observance or practice will be accommodated where reasonable: <http://policy.arizona.edu/human-resources/religious-accommodation-policy>.
 
-Absences pre-approved by the UA Dean of Students (or dean\'s designee) will be honored. See <https://deanofstudents.arizona.edu/policies/attendance-policies-and-practices>
+Absences pre-approved by the UA Dean of Students (or dean's designee) will be honored. See <https://deanofstudents.arizona.edu/policies/attendance-policies-and-practices>
 
 ### Attendance policy related to COVID symptoms, exposure, or infection
 
@@ -257,11 +269,23 @@ In the event of inclement weather or other connectivity-related events that proh
 
 ### Academic accommodations
 
-If you are a student with a disability and need accommodations for this class, it is your responsibility to register with the [Student Disability Access Office (SDAO)](https://access.duke.edu/students) and provide them with documentation of your disability. SDAO will work with you to determine what accommodations are appropriate for your situation. Please note that accommodations are not retroactive and disability accommodations cannot be provided until a Faculty Accommodation Letter has been given to me. Please contact SDAO for more information: [sdao\@duke.edu](mailto:sdao@duke.edu) or [access.duke.edu](https://access.duke.edu).
+At the University of Arizona, we strive to make learning experiences as accessible as possible. If you anticipate or experience barriers based on disability or pregnancy, please contact the Disability Resource Center (520-621-3268, [https://drc.arizona.edu/(link is external)](https://drc.arizona.edu/)) to establish reasonable accommodations.
+
+See [http://drc.arizona.edu/instructors/syllabus-statement(link is external)](http://drc.arizona.edu/instructors/syllabus-statement).
 
 ### Religious accommodations
 
-Students are permitted by university policy to be absent from class to observe a religious holiday. Accordingly, Trinity College of Arts & Sciences and the Pratt School of Engineering have established procedures to be followed by students for notifying their instructors of an absence necessitated by the observance of a religious holiday. Please submit requests for religious accommodations at the beginning of the semester so that we can work to make suitable arrangements well ahead of time. You can find the policy and relevant notification form here: <https://trinity.duke.edu/undergraduate/academic-policies/religious-holidays>.
+Students are permitted by university policy to be absent from class to observe a religious holiday. You can find the policy and relevant information [here](https://policy.arizona.edu/human-resources/religious-accommodation-policy?_gl=1*4dmji1*_ga*MTIzMDYwMTIzLjE2ODAxMDkzNzM.*_ga_7PV3540XS3*MTY4OTcyNjA5MS4xMTUuMS4xNjg5NzI2NDU5LjU0LjAuMA..).
+
+### Nondiscrimination and Anti-Harassment Poilicy
+
+The University of Arizona is committed to creating and maintaining an environment free of discrimination. In support of this commitment, the University prohibits discrimination, including harassment and retaliation, based on a protected classification, including race, color, religion, sex, national origin, age, disability, veteran status, sexual orientation, gender identity, or genetic information. For more information, including how to report a concern, please see [http://policy.arizona.edu/human-resources/nondiscrimination-and-anti-harassment-policy(link is external)](http://policy.arizona.edu/human-resources/nondiscrimination-and-anti-harassment-policy).
+
+### Safety on Campus and in the Classroom
+
+For a list of emergency procedures for all types on incidents, please visit the website of the Critical Incident Response Team (CIRT): [https://cirt.arizona.edu/case-emergency/overview(link is external)](https://cirt.arizona.edu/case-emergency/overview).
+
+Also watch the following [video](https://arizona.sabacloud.com/Saba/Web_spf/NA7P1PRD161/common/learningeventdetail/crtfy000000000003560).
 
 *Note: If you've read this far in the syllabus, email me a picture of your pet if you have one or your favorite meme!*
 
@@ -274,6 +298,6 @@ Students are permitted by university policy to be absent from class to observe a
 -   **Sunday, October 29**: Last day to withdraw from a class online through UAccess
 -   **Friday, November 10**: Veteran's Day, limited support available
 -   **Thursday - Sunday, November 23 - 26**: Thanksgiving recess, no support available
--   **Monday, December 11**: Project 2 presentations
+-   **Tuesday, December 12**: Project 2 presentations
 
 For more important dates, see the full [UArizona Academic Calendar](https://catalog.arizona.edu/2023-2024-academic-calendar).

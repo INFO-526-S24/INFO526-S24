@@ -3,7 +3,7 @@ title: Interactive reporting + visualization with Shiny II
 subtitle: Lecture 26
 title-slide-attributes:
   data-background-image: ../vizdata-bg.png
-  data-background-size: stretch
+  data-background-size: 800px, cover
   data-slide-number: none
 format: revealjs
 highlight-style: a11y
