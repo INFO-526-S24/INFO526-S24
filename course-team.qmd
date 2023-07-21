@@ -8,10 +8,10 @@ title: "Teaching team"
 
 [**Dr. Greg Chism**](https://gregtchism.com) (he/him) is an Assistant Professor of the Practice at the School of Information at The University of Arizona. Greg is a data scientist, educator, and behavioral ecologist. He is passionate about telling stories through data. He accomplishes this by leveraging his interdisciplinary background to provide an innovative approach to answering complex questions.
 
-| Office hours   | Location           |
-|----------------|--------------------|
-| Mon 2 - 3 pm   | Harvill \#         |
-| By appointment | Harvill \# or Zoom |
+| Office hours   | Location            |
+|----------------|---------------------|
+| Mon 2 - 3 pm   | Harvill 420         |
+| By appointment | Harvill 420 or Zoom |
 
 ## Teaching assistants
 

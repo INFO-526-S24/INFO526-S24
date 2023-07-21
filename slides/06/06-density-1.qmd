@@ -1,7 +1,6 @@
 ---
 title: Visualizing density - I
 subtitle: Lecture 6
-author: Sam Rosen
 title-slide-attributes:
   data-background-image: ../vizdata-bg.png
   data-background-size: 800px, cover
@@ -18,7 +17,14 @@ revealjs-plugins:
 
 ## Announcements
 
--   Working with project teams in lab tomorrow!
+-   Office Hours Monday will be devoted to Project 1!
+-   Project 1 proposals submitted for peer review by 3pm Monday
+-   Project proposal peer review
+    -   You'll be assessed on the quality (and participation) of your peer review
+
+    -   Updates based on peer review are due Friday at 5pm
+
+    -   Your proposal will be "graded" after that, by me
 
 ```{r}
 #| label: setup
@@ -157,7 +163,7 @@ Based on [example](https://observablehq.com/@d3/kernel-density-estimation) by Mi
 -   Baseball! A home run in baseball occurs when a player hits a fair ball outside of the playing field. Examples:
 
 ::: {style="text-align: center"}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nxuTG5SEHn8">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CiDy3-EsXiM">
 
 </iframe>
 :::
@@ -275,7 +281,7 @@ home_runs <- Batting |>
 
 ```{r}
 #| label: basic-geom-density
-#| echo: true
+#| echo: false
 
 ggplot(home_runs, aes(HR)) +
   geom_density() + 
@@ -288,6 +294,14 @@ ggplot(home_runs, aes(HR)) +
 :::
 
 ### Code
+
+```{r}
+#| eval: false
+
+ggplot(home_runs, aes(HR)) +
+  geom_density() + 
+  xlab("Home runs per player per year")
+```
 :::
 
 ## Stacked Density Graph By Decade {.smaller}
@@ -297,7 +311,7 @@ ggplot(home_runs, aes(HR)) +
 
 ```{r}
 #| label: stacked-geom-density
-#| echo: true
+#| echo: false
 
 home_runs |>
   mutate(
@@ -317,6 +331,22 @@ If we stratify by decade, we can see the **mode** of the density graphs slowly c
 :::
 
 ### Code
+
+```{r}
+#| eval: false
+
+home_runs |>
+  mutate(
+    decade = cut(
+      yearID,
+      breaks = seq(1920, 2030, 10),
+      labels = paste0(seq(1920, 2020, 10), "'s")
+    )
+  ) |>
+  ggplot(aes(HR, fill = decade)) +
+  geom_density(position = "stack") +
+  labs(x = "Home runs per player per year")
+```
 :::
 
 ## Overlapping Density Graphs By Decade {.smaller}
@@ -326,7 +356,7 @@ If we stratify by decade, we can see the **mode** of the density graphs slowly c
 
 ```{r}
 #| label: overlapping-geom-density
-#| echo: true
+#| echo: false
 
 home_runs |>
   mutate(
@@ -346,6 +376,22 @@ The modes moving forward is a little more apparent now, but the graphs are too c
 :::
 
 ### Code
+
+```{r}
+#| eval: false
+
+home_runs |>
+  mutate(
+    decade = cut(
+      yearID,
+      breaks = seq(1920, 2030, 10),
+      labels = paste0(seq(1920, 2020, 10), "'s")
+    )
+  ) |>
+  ggplot(aes(HR, color = decade)) +
+  geom_density() +
+  labs(x = "Home runs per player per year")
+```
 :::
 
 ## Density Graph with Conditional Probabilities {.smaller}
@@ -355,7 +401,7 @@ The modes moving forward is a little more apparent now, but the graphs are too c
 
 ```{r}
 #| label: conditional-geom-density
-#| echo: true
+#| echo: false
 
 home_runs |>
   mutate(
@@ -377,6 +423,23 @@ By using `position = "fill"` and `y = after_stat(count)` we graph the conditiona
 :::
 
 ### Code
+
+```{r}
+#| eval: false
+
+home_runs |>
+  mutate(
+    decade = cut(
+      yearID,
+      breaks = seq(1920, 2030, 10),
+      labels = paste0(seq(1920, 2020, 10), "'s")
+    )
+  ) |>
+  ggplot(aes(x = HR, y = after_stat(count), fill = decade)) +
+  geom_density(position = "fill") +
+  geom_vline(xintercept = 60, linetype = "dashed") +
+  labs(x = "Home runs per player per year")
+```
 :::
 
 [^2]: With the exception of 1961, the year Roger Maris hit 61 home runs.
@@ -388,7 +451,7 @@ By using `position = "fill"` and `y = after_stat(count)` we graph the conditiona
 
 ```{r}
 #| label: violin-plot
-#| echo: true
+#| echo: false
 
 home_runs |>
   filter(yearID %in% 1985:2005) |>
@@ -407,6 +470,21 @@ Let's examine the years near the change point, 1985 to 2005. All points shown ar
 :::
 
 ### Code
+
+```{r}
+#| eval: false
+
+home_runs |>
+  filter(yearID %in% 1985:2005) |>
+  ggplot(aes(HR, x = factor(yearID))) +
+  geom_violin(draw_quantiles = c(0.25, 0.5, 0.75)) +
+  geom_jitter(
+    data = ~ filter(.x, HR >= 30),
+    height = 0, width = 0.1, alpha = 0.5
+  ) +
+  scale_x_discrete(guide = guide_axis(n.dodge = 2)) +
+  labs(x = "Home runs per player per year")
+```
 :::
 
 ## Ridge Plot {.smaller}
@@ -416,7 +494,7 @@ Let's examine the years near the change point, 1985 to 2005. All points shown ar
 
 ```{r}
 #| label: ridge-plot
-#| echo: true
+#| echo: false
 
 library(ggridges)
 
@@ -452,11 +530,43 @@ The quantiles also have a consistent increase, along with many more players hitt
 :::
 
 ### Code
+
+```{r}
+#| eval: false
+
+library(ggridges)
+
+home_runs |>
+  filter(yearID %in% 1985:2010) |>
+  ggplot(aes(x = HR, y = factor(yearID))) +
+  stat_density_ridges(
+    mapping = aes(fill = factor(after_stat(quantile))),
+    geom = "density_ridges_gradient",
+    calc_ecdf = TRUE,
+    quantiles = c(.25, .50, .75, .95),
+    quantile_lines = TRUE,
+    scale = 2,
+    rel_min_height = 0.01
+  ) +
+  scale_fill_viridis_d(
+    name = "Quantiles",
+    labels = c("0", "25th", "50th", "75th", "95th")
+  ) +
+  geom_jitter(
+    data = ~ filter(.x, HR >= 30),
+    height = 0.2, width = 0, alpha = 0.3,
+  ) +
+  scale_x_continuous(
+    name = "Home runs per player per year",
+    limits = c(0, 73)
+  ) +
+  labs(y = "Year")
+```
 :::
 
 ## Application Exercise: More Examples
 
--   Go to `ae-05`
+-   Go to `ae-06`
 -   Work on Exercise 1
 
 ```{r}

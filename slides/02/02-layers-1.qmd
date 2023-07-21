@@ -437,7 +437,7 @@ ggplot(
 ::: task
 -   Go to the course GitHub organization: <https://github.com/INFO526-DataViz>
 
--   Clone the repo called `ae-01` and work on the exercise.
+-   Clone the repo called `ae-02` and work on the exercise.
 
     -   Note: For today, this is not a personalized repo for you. The repo is public so everyone can clone it, but you won't be able to push to it. Starting Thursday you'll start getting your personalized repos you can push to.
 

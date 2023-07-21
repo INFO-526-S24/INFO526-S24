@@ -1,7 +1,6 @@
 ---
 title: Visualizing density - II
 subtitle: Lecture 7
-author: Sam Rosen
 title-slide-attributes:
   data-background-image: ../vizdata-bg.png
   data-background-size: 800px, cover
@@ -20,16 +19,35 @@ revealjs-plugins:
 
 ## Announcements
 
--   Make sure to review the feedback on your HW 01 repo and close the issue once you're done reiewing.
--   Once you review, close the issue
--   HW 02 won't be graded for those who have open issues from the previously assigned homeework assignment.
+-   HW 02 is due Monday
+-   Project 1 proposal are due for my review.
+
+## Checks
+
+::: task
+Go to your HW 02 repo and make sure all your changes are committed. Then **pull**. You'll see there were some updates. Fix merge conflicts, if any. Then **push**. Check that your document renders.
+:::
+
+## Warnings and messages
+
+-   You should suppress package loading and data loading messages with `message: false` as a chunk option
+
+-   You should also suppress warnings with `warning: false` **after** making sure you're ok with them, or update your code to eliminate warnings
+
+# HW 1 lessons learned
+
+## Highlights
+
+-   Review HW 1 issues, and show us you reviewed them by closing the issue.
+
+-   DO NOT hard code paths! Use the **`here`** package to help with relative paths, if you need.
 
 ## Setup {.smaller}
 
 ```{r}
 #| label: setup
 #| message: false
-#| echo: false
+#| echo: true
 
 # load packages
 library(countdown)
@@ -128,7 +146,7 @@ home_runs <- Batting |>
 Our dataset comes from the R package `Lahman`. Each row in the data frame is the hitting stats of a player for a given year. Today we will use the following columns:
 
 | Variable | Description                                                                        |
-|--------------|----------------------------------------------------------|
+|----------------------|--------------------------------------------------|
 | `yearID` | The year for the statistics                                                        |
 | `HR`     | The number of home runs a player hit in a given year                               |
 | `G`      | Number of games played; there are 162 games in a baseball season (154 before 1961) |
@@ -468,7 +486,7 @@ ggplot(rbind(HR2005, HR2006), aes(HR, color = factor(yearID))) +
 
 ## Application Exercise: Comparing Distributions
 
--   Go to `ae-06`
+-   Go to `ae-07`
 -   Work on exercise 1
 
 ```{r}
@@ -548,7 +566,7 @@ options(warn = 0)
 #| label: visualize-ks-matrix
 #| fig-width: 6.5
 #| fig-asp: 0.8
-#| echo: True
+#| echo: False
 
 ks_matrix |>
   mutate(signif = cut(
@@ -603,6 +621,44 @@ ks.test(HR2005$HR, HR2016$HR)
 :::
 
 ### Code {.smallest}
+
+```{r}
+#| eval: False
+
+ks_matrix |>
+  mutate(signif = cut(
+    p_value,
+    breaks = c(0, 0.001, 0.01, 0.05, 0.1, 1.001),
+    labels = c("<0.001", "<0.01", "<0.05", "<0.1", "<1"),
+    include.lowest = T,
+  )) |>
+  ggplot(aes(
+    x = year1,
+    y = year2,
+    fill = factor(signif)
+  )) +
+  geom_tile() +
+  scale_x_continuous(breaks = 1920 + seq(0, 10) * 10) +
+  scale_y_continuous(breaks = 1920 + seq(0, 10) * 10) +
+  scale_fill_manual(values = c(colorspace::heat_hcl(4), "#AAAAAA")) +
+  labs(
+    title = "Unadjusted p-values matrix",
+    fill = "Significance",
+    x = "Year",
+    y = "Year"
+  ) +
+  coord_fixed() +
+  annotate(
+    "rect",
+    xmin = c(2004.5, 2015.5),
+    ymin = c(2015.5, 2004.5),
+    xmax = c(2005.5, 2016.5),
+    ymax = c(2016.5, 2005.5),
+    color = "#0000FFaa",
+    alpha = 0,
+    size = 1
+  )
+```
 :::
 
 ## Multiple Testing
@@ -657,7 +713,7 @@ ks_matrix <- bind_rows(half_matrix, other_half)
 #| fig-width: 7
 #| fig-asp: 0.5
 #| fig-align: center
-#| echo: True
+#| echo: False
 
 ks_matrix |>
   pivot_longer(
@@ -705,6 +761,52 @@ ks_matrix |>
 Controlling for the Family Wise Error Rate got rid of a lot of our interesting patterns. We don't mind some false positives so we choose the `BY` adjustment as it controls False Discovery Rate but is a bit more conservative than `FDR`.
 
 ### Code
+
+```{r}
+#| eval: False
+
+ks_matrix |>
+  pivot_longer(
+    c(
+      "p_holm",
+      "p_hochberg",
+      "p_hommel",
+      "p_bonferroni",
+      "p_fdr",
+      "p_BY"
+    ),
+    names_to = "adjustment",
+    values_to = "adjusted_p"
+  ) |>
+  mutate(signif = cut(
+    adjusted_p,
+    breaks = c(0, 0.001, 0.01, 0.05, 0.1, 1.001),
+    labels = c("<0.001", "<0.01", "<0.05", "<0.1", "<1"),
+    include.lowest = T,
+  )) |>
+  ggplot(aes(
+    x = year1,
+    y = year2,
+    fill = factor(signif)
+  )) +
+  geom_tile() +
+  scale_x_continuous(breaks = 1920 + seq(0, 10) * 10) +
+  scale_y_continuous(breaks = 1920 + seq(0, 10) * 10) +
+  scale_fill_manual(values = c(colorspace::heat_hcl(4), "#AAAAAA")) +
+  labs(
+    x = "Year",
+    y = "Year",
+    fill = "Significance"
+  ) +
+  facet_wrap(~adjustment) +
+  coord_fixed() +
+  theme(
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank()
+  )
+```
 :::
 
 ## Pre-Integration {.smallest}
@@ -716,7 +818,7 @@ Controlling for the Family Wise Error Rate got rid of a lot of our interesting p
 #| label: by-adjustment
 #| fig-height: 5.5
 #| fig-align: center
-#| echo: True
+#| echo: False
 
 mat_BY <-
   ks_matrix |>
@@ -762,6 +864,52 @@ mat_BY +
 ```
 
 ### Code
+
+```{r}
+#| eval: False
+
+mat_BY <-
+  ks_matrix |>
+  mutate(signif = cut(
+    p_BY,
+    breaks = c(0, 0.001, 0.01, 0.05, 0.1, 1.001),
+    labels = c("<0.001", "<0.01", "<0.05", "<0.1", "<1"),
+    include.lowest = T,
+  )) |>
+  ggplot(aes(x = year1,
+             y = year2)) +
+  geom_tile(aes(fill = factor(signif))) +
+  scale_x_continuous(breaks = 1920 + seq(0, 10) * 10) +
+  scale_y_continuous(breaks = 1920 + seq(0, 10) * 10) +
+  scale_fill_manual(values = c(colorspace::heat_hcl(4), "#AAAAAA")) +
+  labs(title = "BY adjusted p-values matrix",
+       fill = "Significance",
+       x = "Year",
+       y = "Year") +
+  coord_fixed()
+
+description <- "Major League Baseball was segregated by race until Jackie Robinson broke the color barrier in 1947.The talent level of the league changed rapidly, including the overall distribution of home runs." |> 
+  str_wrap(width=40)
+
+mat_BY +
+  annotate(
+    "rect",
+    xmin = 1920,
+    ymin = 1920,
+    xmax = 1947,
+    ymax = 1947,
+    color = "#0000FFaa",
+    alpha = 0
+  ) +
+  annotate(
+    "label",
+    x = 1980,
+    y = 1980,
+    label = description,
+    alpha = 0.9,
+    size = 3
+  )
+```
 :::
 
 ## World War II {.smallest}
@@ -773,7 +921,7 @@ mat_BY +
 #| label: ww2-annotate
 #| fig-height: 5.5
 #| fig-align: center
-#| echo: True
+#| echo: False
 
 description <-
   "During World War II, many baseball players fought overseas,making for an atypical number of home runs during these years." |> 
@@ -800,6 +948,33 @@ mat_BY +
 ```
 
 ### Code
+
+```{r}
+#| eval: False
+
+description <-
+  "During World War II, many baseball players fought overseas,making for an atypical number of home runs during these years." |> 
+  str_wrap(width=40)
+
+mat_BY +
+  annotate(
+    "rect",
+    xmin = c(1920, 1941),
+    ymin = c(1941, 1920),
+    xmax = c(2022, 1945),
+    ymax = c(1945, 2022),
+    color = "#0000FFaa",
+    alpha = 0
+  ) +
+  annotate(
+    "label",
+    x = 1990,
+    y = 1990,
+    label = description,
+    alpha = 0.9,
+    size = 3
+  )
+```
 :::
 
 ## Shortened Seasons {.smallest}
@@ -811,7 +986,7 @@ mat_BY +
 #| label: shorter-season-annotate
 #| fig-height: 5.5
 #| fig-align: center
-#| echo: True
+#| echo: False
 
 description <-
   "In 1994 less homeruns were hit due to the strike-shorted season. Similarly, COVID in 2020 called for a shorter season." |>
@@ -838,6 +1013,33 @@ mat_BY +
 ```
 
 ### Code
+
+```{r}
+#| eval: False
+
+description <-
+  "In 1994 less homeruns were hit due to the strike-shorted season. Similarly, COVID in 2020 called for a shorter season." |>
+  str_wrap(width=40)
+
+mat_BY +
+  annotate(
+    "rect",
+    xmin = c(1920, 2019, 1920, 1993),
+    ymin = c(2019, 1920, 1993, 1920),
+    xmax = c(2022, 2021, 2022, 1995),
+    ymax = c(2021, 2022, 1995, 2022),
+    color = "#0000FFaa",
+    alpha = 0
+  ) +
+  annotate(
+    "label",
+    x = 1950,
+    y = 1950,
+    label = description,
+    alpha = 0.9,
+    size = 3
+  )
+```
 :::
 
 ## Year of the Pitcher {.smallest}
@@ -849,7 +1051,7 @@ mat_BY +
 #| label: yotp-annotate
 #| fig-height: 5.5
 #| fig-align: center
-#| echo: True
+#| echo: False
 
 description <-
   "1968 is known as the Year of the Pitcher, when pitchers dominated the league causing less homeruns. The next year, the pitcher's mound was made smaller to give \npitchers a smaller advantage." |>
@@ -876,11 +1078,38 @@ mat_BY +
 ```
 
 ### Code
+
+```{r}
+#| eval: False
+
+description <-
+  "1968 is known as the Year of the Pitcher, when pitchers dominated the league causing less homeruns. The next year, the pitcher's mound was made smaller to give \npitchers a smaller advantage." |>
+  str_wrap(width = 30)
+
+mat_BY +
+  annotate(
+    "rect",
+    xmin = c(1920, 1967),
+    ymin = c(1967, 1920),
+    xmax = c(2022, 1969),
+    ymax = c(1969, 2022),
+    color = "#0000FFaa",
+    alpha = 0
+  ) +
+  annotate(
+    "label",
+    x = 2000,
+    y = 1950,
+    label = description,
+    alpha = 0.9,
+    size = 3
+  )
+```
 :::
 
 ## Application exercise: Follow the example
 
--   Go to `ae-06`
+-   Go to `ae-07`
 -   Work on exercise 2
 
 ```{r}

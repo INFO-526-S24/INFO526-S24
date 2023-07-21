@@ -17,11 +17,17 @@ editor_options:
 
 ## Announcements
 
--   RQ2 due Tuesday:
+-   RQ2 due Wednesday:
 
-    -   Will be posted tomorrow
+    -   Will be posted today
 
     -   Covers everything since the previous quiz
+
+-   Make sure to review the feedback on your HW 01 repo and close the issue once you're done reviewing.
+
+-   Once you review, close the issue
+
+-   HW 02 won't be graded for those who have open issues from the previously assigned homework assignment.
 
 ## Setup {.smaller}
 

@@ -18,13 +18,8 @@ editor_options:
 
 ## Announcements
 
--   Tomorrow in lab: Project proposal peer review
-    -   You'll be assessed on the quality (and participation) of your peer review
-
-    -   Updates based on peer review are due Friday at 5pm
-
-    -   Your proposal will be "graded" after that, by me
--   HW 2 is due Thursday
+-   RQ 3 is due Wednesday
+-   Project 1 reviews will be returned to you by Wednesday
 
 ## Setup {.smaller}
 
@@ -59,26 +54,6 @@ knitr::opts_chunk$set(
   dpi = 300             # higher dpi, sharper image
 )
 ```
-
-# HW 1 lessons learned
-
-## Highlights
-
--   Review HW 1 issues, and show us you reviewed them by closing the issue.
-
--   DO NOT hard code paths! Use the **here** package to help with relative paths, if you need.
-
-## Checks
-
-::: task
-Go to your HW 02 repo and make sure all your changes are committed. Then **pull**. You'll see there were some updates. Fix merge conflicts, if any. Then **push**. Check that your document renders.
-:::
-
-## Warnings and messages
-
--   You should suppress package loading and data loading messages with `message: false` as a chunk option
-
--   You should also suppress warnings with `warning: false` **after** making sure you're ok with them, or update your code to eliminate warnings
 
 ## Missing values I
 

@@ -171,7 +171,7 @@ ggplot(tucsonHousing, aes(x = price, color = decade_built_cat)) +
 ::: task
 -   Go to the course GitHub organization: <https://github.com/INFO526-DataViz>
 
--   Clone the repo called `ae-02-[YOUR-GITHUB-USERNAME]` and work on the exercises for Part 1.
+-   Clone the repo called `ae-03-[YOUR-GITHUB-USERNAME]` and work on the exercises for Part 1.
 
 -   Once you're done, share your plots on Slack in #general.
 
@@ -359,7 +359,7 @@ ggplot(mean_price_year, aes(x = year_built, y = mean_price)) +
 ::: task
 -   Go to the course GitHub organization: <https://github.com/INFO526-DataViz>
 
--   Clone the repo called `ae-02-[YOUR-GITHUB-USERNAME]` and work on the exercises for Part 2.
+-   Clone the repo called `ae-03-[YOUR-GITHUB-USERNAME]` and work on the exercises for Part 2.
 
 -   Once you're done, share your plot on Slack in #general.
 

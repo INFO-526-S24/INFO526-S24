@@ -17,9 +17,9 @@ editor_options:
 
 ## Announcements
 
--   HW 1 due Thursday at noon, make sure all checks are passing!
+-   HW 1 due Monday at 3:30pm, make sure all checks are passing!
 -   See #random on Slack for playlist request
--   Lab tomorrow: Come with questions on HW 1, particularly Questions 1-4. You'll have time to work on Question 5 especially in lab.
+-   Office Hours: Come with questions on HW 1, particularly Questions 1-4.
 
 ## Setup {.smaller}
 
