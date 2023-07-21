@@ -17,7 +17,6 @@ website:
   open-graph: true
 
   sidebar:
-    title: "INFO 526 F23"
     background: "#378DBD" # Oasis
     logo: "images/logo.png"
     pinned: true

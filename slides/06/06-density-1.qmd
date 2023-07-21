@@ -192,7 +192,7 @@ names(Batting)
 Our dataset comes from the R package `Lahman`. Each row in the data frame is the hitting stats of a player for a given year. We will mostly be using the following columns:
 
 | Variable   | Description                                                                        |
-|---------------------------|---------------------------------------------|
+|------------|------------------------------------------------------------------------------------|
 | `yearID`   | The year for the statistics                                                        |
 | `playerID` | Player unique ID to distinguish rows                                               |
 | `HR`       | The number of home runs a player hit in a given year                               |

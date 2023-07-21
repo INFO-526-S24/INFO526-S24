@@ -18,11 +18,9 @@ editor_options:
 
 ## Announcements
 
--   Project 1 proposal due Friday, 5pm
+-   Project 1 proposal due Monday, 3pm
 
--   RQ 3 due Tuesday by class, covers everything since last reading quiz
-
--   Project 1 presentations -- Feb 22 in lab, all team members must be there
+-   Project 1 presentations -- Monday in class, all team members must be there
 
 ## Setup {.smaller}
 
