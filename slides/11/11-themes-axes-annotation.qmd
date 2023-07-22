@@ -18,7 +18,7 @@ editor_options:
 
 ## Announcements
 
--   Proposal regrades pending, but you can keep working
+-   Proposal regrades pending, but you can keep working on your projects
 
 ## Setup {.smaller}
 
