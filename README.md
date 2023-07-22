@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b3d28610-25b7-4d03-a3dd-bb87d7690b2c/deploy-status)](https://app.netlify.com/sites/datavizaz/deploys)
 
-Course website for INFO 526 - Data Analysis and Visualization at The University of Arizona, taught by Dr. Greg Chism.
+Course website for INFO 526 F23- Data Analysis and Visualization at The University of Arizona, taught by Dr. Greg Chism.
 
 The website is live at [datavizaz.org](http://datavizaz.org/).
 
