@@ -18,9 +18,9 @@ editor_options:
 
 ## Announcements
 
--   Project 1 proposal due Monday, 3pm
+-   Final Project 1 due Monday, October 16th, 3pm
 
--   Project 1 presentations -- Monday in class, all team members must be there
+-   Project 1 presentations -- Monday October 16th in class, all team members must be there
 
 ## Setup {.smaller}
 
@@ -96,20 +96,20 @@ aqi_levels <- tribble(
 
 -   2016 - 2022 AQI (Ozone and PM2.5 combined) for San Francisco-Oakland-Hayward, CA CBSA, one file per year
 
-## 2022 Durham-Chapel Hill
+## 2022 Tucson, AZ
 
 -   Load data
 
 ```{r}
 #| include: false
 
-dch_2022 <- read_csv(here::here("slides/09/", "data/durham-chapel-hill/ad_aqi_tracker_data-2022.csv"))
+tuc_2022 <- read_csv(here::here("slides/09/", "data/tucson/ad_aqi_tracker_data-2022.csv"))
 ```
 
 ```{r}
 #| eval: false
 
-dch_2022 <- read_csv(here::here("data/durham-chapel-hill/ad_aqi_tracker_data-2022.csv"))
+tuc_2022 <- read_csv(here::here("data/tucson/ad_aqi_tracker_data-2022.csv"))
 ```
 
 . . .
@@ -117,17 +117,17 @@ dch_2022 <- read_csv(here::here("data/durham-chapel-hill/ad_aqi_tracker_data-202
 -   Metadata
 
 ```{r}
-dim(dch_2022)
-names(dch_2022)
+dim(tuc_2022)
+names(tuc_2022)
 ```
 
 ## Clean variable names
 
 ```{r}
-dch_2022 <- dch_2022 |>
+tuc_2022 <- tuc_2022 |>
   janitor::clean_names()
 
-names(dch_2022)
+names(tuc_2022)
 ```
 
 ## First look
@@ -137,14 +137,14 @@ This plot looks quite bizarre. What might be going on?
 :::
 
 ```{r}
-ggplot(dch_2022, aes(x = date, y = aqi_value, group = 1)) +
+ggplot(tuc_2022, aes(x = date, y = aqi_value, group = 1)) +
   geom_line()
 ```
 
 ## Peek at data
 
 ```{r}
-dch_2022 |>
+tuc_2022 |>
   select(date, aqi_value, site_name, site_id)
 ```
 
@@ -153,7 +153,7 @@ dch_2022 |>
 Using `lubridate::mdy()`:
 
 ```{r}
-dch_2022 |>
+tuc_2022 |>
   mutate(date = mdy(date))
 ```
 
@@ -170,7 +170,7 @@ options(dplyr.print_min = 3, dplyr.print_max = 3)
 ```
 
 ```{r}
-dch_2022 |>
+tuc_2022 |>
   mutate(aqi_value = as.numeric(aqi_value))
 ```
 
@@ -185,7 +185,7 @@ options(dplyr.print_min = 10, dplyr.print_max = 10)
 -   Take a peek at distinct values of AQI
 
 ```{r}
-dch_2022 |>
+tuc_2022 |>
   distinct(aqi_value) |>
   pull()
 ```
@@ -197,8 +197,8 @@ dch_2022 |>
 ```{r}
 #| include: false
 
-dch_2022 <- read_csv(
-  here::here("slides/09/", "data/durham-chapel-hill/ad_aqi_tracker_data-2022.csv"),
+tuc_2022 <- read_csv(
+  here::here("slides/09/", "data/tucson/ad_aqi_tracker_data-2022.csv"),
   na = c(".", "")
 )
 ```
@@ -206,33 +206,33 @@ dch_2022 <- read_csv(
 ```{r}
 #| eval: false
 
-dch_2022 <- read_csv(
-  here::here("data/durham-chapel-hill/ad_aqi_tracker_data-2022.csv"),
+tuc_2022 <- read_csv(
+  here::here("data/tucson/ad_aqi_tracker_data-2022.csv"),
   na = c(".", "")
 )
 ```
 
 ```{r}
-glimpse(dch_2022)
+glimpse(tuc_2022)
 ```
 
 ## Data cleaning
 
 ```{r}
-dch_2022 <- dch_2022 |>
+tuc_2022 <- tuc_2022 |>
   janitor::clean_names() |>
   mutate(date = mdy(date))
 
-dch_2022
+tuc_2022
 ```
 
 ## Another look
 
 ```{r}
-#| label: dch-2022-1
+#| label: tuc_2022-1
 #| fig-asp: 0.5
 
-ggplot(dch_2022, aes(x = date, y = aqi_value, group = 1)) +
+ggplot(tuc_2022, aes(x = date, y = aqi_value, group = 1)) +
   geom_line()
 ```
 
@@ -240,23 +240,23 @@ ggplot(dch_2022, aes(x = date, y = aqi_value, group = 1)) +
 How would you improve this visualization?
 :::
 
-```{r ref.label = "dch-2022-1", echo = FALSE}
+```{r ref.label = "tuc_2022-1", echo = FALSE}
 ```
 
 ## Visualizing Durham AQI
 
 ::: task
-Recreate the following visualization.
+Recreate the following visualization: `ae-09`
 :::
 
 ```{r}
-#| label: dch-2022-2
+#| label: tuc_2022-2
 #| echo: false
 
 aqi_levels <- aqi_levels |>
   mutate(aqi_mid = ((aqi_min + aqi_max) / 2))
 
-dch_2022 |>
+tuc_2022 |>
   filter(!is.na(aqi_value)) |>
   ggplot(aes(x = date, y = aqi_value, group = 1)) +
   geom_rect(
@@ -287,7 +287,7 @@ dch_2022 |>
   labs(
     x = NULL, y = "AQI",
     title = "Ozone and PM2.5 Daily AQI Values",
-    subtitle = "Durham-Chapel Hill, NC",
+    subtitle = "Tucson, AZ",
     caption = "\nSource: EPA Daily Air Quality Tracker"
   ) +
   theme(

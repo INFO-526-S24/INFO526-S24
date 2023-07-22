@@ -18,13 +18,13 @@ editor_options:
 
 ## Announcements
 
--   Don't forget to watch the videos for Thursday's lecture
+-   Don't forget to watch the videos for Wednesday's lecture
 
 ## Project next steps I {.smaller}
 
 -   Proposal feedback is available.
     -   Required: Address all issues and close them with keywords.
-    -   Optional: Submit for regrade, by replying to the "Proposal feedback" issue and tagging me in your reply. Due 5pm tomorrow (Wednesday). Final proposal score will be average of original and updated score.
+    -   Optional: Submit for regrade, by replying to the "Proposal feedback" issue and tagging me in your reply. Due 5pm tomorrow (Tuesday). Final proposal score will be average of original and updated score.
 -   Within team peer evaluations due today at 5pm, so that we can share them with you before lab tomorrow. Please take 5 minutes to complete the survey (from TEAMMATES).
 
 ## Project next steps II {.smaller}
@@ -64,7 +64,7 @@ If you haven't yet done so, schedule meetings with your project mentor TA:
 -   Create a slide deck in `presentation.qmd`, replacing the placeholder text.
 -   Add your writeup to `index.qmd`, replacing the placeholder text.
 -   In both outputs, hide the code with `echo: false` prior to turning them in.
--   Due: Wednesday, February 22 at the beginning of your lab.
+-   Due: Wednesday, Monday, October 16th, 3pm.
 
 ## Setup {.smaller}
 
@@ -119,11 +119,11 @@ aqi_levels <- tribble(
 
 -   Source: [EPA's Daily Air Quality Tracker](https://www.epa.gov/outdoor-air-quality-data/air-data-daily-air-quality-tracker)
 
--   2016 - 2022 AQI (Ozone and PM2.5 combined) for Durham-Chapel Hill, NC core-based statistical area (CBSA), one file per year
+-   2016 - 2022 AQI (Ozone and PM2.5 combined) for Tucson, AZ core-based statistical area (CBSA), one file per year
 
 -   2016 - 2022 AQI (Ozone and PM2.5 combined) for San Francisco-Oakland-Hayward, CA CBSA, one file per year
 
-## 2022 Durham-Chapel Hill {.smaller}
+## 2022 Tucson, AZ {.smaller}
 
 ```{r}
 #| include: false
@@ -134,8 +134,8 @@ options(dplyr.print_min = 3, dplyr.print_max = 3)
 ```{r}
 #| include: false
 
-dch_2022 <- read_csv(
-  here::here("slides/10/", "data/durham-chapel-hill/ad_aqi_tracker_data-2022.csv"),
+tuc_2022 <- read_csv(
+  here::here("slides/10/", "data/tucson/ad_aqi_tracker_data-2022.csv"),
   na = c(".", "")
 )
 ```
@@ -143,18 +143,18 @@ dch_2022 <- read_csv(
 ```{r}
 #| eval: false
 
-dch_2022 <- read_csv(
-  here::here("data/durham-chapel-hill/ad_aqi_tracker_data-2022.csv"),
+tuc_2022 <- read_csv(
+  here::here("data/tucson/ad_aqi_tracker_data-2022.csv"),
   na = c(".", "")
 )
 ```
 
 ```{r}
-dch_2022 <- dch_2022 |>
+tuc_2022 <- tuc_2022 |>
   janitor::clean_names() |>
   mutate(date = mdy(date))
 
-dch_2022
+tuc_2022
 ```
 
 ```{r}
@@ -170,13 +170,13 @@ Recreate the following visualization.
 :::
 
 ```{r}
-#| label: dch-2022-2
+#| label: tuc-2022-2
 #| echo: false
 
 aqi_levels <- aqi_levels |>
   mutate(aqi_mid = ((aqi_min + aqi_max) / 2))
 
-dch_2022 |>
+tuc_2022 |>
   filter(!is.na(aqi_value)) |>
   ggplot(aes(x = date, y = aqi_value, group = 1)) +
   geom_rect(
@@ -207,7 +207,7 @@ dch_2022 |>
   labs(
     x = NULL, y = "AQI",
     title = "Ozone and PM2.5 Daily AQI Values",
-    subtitle = "Durham-Chapel Hill, NC",
+    subtitle = "Tucson, AZ",
     caption = "\nSource: EPA Daily Air Quality Tracker"
   ) +
   theme(
@@ -223,22 +223,22 @@ dch_2022 |>
 Reveal below for code developed during live coding session.
 
 ```{r}
-#| ref.label: dch-2022-2
+#| ref.label: tuc-2022-2
 #| fig-show: hide
 #| code-fold: true
 ```
 
-## Another visualization of Durham AQI
+## Another visualization of Tucson AQI
 
 ::: task
 Recreate the following visualization.
 :::
 
 ```{r}
-#| label: dch-2022-3
+#| label: tuc-2022-3
 #| echo: false
 
-dch_2022 |>
+tuc_2022 |>
   filter(!is.na(aqi_value)) |>
   ggplot(aes(x = date, y = aqi_value, group = 1)) +
   geom_line(linewidth = 1) +
@@ -262,7 +262,7 @@ dch_2022 |>
   labs(
     x = NULL, y = "AQI",
     title = "Ozone and PM2.5 Daily AQI Values",
-    subtitle = "Durham-Chapel Hill, NC",
+    subtitle = "Tucson, AZ",
     caption = "\nSource: EPA Daily Air Quality Tracker"
   ) +
   theme(
@@ -280,7 +280,7 @@ dch_2022 |>
 Reveal below for code developed during live coding session.
 
 ```{r}
-#| ref.label: dch-2022-3
+#| ref.label: tuc-2022-3
 #| fig-show: hide
 #| code-fold: true
 ```
@@ -317,7 +317,7 @@ options(dplyr.print_min = 5, dplyr.print_max = 5)
 Step 1. Arrange your data
 
 ```{r}
-dch_2022 |>
+tuc_2022 |>
   select(date, aqi_value) |>
   filter(!is.na(aqi_value)) |>
   arrange(date)
@@ -328,7 +328,7 @@ dch_2022 |>
 Step 2. Identify good days
 
 ```{r}
-dch_2022 |>
+tuc_2022 |>
   select(date, aqi_value) |>
   filter(!is.na(aqi_value)) |>
   arrange(date) |>
@@ -340,7 +340,7 @@ dch_2022 |>
 Step 3. Sum over time
 
 ```{r}
-dch_2022 |>
+tuc_2022 |>
   select(date, aqi_value) |>
   filter(!is.na(aqi_value)) |>
   arrange(date) |>
@@ -356,11 +356,11 @@ dch_2022 |>
 ### Plot
 
 ```{r}
-#| label: durham-aqi-3
+#| label: tucson-aqi-3
 #| echo: false
 #| fig.asp: 0.5
 
-dch_2022 |>
+tuc_2022 |>
   select(date, aqi_value) |>
   filter(!is.na(aqi_value)) |>
   arrange(date) |>
@@ -374,7 +374,7 @@ dch_2022 |>
   labs(
     x = NULL, y = "Number of days",
     title = "Cumulative number of good AQI days (AQI < 50)",
-    subtitle = "Durham-Chapel Hill, NC",
+    subtitle = "Tucson, AZ",
     caption = "\nSource: EPA Daily Air Quality Tracker"
   ) +
   theme(plot.title.position = "plot")
@@ -383,7 +383,7 @@ dch_2022 |>
 ### Code
 
 ```{r}
-#| ref.label: durham-aqi-3
+#| ref.label: tucson-aqi-3
 #| fig-show: hide
 ```
 :::
@@ -396,24 +396,24 @@ dch_2022 |>
 
 -   Let's demonstrate using multiple years of AQI data
 
-## Multiple years of Durham-Chapel Hill data {.smaller}
+## Multiple years of Tucson, AZ data {.smaller}
 
 ```{r}
 #| include: false
 
-dch_files <- fs::dir_ls(here::here("slides/09/", "data/durham-chapel-hill"))
+tuc_files <- fs::dir_ls(here::here("slides/09/", "data/tucson"))
 ```
 
 ```{r}
 #| eval: false
 
-dch_files <- fs::dir_ls(here::here("data/durham-chapel-hill"))
-dch_files
+tuc_files <- fs::dir_ls(here::here("data/tucson"))
+tuc_files
 ```
 
 ```{r}
 #| echo: false
-dch_files
+tuc_files
 ```
 
 ## Reading multiple files {.smaller}
@@ -421,9 +421,9 @@ dch_files
 ```{r}
 #| message: false
 
-dch <- read_csv(dch_files, na = c(".", ""))
+tuc <- read_csv(tuc_files, na = c(".", ""))
 
-dch <- dch |>
+tuc <- tuc |>
   janitor::clean_names() |>
   mutate(
     date = mdy(date),
@@ -433,7 +433,7 @@ dch <- dch |>
   arrange(date) |>
   mutate(cumsum_good_aqi = cumsum(good_aqi), .after = aqi_value)
 
-dch
+tuc
 ```
 
 ## Plot trend since 2016 {.smaller}
@@ -442,12 +442,12 @@ dch
 ### Plot
 
 ```{r}
-#| label: dch-3
+#| label: tuc-3
 #| echo: false
 #| fig-asp: 0.5
 #| warning: false
 
-dch |>
+tuc |>
   ggplot(aes(x = date, y = cumsum_good_aqi, group = 1)) +
   geom_smooth(method = "lm", color = "pink") +
   geom_line() +
@@ -458,7 +458,7 @@ dch |>
   labs(
     x = NULL, y = "Number of days",
     title = "Cumulative number of good AQI days (AQI < 50)",
-    subtitle = "Durham-Chapel Hill, NC",
+    subtitle = "Tucson, AZ",
     caption = "\nSource: EPA Daily Air Quality Tracker"
   ) +
   theme(plot.title.position = "plot")
@@ -467,7 +467,7 @@ dch |>
 ### Code
 
 ```{r}
-#| ref.label: dch-3
+#| ref.label: tuc-3
 #| fig-show: hide
 #| code-line-numbers: "6|7"
 ```
@@ -478,7 +478,7 @@ dch |>
 Step 1. Fit a simple linear regression
 
 ```{r}
-m <- lm(cumsum_good_aqi ~ date, data = dch)
+m <- lm(cumsum_good_aqi ~ date, data = tuc)
 
 m
 ```
@@ -488,9 +488,9 @@ m
 Step 2. Augment the data with model results (using `broom::augment()`)
 
 ```{r}
-dch_aug <- augment(m)
+tuc_aug <- augment(m)
 
-dch_aug
+tuc_aug
 ```
 
 ## Detrend
@@ -498,11 +498,11 @@ dch_aug
 Step 3. Divide the observed value of `cumsum_good_aqi` by the respective value in the long-term trend (i.e., `.fitted`)
 
 ```{r}
-dch_aug <- dch_aug |>
+tuc_aug <- tuc_aug |>
   mutate(ratio = cumsum_good_aqi / .fitted, .after = .fitted)
 
 
-dch_aug
+tuc_aug
 ```
 
 ## Visualize detrended data
@@ -511,11 +511,11 @@ dch_aug
 ### Plot
 
 ```{r}
-#| label: dch-4
+#| label: tuc-4
 #| echo: false
 #| fig-asp: 0.5
 
-dch_aug |>
+tuc_aug |>
   ggplot(aes(x = date, y = ratio, group = 1)) +
   geom_hline(yintercept = 1, color = "gray") +
   geom_line() +
@@ -526,7 +526,7 @@ dch_aug |>
   labs(
     x = NULL, y = "Number of days\n(detrended)",
     title = "Cumulative number of good AQI days (AQI < 50)",
-    subtitle = "Durham-Chapel Hill, NC",
+    subtitle = "Tucson, AZ",
     caption = "\nSource: EPA Daily Air Quality Tracker"
   ) +
   theme(plot.title.position = "plot")
@@ -535,12 +535,12 @@ dch_aug |>
 ### Code
 
 ```{r}
-#| ref.label: dch-4
+#| ref.label: tuc-4
 #| fig-show: hide
 ```
 :::
 
-## Air Quality in Durham
+## Air Quality in Tucson
 
 <br><br>
 
@@ -688,7 +688,3 @@ sf_aug |>
 -   Depending on the complexity you're trying to capture you might choose to fit a much more complex model
 
 -   You can also decompose the trend into multiple trends, e.g. monthly, long-term, seasonal, etc.
-
-::: aside
-Interested in learning more? Take STA 344 - Spatio-temporal analysis!
-:::

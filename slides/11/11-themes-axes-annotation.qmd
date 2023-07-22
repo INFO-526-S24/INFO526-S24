@@ -18,7 +18,6 @@ editor_options:
 
 ## Announcements
 
--   My office hours next week - Tuesday 8-9pm
 -   Proposal regrades pending, but you can keep working
 
 ## Setup {.smaller}
@@ -98,13 +97,13 @@ p +
   labs(title = "Wall Street Journal")
 ```
 
-## Duke theme!
+## UArizona theme!
 
 ::: callout-warning
-This package is a work in progress. Feedback and issues welcome! See <https://aidangildea.github.io/duke/> for more info.
+This package is a work in progress. Feedback and issues welcome! See <https://github.com/Gchism94/uarizona> for more info.
 :::
 
-![](images/aidan-gildea-duke.png){fig-align="center" width="601"}
+![](images/gchism-uarizona.png){fig-align="center"}
 
 ## Modifying theme elements
 
@@ -289,13 +288,13 @@ countdown(minutes = 3)
 ## Now go ahead and improve it!
 
 ::: task
-Open `ae-09` and implement the improvements you came up with in Part 1.
+Open `ae-11` and implement the improvements you came up with in Part 1.
 :::
 
 ## Revisit Durham AQI
 
 ::: task
-Recreate the following visualization, in Part 2 of `ae-09`. This picks up where you left off in `ae-08`.
+Recreate the following visualization, in Part 2 of `ae-11`. This picks up where you left off in `ae-09`.
 :::
 
 ```{r}
