@@ -291,7 +291,7 @@ countdown(minutes = 3)
 Open `ae-11` and implement the improvements you came up with in Part 1.
 :::
 
-## Revisit Durham AQI
+## Revisit Tucson AQI
 
 ::: task
 Recreate the following visualization, in Part 2 of `ae-11`. This picks up where you left off in `ae-09`.
@@ -313,8 +313,8 @@ aqi_levels <- tribble(
 ) |>
   mutate(aqi_mid = ((aqi_min + aqi_max) / 2))
 
-dch_2022 <- read_csv(
-  here::here("slides/11/", "data/durham-chapel-hill/ad_aqi_tracker_data-2022.csv"),
+tuc_2022 <- read_csv(
+  here::here("slides/11/", "data/tucson/ad_aqi_tracker_data-2022.csv"),
   na = c(".", "")
 ) |>
   janitor::clean_names() |>
@@ -325,7 +325,7 @@ dch_2022 <- read_csv(
 #| label: dch-2022-3-data-viz
 #| echo: false
 
-dch_2022 |>
+tuc_2022 |>
   filter(!is.na(aqi_value)) |>
   ggplot(aes(x = date, y = aqi_value, group = 1)) +
   geom_line(linewidth = 1) +
@@ -349,7 +349,7 @@ dch_2022 |>
   labs(
     x = NULL, y = "AQI",
     title = "Ozone and PM2.5 Daily AQI Values",
-    subtitle = "Durham-Chapel Hill, NC",
+    subtitle = "Tucson, AZ",
     caption = "\nSource: EPA Daily Air Quality Tracker"
   ) +
   theme(
@@ -369,7 +369,7 @@ Reveal below for code developed during live coding session.
 -   Prep
 
 ```{r}
-#| ref.label: dch-2022-3-data-prep
+#| ref.label: tuc-2022-3-data-prep
 #| fig-show: hide
 #| code-fold: true
 #| message: false
@@ -552,5 +552,5 @@ ggplot(sf, aes(x = day_of_year, y = aqi_value, group = year)) +
 Time permitting!
 
 ::: task
-Highlight years using **gghighlight** instead in Part 3 of `ae-09`.
+Highlight years using **gghighlight** in Part 3 of `ae-11`.
 :::

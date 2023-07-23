@@ -163,7 +163,7 @@ tuc_2022
 options(dplyr.print_min = 3, dplyr.print_max = 3)
 ```
 
-## Visualizing Durham AQI
+## Visualizing Tucson AQI
 
 ::: task
 Recreate the following visualization.

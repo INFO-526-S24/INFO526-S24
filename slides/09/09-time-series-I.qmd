@@ -92,7 +92,7 @@ aqi_levels <- tribble(
 
 -   Source: [EPA's Daily Air Quality Tracker](https://www.epa.gov/outdoor-air-quality-data/air-data-daily-air-quality-tracker)
 
--   2016 - 2022 AQI (Ozone and PM2.5 combined) for Durham-Chapel Hill, NC core-based statistical area (CBSA), one file per year
+-   2016 - 2022 AQI (Ozone and PM2.5 combined) for Tucson, AZ core-based statistical area (CBSA), one file per year
 
 -   2016 - 2022 AQI (Ozone and PM2.5 combined) for San Francisco-Oakland-Hayward, CA CBSA, one file per year
 
@@ -243,7 +243,7 @@ How would you improve this visualization?
 ```{r ref.label = "tuc_2022-1", echo = FALSE}
 ```
 
-## Visualizing Durham AQI
+## Visualizing Tucson AQI
 
 ::: task
 Recreate the following visualization: `ae-09`
@@ -306,7 +306,7 @@ tuc_2022 |>
 Reveal below for code developed during live coding session.
 
 ```{r}
-#| ref.label: dch-2022-2
+#| ref.label: tuc-2022-2
 #| fig-show: hide
 #| code-fold: true
 ```
