@@ -18,7 +18,7 @@ editor_options:
 
 ## Announcements I
 
-Presentations tomorrow in lab:
+Presentations Monday Oct 16 in lecture:
 
 -   Bring a laptop to fill out feedback forms
 
@@ -27,12 +27,10 @@ Presentations tomorrow in lab:
 -   Presentation order to be announced in class tomorrow
 
 ::: {.callout-note appearance="minimal"}
-We might go over by 10 mins max for each lab section. Let me know if this presents a big issue for getting to your next class.
+We might go over by 10 mins max for lecture. Let me know if this presents a big issue for getting to your next class.
 :::
 
 ## Announcements II
-
--   Guest lecture on Thursday -- make sure to complete the reading before class
 
 -   Take note of Project 2 presentation date: must be in class in person to present or present live via Zoom in case of isolation
 
@@ -49,11 +47,19 @@ library(countdown)
 library(tidyverse)
 library(ggrepel)
 library(patchwork)
+library(ggtext)
 
 # set theme for ggplot2
-ggplot2::theme_set(ggplot2::theme_minimal(base_size = 14))
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))
 
-# no plot sizing defaults for this slide deck
+# set figure parameters for knitr
+knitr::opts_chunk$set(
+  fig.width = 7, # 7" width
+  fig.asp = 0.618, # the golden ratio
+  fig.retina = 3, # dpi multiplier for displaying HTML output on retina
+  fig.align = "center", # center align figures
+  dpi = 300 # higher dpi, sharper image
+)
 ```
 
 # Telling a story
@@ -172,45 +178,144 @@ ggplot(d, aes(y = fct_reorder(category, value), x = value, fill = category)) +
 
 ## Tell a story
 
+```{r}
+#| echo: false
+#| message: false
+ret_rate <- read_csv(here::here("slides/12", "data", "RetentionRateoverTime.csv")) |> 
+  janitor::clean_names()
+
+```
+
 ::: columns
 ::: {.column width="50%"}
-![](images/duke-hires-1.png){fig-align="center"}
+```{r}
+#| echo: false
+#| message: false
+
+ret_rate |>
+  ggplot(aes(year, full_time_retention_rate, color = university)) +
+  geom_smooth(se = FALSE, linewidth = 1.5) +
+  scale_color_discrete(labels = c("Clark University",
+                                  "Doctoral Universities",
+                                  "Doctoral Universities: \nHighest Research Activity", 
+                                  "National Louis University", 
+                                  "Pontifical Catholic University \nof Puerto Rico-Ponce",
+                                  "Trident University International",
+                                  "University of Arizona",
+                                  "University of Kansas"),
+                       ) + 
+  xlab(NULL) +
+  ylab("Full-Time Retention Rate") +
+  guides(color = guide_legend("", nrow = 4)) + 
+  theme(legend.position = "top",
+        text = element_text(family = "Montserrat"))
+  
+```
 :::
 
 ::: {.column width="50%"}
-![](images/duke-hires-2.png){fig-align="center"}
-:::
-:::
+```{r}
+#| echo: false
+#| message: false
 
-::: aside
-*Credit*: Angela Zoss and Eric Monson, Duke DVS
+ret_rate |>
+  ggplot(aes(year, full_time_retention_rate, group = university)) +
+  geom_smooth(se = FALSE, linewidth = 1.5, color = "gray") +
+  geom_smooth(data = ret_rate |> filter(university == "University of Arizona"), se = FALSE, linewidth = 2, color = "#AB0520") +
+  annotate("richtext",
+    x = 2014,
+    y = 70,
+    label = "Full-Time Retention at <br><span style='color: #AB0520;'>The University of Arizona</span> <br>has steadily <i>increased</i> since 2012",
+    alpha = 0.9,
+    size = 5,
+    hjust = 0,
+    family = "Montserrat"
+  ) +
+  scale_color_discrete(labels = c("Clark University",
+                                  "Doctoral Universities",
+                                  "Doctoral Universities: \nHighest Research Activity", 
+                                  "National Louis University", 
+                                  "Pontifical Catholic University \nof Puerto Rico-Ponce",
+                                  "Trident University International",
+                                  "University of Arizona",
+                                  "University of Kansas"),
+                       ) + 
+  labs(x = NULL, y = "Full-Time Retention Rate", 
+       caption = "Source: DATAUSA") +
+  theme(text = element_text(family = "Montserrat"))
+```
+:::
 :::
 
 ## Leave out non-story details
 
 ::: columns
 ::: {.column width="50%"}
-![](images/too-many-details.png){fig-align="center"}
+```{r}
+#| echo: false
+#| message: false 
+#| warning: false
+
+simdata1 <- read_csv(here::here("slides/12", "data", "simdata1.csv")) |>
+  mutate(iter = paste0("Rep", iter))
+
+simdata1 |>
+  ggplot(aes(Var1, Freq, color = iter)) +
+  geom_point() +
+  geom_smooth(se = FALSE) +
+  theme_gray(base_size = 16) +
+  labs(x = "Time(s)", y = "Frequency") + 
+  theme(legend.title = element_blank(),
+        legend.position = c(0.9, 0.7))
+```
 :::
 
 ::: {.column width="50%"}
-![](images/fewer-details.png){fig-align="center"}
-:::
-:::
+```{r}
+#| echo: false
+#| message: false 
+#| warning: false
 
-::: aside
-*Credit*: Angela Zoss and Eric Monson, Duke DVS
+simdata1 |>
+  ggplot(aes(Var1, Freq)) +
+  geom_pointrange(stat = "summary") +
+  labs(x = "Time (sec)", y = "Frequency") 
+
+```
+:::
 :::
 
 ## Order matters
 
 ::: columns
 ::: {.column width="50%"}
-![](images/unordered.png){fig-align="center"}
+```{r}
+#| echo: false
+#| message: false
+
+salesStates <- read_csv(here::here("slides/12", "data", "salesStates.csv"))
+
+salesStates |>
+  ggplot(aes(fct_rev(State), TotalSales)) +
+  geom_col(fill = "#1E5288") +
+  coord_flip() +
+  labs(x = "State", y = "Sales") +
+  scale_y_continuous(labels=scales::dollar_format())
+```
 :::
 
 ::: {.column width="50%"}
-![](images/ordered.png){fig-align="center"}
+```{r}
+#| echo: false
+#| message: false
+
+salesStates |>
+  ggplot(aes(reorder(State, TotalSales), TotalSales)) +
+  geom_col(fill = "#1E5288") +
+  coord_flip() +
+  labs(x = "State", y = "Sales") +
+  scale_y_continuous(labels=scales::dollar_format())
+```
 :::
 :::
 
@@ -223,15 +328,55 @@ ggplot(d, aes(y = fct_reorder(category, value), x = value, fill = category)) +
 ![](images/missing-data.png){fig-align="center"}
 
 ::: aside
-http://ivi.sagepub.com/content/10/4/271, Angela Zoss and Eric Monson, Duke DVS
+<http://ivi.sagepub.com/content/10/4/271>
 :::
 
 ## Reduce cognitive load
 
-![](images/cognitive-load.png){fig-align="center"}
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| message: false
+#| fig_height: 6
+
+salesStates <- read_csv(here::here("slides/12", "data", "wageDistribution.csv")) |>
+  janitor::clean_names() |>
+  mutate(wage_bin = factor(wage_bin, levels = c("< $10K", "$10-20k", "$20-30k", "$30-40k", "$40-50k", "$50-60k", "$60-70k", "$70-80k", "$80-90k", "$90-100k", "$100-110k", "$110-120k", "$120-130k", "$130-140k", "$140-150k", "$150-160k", "$160-170k", "$170-180k", "$180-190k", "$190-200k", "$200k+")))
+
+salesStates |>
+  filter(year == 2020) |>
+  ggplot(aes(wage_bin, share, fill = geography)) +
+  geom_col(position = "dodge") +
+  labs(x = "Average Salary", y = "Share") +
+  scale_fill_manual(values = c("#E2E9EB", "#EF4056"), name = "") +
+  theme(axis.text.x = element_text(angle = 45),
+        legend.position = "top") +
+  scale_y_continuous(labels = scales::percent)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| fig_height: 6
+
+salesStates |>
+  filter(year == 2020) |>
+  ggplot(aes(fct_rev(wage_bin), share, fill = geography)) +
+  geom_col(position = "dodge") +
+  labs(x = "Average Salary", y = "Share") +
+  scale_fill_manual(values = c("#E2E9EB", "#EF4056"), name = "") +
+  theme(legend.position = "top",
+        axis.text.y = element_text(size = 12)) +
+  scale_y_continuous(labels = scales::percent) +
+  coord_flip()
+```
+:::
+:::
 
 ::: aside
-http://www.storytellingwithdata.com/2012/09/some-finer-points-of-data-visualization.html
+<http://www.storytellingwithdata.com/2012/09/some-finer-points-of-data-visualization.html>
 :::
 
 ## Use descriptive titles
@@ -260,7 +405,7 @@ https://bl.ocks.org/susielu/23dc3082669ee026c552b85081d90976
 
 # Project workflow overview
 
-## First, some AInspiration
+## First, some Inspiration
 
 <br><br>
 
@@ -270,7 +415,7 @@ Visualize the data at [\[url\]](https://raw.githubusercontent.com/rfordatascienc
 
 ## Demo {.smaller}
 
-`ae-10`
+`ae-12`
 
 -   Rendering individual documents
 -   Write-up:
@@ -279,7 +424,7 @@ Visualize the data at [\[url\]](https://raw.githubusercontent.com/rfordatascienc
 -   Presentation:
     -   Pauses
     -   Smaller text
--   Website: `https://vizdata-s23.github.io/ae-10-YOUR_GITHUB_NAME/`
+-   Website: `https://vizdata-s23.github.io/ae-12-YOUR_GITHUB_NAME/`
     -   Rendering site
     -   Making sure your website reflects your latest changes
     -   Customizing the look of your website.
