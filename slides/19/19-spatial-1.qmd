@@ -19,10 +19,9 @@ editor_options:
 ## Announcements
 
 -   Project 2 proposals due
-    -   Tuesday at 5 pm for peer review
+    -   Monday at 3 pm for peer review
+        -   Peer review will be during class
     -   Friday at 5pm for instructor review
--   Lab next week: Project 2 proposal peer review
--   RQ 5 due Tuesday at noon
 
 ## Note
 
@@ -52,6 +51,7 @@ library(countdown)
 library(mapproj)
 library(sf)
 library(geofacet)
+library(glue)
 
 # set theme for ggplot2
 ggplot2::theme_set(ggplot2::theme_minimal(base_size = 14))
@@ -68,6 +68,108 @@ knitr::opts_chunk$set(
   dpi = 300             # higher dpi, sharper image
 )
 ```
+
+## John Snow and 1854 cholera epidemic
+
+::: columns
+::: {.column width="50%"}
+![This John Snow knows things](images/800px-John_Snow.jpg "John Snow"){fig-align="left" width="340"}
+:::
+
+::: {.column width="50%"}
+10% of the population of Soho died in a week (!!)
+
+<br>
+
+Miasma theory said it was because the air was bad
+:::
+:::
+
+## 
+
+![](images/1092px-Snow-cholera-map-1.jpg){fig-align="center" width="2133"}
+
+## The Broad Street pump
+
+::: columns
+::: {.column width="50%"}
+![](images/Snow-cholera-map.jpg)
+:::
+
+::: {.column width="50%"}
+![](images/John_Snow_memorial_and_pub.jpg)
+:::
+:::
+
+## Outright lies
+
+::: columns
+::: {.column width="50%"}
+![](images/wp-bad-map.jpg)
+:::
+
+::: {.column width="50%"}
+:::
+:::
+
+## Outright lies
+
+::: columns
+::: {.column width="50%"}
+![](images/wp-bad-map.jpg)
+:::
+
+::: {.column width="50%"}
+![](images/bad-map-meme.png)
+:::
+:::
+
+## Fake maps and junk maps
+
+::: columns
+::: {.column width="50%"}
+![](images/bot-designed-maps.png)
+:::
+
+::: {.column width="50%"}
+:::
+:::
+
+## Fake maps and junk maps
+
+::: columns
+::: {.column width="50%"}
+![](images/bot-designed-maps.png)
+:::
+
+::: {.column width="50%"}
+![](images/candy-map.jpg)
+:::
+:::
+
+## Chloropleths can be great
+
+![](images/fall-foliage-2019.png)
+
+## Chloropleths can distort
+
+![](images/white-house-framed-map.png){fig-align="center"}
+
+## Cartograms
+
+::: columns
+::: {.column width="33%"}
+![](images/countymap3070384.png){fig-align="center"}
+:::
+
+::: {.column width="33%"}
+![](images/538-hexagon-cartogram.png){fig-align="center"}
+:::
+
+::: {.column width="33%"}
+![](images/countycart30701024.png)
+:::
+:::
 
 # Projections
 
@@ -290,6 +392,10 @@ plot(ak_shift, axes = TRUE, col = "black", border = NA, xlim = c(-190, -130))
 points(c(-360 + 179.776, -179.146), c(51.952, 51.273), col = "red")
 abline(v = -180, col = "blue", lty = 2)
 ```
+
+# Putting data on maps
+
+## Maps with lines
 
 # Geospatial data in the real world: <br> Freedom index
 

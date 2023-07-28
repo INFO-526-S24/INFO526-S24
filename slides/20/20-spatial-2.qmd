@@ -18,7 +18,7 @@ editor_options:
 
 ## Announcements
 
--   Project proposals for peer review due today at 5pm
+-   Project proposals for peer review due Monday at 3pm
 
 ## Large data advice
 
