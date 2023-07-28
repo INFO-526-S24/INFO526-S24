@@ -1760,8 +1760,8 @@ plot_grid(
 ## Hypothetical outcome plot
 
 ::: panel-tabset
-
 ### Chocolate ratings
+
 ```{r}
 #| message: false
 #| warning: false
@@ -1824,6 +1824,7 @@ anim_save("hypoOutcome.gif")
 ![](images/hypoOutcome.gif)
 
 ### Fuel efficiency vs. displacement
+
 ```{r}
 #| message: false
 #| warning: false
