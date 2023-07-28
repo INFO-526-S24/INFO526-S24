@@ -19,7 +19,7 @@ editor_options:
 ## Announcements
 
 -   Project proposals for my review due Friday at 5pm
--   HW 5 to be posted soon, HW 4 feedback available
+-   HW 5 to be posted soon, HW 4 feedback available Monday
 
 ## Setup {.smaller}
 
@@ -65,7 +65,7 @@ hwy <- read_sf("data/us_interstates/", quiet = TRUE)
 ## From last time...
 
 ::: task
-`ae-17`: Recreate the following visualization.
+`ae-20`: Recreate the following visualization.
 :::
 
 ```{r}
@@ -107,7 +107,7 @@ ggplot() +
 ## Which counties have airports?
 
 ::: task
-`ae-17`: On the map of NC you made previously, highlight the counties that have airports.
+`ae-20`: On the map of NC you made previously, highlight the counties that have airports.
 :::
 
 ```{r}
@@ -262,7 +262,7 @@ points <- read_sf("data/easter_island/ei_points.gpkg")
 ## Layering with ggplot2
 
 ::: task
-`ae-18`: Recreate the visualization below.
+`ae-21`: Recreate the visualization below.
 :::
 
 ```{r}
