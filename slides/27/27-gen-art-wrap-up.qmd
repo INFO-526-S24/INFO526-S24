@@ -20,8 +20,6 @@ editor_options:
 
 -   Peer eval 2 is due today at 5pm.
 
--   HW 06 is due Thursday at noon.
-
 -   Course + TA evaluations are due on Thursday.
 
 -   Don't
@@ -435,7 +433,7 @@ build_art(
 ## Livecoding
 
 ::: task
-Go to `ae-22` and let's make some flowers!
+Go to `ae-27` and let's make some flowers!
 :::
 
 # Wrap up

@@ -20,7 +20,7 @@ editor_options:
 
 -   Peer evals due Friday at 5pm
 -   Meet with your mentor / TAs
--   Guest lecture on Tuesday: [Allison Horst](https://observablehq.com/@allisonhorst), ObservableHQ
+-   HW 06 is due next Monday
 
 ## Setup {.smaller}
 
@@ -185,7 +185,7 @@ knitr::include_graphics("images/high-level-4.png")
 ::: columns
 ::: {.column width="50%"}
 ::: task
--   Clone the `ae-21` repo.
+-   Clone the `ae-25` repo.
 -   Navigate to the `goog-index` folder, and launch the app by opening the `app.R` file and clicking on *Run App*.
 -   Close the app by clicking the stop icon
 -   Select view mode in the drop down menu next to Run App
@@ -262,7 +262,7 @@ knitr::include_app("https://minecr.shinyapps.io/manager-survey/", height ="550px
 ## Livecoding
 
 ::: task
-Go to the `ae-21` project and code along in `manager-survey/app-1.R`.
+Go to the `ae-25` project and code along in `manager-survey/app-1.R`.
 :::
 
 <br>

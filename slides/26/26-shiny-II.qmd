@@ -41,7 +41,7 @@ knitr::include_app("https://minecr.shinyapps.io/manager-survey/", height ="550px
 ## Livecoding
 
 ::: task
-Go to the `ae-21` project and code along in `manager-survey/app-2.R`.
+Go to the `ae-26` project and code along in `manager-survey/app-2.R`.
 :::
 
 <br>
@@ -57,7 +57,7 @@ Highlights:
 ## Livecoding
 
 ::: task
-Go to the `ae-21` project and code along in `manager-survey/app-3.R`.
+Go to the `ae-26` project and code along in `manager-survey/app-3.R`.
 :::
 
 <br>

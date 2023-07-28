@@ -28,7 +28,7 @@ editor_options:
 
 -   HW: HW 6 is optional, you'll need to explicitly indicate if you're opting out
 
--   Project: Presentations Thu, May 4, 2-5pm (all team members must be there!)
+-   Project: Presentations Tue, Dec 12, 3:30pm - 5:30pm (all team members must be there!)
 
 ## Setup {.smaller}
 
@@ -922,7 +922,7 @@ Sometimes you need more frames, sometimes fewer
 ## Racing bar chart, the making of
 
 ::: task
-Go to `ae-20`. We'll live-code tasks 1 and 2. You'll work on Task 3.
+Go to `ae-24`. We'll live-code tasks 1 and 2. You'll work on Task 3.
 :::
 
 ## Acknowledgements
