@@ -18,7 +18,7 @@ editor_options:
 
 ## Announcements
 
--   HW 3 is due next Thursday
+-   HW 3 is due next Monday
 -   Make sure to reply to "Sharing your project" issues on Project 1
 
 ## Setup {.smaller}
@@ -62,15 +62,15 @@ Source: The New York Times. [Flattening the Coronavirus Curve](https://www.nytim
 
 ## Exponential spread
 
-![](images/wapo-covid.png){fig-align="center" width="1201"}
+![](images/wapo-covid.png){fig-align="center" width="790"}
 
-::: aside
+::: {.aside style="font-size: 10;"}
 Source: The Washington Post. [Why outbreaks like coronavirus spread exponentially, and how to "flatten the curve"](https://www.washingtonpost.com/graphics/2020/world/corona-simulator/)
 :::
 
 ## JHU COVID-19 Dashboard
 
-![](images/jhu-dashboard.png){fig-align="center" width="1400"}
+![](images/jhu-dashboard.png){fig-align="center" width="921"}
 
 ::: aside
 Source: [COVID-19 Dashboard by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University (JHU)](https://coronavirus.jhu.edu/map.html)

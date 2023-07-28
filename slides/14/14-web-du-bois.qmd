@@ -20,7 +20,7 @@ editor_options:
 
 -   Project 1 feedback is posted
 
--   Scores for all assignments so far are on Sakai
+-   Scores for all assignments so far are on D2L
 
 -   Project 2 groups will be announced next week -- if you have specific requests, let me know before the end of the week
 
@@ -76,7 +76,7 @@ The **Exposition Universelle of 1900**, better known in English as the **1900 Pa
 Source: [Wikipedia](https://en.wikipedia.org/wiki/Exposition_Universelle_(1900))
 :::
 
-## 1900 Paris Exposition
+## 1900 Paris Exposition {.smaller}
 
 ::: columns
 ::: {.column width="50%"}
@@ -86,7 +86,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Exposition_Universelle_(1900))
 
 -   The exhibit highlighted the progress made by African Americans, and Du Bois, in particular, used data and visualizations to counter the "narrative of Black inferiority" and to humanize the African American experience.
 
--   Visualizations and photographs from the 1900 Paris Exposition are available in the [Library of Congress digital collection](https://www.loc.gov/collections/african-american-photographs-1900-paris-exposition/?st=grid&sb=shelf-id_desc).
+-   Visualizations and photographs are available in the [Library of Congress digital collection](https://www.loc.gov/collections/african-american-photographs-1900-paris-exposition/?st=grid&sb=shelf-id_desc).
 :::
 
 ::: {.column width="50%"}
