@@ -18,7 +18,7 @@ editor_options:
 
 ## Announcements
 
--   HW 3 is due Thursday
+-   HW 3 is due Monday
     -   Question 2: Include old figure from project as starting point
     -   All questions: Add alt text with `fig-alt`
 -   Make sure to reply to "Sharing your project" issues on Project 1 if you haven't already
@@ -246,6 +246,6 @@ Brainstorm a bunch of ideas and discard them until you settle on a topic that ev
 
 ![](images/demographics.png){fig-align="center" width="800"}
 
-## `ae-13`
+## `ae-16`
 
-Let's go to `ae-13` and dive in!
+Let's go to `ae-16` and dive in!
