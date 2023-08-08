@@ -32,6 +32,8 @@ website:
         text: "D2L"
         menu:
           - text: Announcements
+          - text: Slack
+            href: https://datavizaz.slack.com
           - text: Zoom meetings
           - text: Gradebook
 

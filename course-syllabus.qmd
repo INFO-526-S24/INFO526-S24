@@ -43,14 +43,6 @@ Readings for the course will come from the following textbooks. All of them are 
 
 All students must adhere to the [UArizona Student Rights & Responsibilities](https://deanofstudents.arizona.edu/student-rights-responsibilities#:~:text=The%20Code%20of%20Academic%20Integrity%20and%20Student%20Code,conduct%20expected%20within%20the%20University%20of%20Arizona%20community.): The University of Arizona is a community dedicated to scholarship, leadership, and service and to the principles of honesty, fairness, and accountability. Citizens of this community commit to reflect upon these principles in all academic and non-academic endeavors, and to protect and promote a culture of integrity.
 
-To uphold the UArizona Community Standard, students agree:
-
--   I will not lie, cheat, or steal in my academic endeavors;
-
--   I will conduct myself honorably in all my endeavors; and
-
--   I will act if the Standard is compromised.
-
 ### Inclusive community
 
 It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students' learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. It is my intent to present materials and activities that are respectful of diversity and in alignment with [UArizona's Commitment to Diversity and Inclusion](https://provost.arizona.edu/content/diversity-inclusion). Your suggestions are encouraged and appreciated. Please let me know ways to improve the effectiveness of the course for you personally, or for other students or student groups.
@@ -65,7 +57,7 @@ Furthermore, I would like to create a learning environment for my students that 
 
 This course affirms people of all gender expressions and gender identities. If you prefer to be called a different name than what is on the class roster, please let me know. Feel free to correct instructors on your preferred gender pronoun. If you have any questions or concerns, please do not hesitate to contact me directly in class or via email (instructor email). If you wish to change your preferred name or pronoun in the UAccess system, please use the following guidelines:
 
-**Preferred name:** University of Arizona students may choose to identify themselves within the University community using a preferred first name that differs from their official/legal name. A student\'s preferred name will appear instead of the person\'s official/legal first name in select University-related systems and documents, provided that the name is not being used for the purpose of misrepresentation. Students are able to update their preferred names in UAccess.
+**Preferred name:** University of Arizona students may choose to identify themselves within the University community using a preferred first name that differs from their official/legal name. A student's preferred name will appear instead of the person's official/legal first name in select University-related systems and documents, provided that the name is not being used for the purpose of misrepresentation. Students are able to update their preferred names in UAccess.
 
 **Pronouns:** Students may designate pronouns they use to identify themselves. Instructors and staff are encouraged to use pronouns for people that they use for themselves as a sign of respect and inclusion. Students are able to update and edit their pronouns in UAccess.
 
@@ -87,7 +79,7 @@ I will regularly send course announcements via email and D2L, make sure to check
 
 -   If you have a question during lecture, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.
 -   The teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!
--   Outside of class and office hours, any general questions about course content or assignments should be posted on the course Slack. There is a chance another student has already asked a similar question, so please check the other posts on Slack before adding a new question. If you know the answer to a question posted on Slack, I encourage you to respond!
+-   Outside of class and office hours, any general questions about course content or assignments should be posted on the course [Slack](https://datavizaz.slack.com). There is a chance another student has already asked a similar question, so please check the other posts on Slack before adding a new question. If you know the answer to a question posted on Slack, I encourage you to respond!
 
 Check out the [Support](/support/) page for more resources.
 
@@ -107,7 +99,7 @@ You are expected to bring a laptop to each class so that you can take part in th
 
 Assessment for the course is comprised of four components: attendance and participation, reading quizzes, homework assignments, and projects.
 
--   **Attendance and participation** is required throughout the semester. Students who attend at least 80% of the lectures and participate regularly during lecture will receive full credit for this portion of their grade. Participation in labs as well as on Slack will also count towards this component.
+-   **Attendance and participation** is required throughout the semester. Students who attend at least 80% of the lectures and participate regularly during lecture will receive full credit for this portion of their grade. Participation on Slack will also count towards this component.
 
 -   **Reading quizzes** (6), due every other week (roughly), completed individually. Each quiz is worth 2% of the grade. Lowest quiz score is dropped.
 
@@ -161,9 +153,13 @@ The final letter grade will be determined based on the following thresholds:
 
 These are upper bounds for grade cutoffs, depending on the class performance the cutoffs may be lowered but they won't be increased.
 
+## **Tutoring**
+
+We have been developing additional support for students in our ISTA programs. One of these is the [**iSchool Peer Tutoring Center**](https://ischool.arizona.edu/undergraduate-peer-tutoring "https://ischool.arizona.edu/undergraduate-peer-tutoring"), which our colleague Dan Charbonneau has been developing to help students in ISTA courses including ISTA 116, 130, 131, 331, and 350. If you are teaching one of these courses, please include the attached flyer on your syllabus to tell your students about this important resource! For other courses and programs, please let students know tutoring is available through [Think Tank](https://thinktank.arizona.edu/ "https://thinktank.arizona.edu/").
+
 ## Teams
 
-You will be assigned to a different team for each of your two projects. You are encouraged to sit with your teammates in lecture and you will also work with them in the lab sessions. All team members are expected to contribute equally to the completion of each project and you will be asked to evaluate your team members after each assignment is due. Failure to adequately contribute to an assignment will result in a penalty to your mark relative to the team's overall mark.
+You will be assigned to a different team for each of your two projects. You are encouraged to sit with your teammates in lectures. All team members are expected to contribute equally to the completion of each project and you will be asked to evaluate your team members after each assignment is due. Failure to adequately contribute to an assignment will result in a penalty to your mark relative to the team's overall mark.
 
 You are expected to make use of the provided GitHub repository as their central collaborative platform. Commits to this repository will be used as a metric (one of several) of each team member's relative contribution for each project.
 
@@ -187,9 +183,35 @@ Please abide by the following as you work on assignments in this course:
 
 -   **Sharing and reusing code:** I am well aware that a huge volume of code is available on the web to solve any number of problems. Unless I explicitly tell you not to use something, the course's policy is that you may make use of any online resources (e.g. RStudio Community, StackOverflow) but you must explicitly cite where you obtained any code you directly use (or use as inspiration). Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. On individual assignments you may not directly share code with another student in this class, and on team assignments you may not directly share code with another team in this class.
 
--   **Generative AI (e.g., ChatGPT):** I am additionally aware of the potential code AI for coding (I taught a workshop on it...). While these tools are amazing, learners should be aware of the impacts that using such tools can have on core competency. David Humphrey, a computer science professor, [**wrote about ChatGPT and its potentially negative impacts on core learning.**](https://blog.humphd.org/cheatgpt/) It is a good read about the pitfalls of using generative AI in an educational context. By using a generative AI, learners may miss the opportunity to discover how something works and why things are done that way. It is also important to note that the iSchool generally bans utilizing ChatGPT and generative AI in our [Academic Integrity Policy](https://ischool.arizona.edu/sites/ischool.arizona.edu/files/iSchool%20Policy%20on%20Academic%20Integrity%20in%20Computing%202023%20-%20approved%20by%20faculty%20vote%20April%202023.pdf#:~:text=UArizona%20iSchool%20Instructors%20are%20expected%20to%20help%20students,prohibited%20in%20some%20courses%20are%20allowed%20in%20others.).
+-   **Generative AI (e.g., LLM, ChatGPT):** Large language models (LLMs) like ChatGPT are a type of artificial intelligence (AI) engine that can look like it generates the code you need for R labs and short answer questions. You are encouraged to use ChatGPT to debug code and experiment. However, abuse of ChatGPT can be traced (e.g., failing to give credit or cite ChatGPT when it is used) which could result in your suspension or termination from the course and even your program of study. Keep in mind, too, that while the code may appear legitimate, early studies have shown ChatGPT is not all that accurate with sophisticated coding. Exercise your scholarly discretion and maintain a sense of integrity in your statistical learning journey.
+
+    I am additionally aware of the potential code AI for coding (I taught a workshop on it...). While these tools are amazing, learners should be aware of the impacts that using such tools can have on core competency. David Humphrey, a computer science professor, [**wrote about ChatGPT and its potentially negative impacts on core learning.**](https://blog.humphd.org/cheatgpt/) It is a good read about the pitfalls of using generative AI in an educational context. By using a generative AI, learners may miss the opportunity to discover how something works and why things are done that way.
 
 Students are encouraged to share intellectual views and discuss freely the principles and applications of course materials. However, graded work/exercises must be the product of independent effort unless otherwise instructed. Students are expected to adhere to the UA Code of Academic Integrity as described in the UA General Catalog. See: [https://deanofstudents.arizona.edu/policies/code-academic-integrity(link is external)](https://deanofstudents.arizona.edu/policies/code-academic-integrity).
+
+### **iSchool Academic Integrity Policy**
+
+This policy agreed upon by faculty in the UArizona iSchool applies in addition to the Dean of Students\' [Code of Academic Integrity](https://deanofstudents.arizona.edu/policies/code-academic-integrity).
+
+Students in courses at the UArizona iSchool are expected to maintain rigor in their academic performance with intent to learn, practice, and overcome challenges toward personal growth and enrichment. As future professionals in digital environments, iSchool students are also expected to exercise transparency and integrity in collaborations and in the use of tools and resources that may aid completion in assignments for our courses.
+
+**Consider the following PROHIBITED** practices in this course, unless the instructor has specifically written instructions or permission to do otherwise:
+
+-   Posting a question on an online site such as Chegg.com, and copying and pasting some or all of the response into an assessment
+
+-   Posting an assessment from the course on online sharing sites such as Course Hero. Aiding other students in violation of academic integrity is also a violation, and is potential copyright infringement.
+
+-   Generating and submitting, in whole or in part, text or code through Artificial Intelligence such as ChatGPT, QuillBot, and text summarizers
+
+-   Using, in whole or in part, computer code not written by the student (for example, from another student, a book, or the internet) in an assignment or project. This includes using such code in modified or unmodified form.
+
+-   Searching for solutions to projects or assignments on the internet or through other tools, when your instructor intended for you to learn the solution through exercises (e.g. Googling for the solution to a question on an assignment).
+
+-   Simultaneously submitting the same assignment as another student enrolled into the course without prior permission from the instructor
+
+***Exceptions: Clear Instructions will be Provided***
+
+In any cases in which this course requires or permits students to use practices in the list above, clear written instructions will specify the tools allowed or required, so students can be certain they are working as instructed. See the [UArizona iSchool Academic Integrity Policy](https://ischool.arizona.edu/node/519), the [UArizona Code of Academic Integrity](https://deanofstudents.arizona.edu/policies/code-academic-integrity) and [Syllabus policy](https://catalog.arizona.edu/syllabus-policies) for more information.
 
 ### Late work & extensions
 
@@ -223,7 +245,7 @@ Policy on late work depends on the particular course component:
 
 ### Waiver for extenuating circumstances
 
-If there are circumstances that prevent you from completing a lab or homework assignment by the stated due date, you may email me ([mailto:gchism\@arizona.edu](jacquelyn.du@duke.edu)) before the deadline to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide explanation. This waiver may only be used for once in the semester, so only use it for a truly extenuating circumstance.
+If there are circumstances that prevent you from completing a reading quiz or homework assignment by the stated due date, you may email me ([mailto:gchism\@arizona.edu](jacquelyn.du@duke.edu)) before the deadline to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide explanation. This waiver may only be used for once in the semester, so only use it for a truly extenuating circumstance.
 
 If there are circumstances that are having a longer-term impact on your academic performance, please let your academic dean know, as they can be a resource. Please let me know if you need help contacting your academic dean.
 

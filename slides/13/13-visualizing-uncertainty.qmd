@@ -44,6 +44,7 @@ library(ggtext)
 library(extrafont)
 library(ggstance)
 library(gganimate)
+library(emo)
 
 # set theme for ggplot2
 ggplot2::theme_set(ggplot2::theme_minimal(base_size = 14, base_family = "Myriad Pro"))
@@ -65,6 +66,32 @@ loadfonts(device = "all")
 ```
 
 # Uncertainty
+
+# Playing {.smaller}
+
+![](images/Disappearing_dots.gif){fig-align="center"}
+
+Image by Wikiemdia user [Jahobr](https://commons.wikimedia.org/wiki/User:Jahobr), released into the public domain.
+
+[https://commons.wikimedia.org/wiki/File:Disappearing_dots.gif](https://commons.wikimedia.org/wiki/File:Disappearing_dots.gif){style=".aside"}
+
+------------------------------------------------------------------------
+
+# \[Sorry, you lost.\] `r emo::ji("slightly_smiling_face")`
+
+------------------------------------------------------------------------
+
+# \[How does that make you feel?\]
+
+------------------------------------------------------------------------
+
+## We are bad at judging uncertainty
+
+-   You had a 10% chance of losing
+-   One in ten playing this game will lost
+-   90% chance of winning is nowhere near a certain win
+
+------------------------------------------------------------------------
 
 ## Uncertainty in probability {.smaller}
 
