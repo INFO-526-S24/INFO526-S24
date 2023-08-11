@@ -30,12 +30,13 @@ website:
         text: "Posit Cloud"
       - icon: person-fill
         text: "D2L"
+        href: https://d2l.arizona.edu/d2l/home/1334576
         menu:
           - text: Announcements
-          - text: Slack
             href: https://datavizaz.slack.com
           - text: Zoom meetings
           - text: Gradebook
+            href: https://d2l.arizona.edu/d2l/lms/grades/admin/manage/gradeslist.d2l?ou=1334576
 
     style: docked
     search: true
