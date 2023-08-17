@@ -1,17 +1,45 @@
 ---
-title: "Syllabus"
+title: "INFO 526 Syllabus Fall 2023"
 format: 
   html: default
   pdf: default
 ---
 
-## Course description
+## Course Description
 
-INFO 526 - This course provides an overview of the various concepts and skills required for effective data visualization. It presents principles of graphic design, programming skills, and statistical knowledge required to build compelling visualizations that communicate effectively to target audiences. Visualization skills addressed in this course include choosing appropriate colors, shapes, variable mappings, and interactivity based on principles of color perception, pre-attentive processing, and accessibility.
+INFO 526 Data Analysis and Visualization - This course provides an overview of the various concepts and skills required for effective data visualization. It presents principles of graphic design, programming skills, and statistical knowledge required to build compelling visualizations that communicate effectively to target audiences. Visualization skills addressed in this course include choosing appropriate colors, shapes, variable mappings, and interactivity based on principles of color perception, pre-attentive processing, and accessibility.
 
-### Introduction
+## Course offering
 
-Data Visualization is a blend of art and science. Throughout this course, we'll focus on three aspects: what, why, and how. 'What' relates to choosing appropriate visualizations and tools for specific purposes, such as maps for spatial data or R packages for tooling. 'How' involves the process from design to execution, starting with a rough sketch and pseudocode, data pre-processing, aesthetic mapping, strategic decision-making, and ending with post-processing for visual appeal. 'Why' delves into the theory linking 'what' and 'how', often emphasizing the grammar of graphics. We encourage an iterative approach, learning through critique and repeated trials. Additional modules will cover statistical graphics, data-based art, and non-visual data representation.
+981-2234-1 INFO 526 001 -- Data Analysis and Visualization
+
+## Instructor Information
+
+### Instructor
+
+Dr. Greg Chism,
+
+Assistant Professor of Practice,
+
+School of Information
+
+[gchism\@arizona.edu](mailto:gchism@arizona.edu)
+
+**Office**: Harvill 420
+
+**Office Hours**: Mondays, 1-2pm, Harvill 420
+
+### Teacher's Assistant
+
+Laura Dozal
+
+PhD Student
+
+School of Information
+
+[lwerthmann\@arizona.edu](mailto:lwerthmann@arizona.edu)
+
+Office: Zoom; available upon request.
 
 ## Prerequisites
 
@@ -19,7 +47,15 @@ Strong quantitative, statistical, and analytical reasoning abilities are needed 
 
 This course assumes that this is not your first interaction with working with data in R, using RStudio, and along with version control with Git, and collaboration on GitHub. The course will start with a quick review of the relevant technologies.
 
-## Learning goals
+## Course Format
+
+Live in-person lectures, MW 3:30-4:45pm, M Pacheco ILC, RM 130. Attendance is mandatory.
+
+## Course Objective
+
+This course provides an overview of the various concepts and skills required for effective data visualization. It presents principles of graphic design, programming skills, and statistical knowledge required to build compelling visualizations that communicate effectively to target audiences. Visualization skills addressed in this course include choosing appropriate colors, shapes, variable mappings, and interactivity based on principles of color perception, pre-attentive processing, and accessibility.
+
+## Learning Outcomes
 
 -   Understand the principles of designing and creating effective data visualizations.
 -   Evaluate, critique, and improve upon one's own and others' data visualizations based on how good a job the visualization does for communicating a message clearly and correctly.
@@ -37,7 +73,19 @@ Readings for the course will come from the following textbooks. All of them are 
 3.  `[fdv]` Claus O. Wilke. [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/). O'Reilly Media, 2019.
 4.  `[r4ds]` Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. [R for Data Science](https://r4ds.hadley.nz/). 2nd edition. O'Reilly, 2022.
 
-## Course community
+## Course Schedule
+
+An up-to-date schedule, assignments, and due dates can be found on the course website: [datavizaz.org](https://datavizaz.org/).
+
+## Course competencies
+
+This course is a core requirement for the MS in Data Science. It will help you master the following competencies:
+
+-   MSINFO2: Students will obtain the skills of collecting, manipulating, and analyzing different types of data at different scales, and interpreting the results properly.
+
+-   MSINFO3: Students will acquire the skills to communicate the results of their work to interdisciplinary teams, using appropriate visualizations, multi-media, or artistic performance.
+
+## Course Community
 
 ### UArizona Community Standard
 
@@ -53,27 +101,11 @@ Furthermore, I would like to create a learning environment for my students that 
 -   If you feel like your performance in the class is being impacted by your experiences outside of class, please don't hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your academic dean is an excellent resource.
 -   I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please let me or a member of the teaching team know.
 
-### Preferred Name & Pronoun
-
-This course affirms people of all gender expressions and gender identities. If you prefer to be called a different name than what is on the class roster, please let me know. Feel free to correct instructors on your preferred gender pronoun. If you have any questions or concerns, please do not hesitate to contact me directly in class or via email (instructor email). If you wish to change your preferred name or pronoun in the UAccess system, please use the following guidelines:
-
-**Preferred name:** University of Arizona students may choose to identify themselves within the University community using a preferred first name that differs from their official/legal name. A student's preferred name will appear instead of the person's official/legal first name in select University-related systems and documents, provided that the name is not being used for the purpose of misrepresentation. Students are able to update their preferred names in UAccess.
-
-**Pronouns:** Students may designate pronouns they use to identify themselves. Instructors and staff are encouraged to use pronouns for people that they use for themselves as a sign of respect and inclusion. Students are able to update and edit their pronouns in UAccess.
-
-More information on updating your preferred name and pronouns is available on the Office of the Registrar site at [https://www.registrar.arizona.edu/records-enrollment/personal-information/updating-personal-information(link is external)](https://www.registrar.arizona.edu/records-enrollment/personal-information/updating-personal-information).
-
-### Accessibility
-
-If there is any portion of the course that is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations.
-
-The [Disability Resource Center](https://drc.arizona.edu/) is available to ensure that students are able to engage with their courses and related assignments. Students should be in touch with the Disability Resource Center to [request or update accommodations](https://drc.arizona.edu/students/connect-drc) under these circumstances.
-
 ### Communication
 
-All lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website: [vizdata.org](https://vizdata.org/ "STA 313 - Spring 2023 - Course website").
+All lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website: [datavizaz.org](https://datavizaz.org/).
 
-I will regularly send course announcements via email and D2L, make sure to check one or the other of these regularly. If an announcement is sent Monday through Thursday, I will assume that you have read the announcement by the next day. If an announcement is sent on a Friday or over the weekend, I will assume that you have read it by Monday.
+I will regularly send course announcements via email and Slack, make sure to check one or the other of these regularly. If an announcement is sent Monday through Thursday, I will assume that you have read the announcement by the next day. If an announcement is sent on a Friday or over the weekend, I will assume that you have read it by Monday.
 
 ### Where to get help
 
@@ -81,7 +113,7 @@ I will regularly send course announcements via email and D2L, make sure to check
 -   The teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!
 -   Outside of class and office hours, any general questions about course content or assignments should be posted on the course [Slack](https://datavizaz.slack.com). There is a chance another student has already asked a similar question, so please check the other posts on Slack before adding a new question. If you know the answer to a question posted on Slack, I encourage you to respond!
 
-Check out the [Support](/support/) page for more resources.
+Check out the [Support](https://datavizaz.org/course-support) page for more resources.
 
 I want to make sure that you learn everything you were hoping to learn from this class. If this requires flexibility, please don't hesitate to ask.
 
@@ -103,18 +135,18 @@ Assessment for the course is comprised of four components: attendance and partic
 
 -   **Reading quizzes** (6), due every other week (roughly), completed individually. Each quiz is worth 2% of the grade. Lowest quiz score is dropped.
 
-    Reading quizzes will be linked from the [course schedule](https://www.vizdata.org/schedule.html). They always cover reading that is due since the previous quiz and up to and including the deadline for the given quiz. They're due by 12pm ET (beginning of class) on the indicated day on the [course schedule](https://www.vizdata.org/schedule.html).
+    Reading quizzes will be linked from the [course schedule](https://datavizaz.org/). They always cover reading that is due since the previous quiz and up to and including the deadline for the given quiz. They're due by 12pm ET (beginning of class) on the indicated day on the [course schedule](https://datavizaz.org/).
 
 -   **Homework assignments** (6), due every other week (roughly), completed individually. Each homework assignment is worth 8% of the course grade. Lowest homework assignment score is dropped.
 
-    Homework assignments are due by 12pm ET (beginning of class) on the indicated day on the [course schedule](https://www.vizdata.org/schedule.html).
+    Homework assignments are due by 12pm ET (beginning of class) on the indicated day on the [course schedule](https://datavizaz.org/).
 
 -   **Projects** (2), mid-semester and end of semester, completed in teams.
 
     -   Project 1: Teams will be given a dataset to visualize. Project 1 is worth 15% of the course grade.
     -   Project 2: Teams will pick a dataset of interest to them and/or build an R package that implements a new type of data visualization in R. Project 2 is worth 25% of the course grade.
 
-    The deliverables for each project will include a data visualization, a write up of the process and findings, and a presentation. For the second project, you will be encouraged to think beyond a traditional two-dimensional data visualization (e.g. interactive web apps/dashboards, data art, generative art, physical/tangible visualizations, **ggplot2** extensions, etc.).
+    The deliverables for each project will include a data visualization, a write up of the process and findings, and a presentation. For the second project, you will be encouraged to think beyond a traditional two-dimensional data visualization (e.g., interactive web apps/dashboards, data art, generative art, physical/tangible visualizations, **ggplot2** extensions, etc.).
 
     Each project will have a peer review component to provide at least one round of feedback during the process of development. Teams will provide periodic peer feedback to their teammates while working on the projects as well as upon completion. The scores from the peer evaluations, along with individual contributions tracked by commits on GitHub, will be used to ensure that each student has contributed to the teamwork.
 
@@ -138,24 +170,28 @@ The final letter grade will be determined based on the following thresholds:
 
 | Letter Grade | Final Course Grade |
 |--------------|--------------------|
-| A            | \>= 93             |
-| A-           | 90 - 92.99         |
-| B+           | 87 - 89.99         |
-| B            | 83 - 86.99         |
-| B-           | 80 - 82.99         |
-| C+           | 77 - 79.99         |
-| C            | 73 - 76.99         |
-| C-           | 70 - 72.99         |
-| D+           | 67 - 69.99         |
-| D            | 63 - 66.99         |
-| D-           | 60 - 62.99         |
+| A            | \>= 90             |
+| B            | 80 - 89.99         |
+| C            | 70 - 79.99         |
+| D            | 60 - 69.99         |
+| E            | 50-59.99           |
 | F            | \< 60              |
 
 These are upper bounds for grade cutoffs, depending on the class performance the cutoffs may be lowered but they won't be increased.
 
-## **Tutoring**
+## Final Projects
 
-We have been developing additional support for students in our ISTA programs. One of these is the [**iSchool Peer Tutoring Center**](https://ischool.arizona.edu/undergraduate-peer-tutoring "https://ischool.arizona.edu/undergraduate-peer-tutoring"), which our colleague Dan Charbonneau has been developing to help students in ISTA courses including ISTA 116, 130, 131, 331, and 350. If you are teaching one of these courses, please include the attached flyer on your syllabus to tell your students about this important resource! For other courses and programs, please let students know tutoring is available through [Think Tank](https://thinktank.arizona.edu/ "https://thinktank.arizona.edu/").
+Your task for this project is to create *something* related to data visualization.
+
+This is intentionally vague \-- part of the challenge is to design a project that showcases best your interests and strengths.
+
+One requirement is that your project should feature some element that you had to learn on your own. This could be a package you use that we didn't teach in class (e.g., a package for building 3D visualizations) or a workflow (e.g., making a package) or anything else. If you're not sure if your "new" thing counts, just ask!
+
+More information will be provided throughout the semester.
+
+### Final Project Date
+
+**Tuesday, December 12**
 
 ## Teams
 
@@ -183,13 +219,9 @@ Please abide by the following as you work on assignments in this course:
 
 -   **Sharing and reusing code:** I am well aware that a huge volume of code is available on the web to solve any number of problems. Unless I explicitly tell you not to use something, the course's policy is that you may make use of any online resources (e.g. RStudio Community, StackOverflow) but you must explicitly cite where you obtained any code you directly use (or use as inspiration). Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. On individual assignments you may not directly share code with another student in this class, and on team assignments you may not directly share code with another team in this class.
 
--   **Generative AI (e.g., LLM, ChatGPT):** Large language models (LLMs) like ChatGPT are a type of artificial intelligence (AI) engine that can look like it generates the code you need for R labs and short answer questions. You are encouraged to use ChatGPT to debug code and experiment. However, abuse of ChatGPT can be traced (e.g., failing to give credit or cite ChatGPT when it is used) which could result in your suspension or termination from the course and even your program of study. Keep in mind, too, that while the code may appear legitimate, early studies have shown ChatGPT is not all that accurate with sophisticated coding. Exercise your scholarly discretion and maintain a sense of integrity in your statistical learning journey.
+-   **Generative AI (e.g., ChatGPT):** I am additionally aware of the potential code AI for coding (I taught a workshop on it...). While these tools are amazing, learners should be aware of the impacts that using such tools can have on core competency. David Humphrey, a computer science professor, [**wrote about ChatGPT and its potentially negative impacts on core learning.**](https://blog.humphd.org/cheatgpt/) It is a good read about the pitfalls of using generative AI in an educational context. By using a generative AI, learners may miss the opportunity to discover how something works and why things are done that way. It is also important to note that the iSchool generally bans utilizing ChatGPT and generative AI in our [Academic Integrity Policy](https://ischool.arizona.edu/sites/ischool.arizona.edu/files/iSchool%20Policy%20on%20Academic%20Integrity%20in%20Computing%202023%20-%20approved%20by%20faculty%20vote%20April%202023.pdf#:~:text=UArizona%20iSchool%20Instructors%20are%20expected%20to%20help%20students,prohibited%20in%20some%20courses%20are%20allowed%20in%20others.).
 
-    I am additionally aware of the potential code AI for coding (I taught a workshop on it...). While these tools are amazing, learners should be aware of the impacts that using such tools can have on core competency. David Humphrey, a computer science professor, [**wrote about ChatGPT and its potentially negative impacts on core learning.**](https://blog.humphd.org/cheatgpt/) It is a good read about the pitfalls of using generative AI in an educational context. By using a generative AI, learners may miss the opportunity to discover how something works and why things are done that way.
-
-Students are encouraged to share intellectual views and discuss freely the principles and applications of course materials. However, graded work/exercises must be the product of independent effort unless otherwise instructed. Students are expected to adhere to the UA Code of Academic Integrity as described in the UA General Catalog. See: [https://deanofstudents.arizona.edu/policies/code-academic-integrity(link is external)](https://deanofstudents.arizona.edu/policies/code-academic-integrity).
-
-### **iSchool Academic Integrity Policy**
+## **iSchool Academic Integrity Policy**
 
 This policy agreed upon by faculty in the UArizona iSchool applies in addition to the Dean of Students\' [Code of Academic Integrity](https://deanofstudents.arizona.edu/policies/code-academic-integrity).
 
@@ -212,6 +244,12 @@ Students in courses at the UArizona iSchool are expected to maintain rigor in th
 ***Exceptions: Clear Instructions will be Provided***
 
 In any cases in which this course requires or permits students to use practices in the list above, clear written instructions will specify the tools allowed or required, so students can be certain they are working as instructed. See the [UArizona iSchool Academic Integrity Policy](https://ischool.arizona.edu/node/519), the [UArizona Code of Academic Integrity](https://deanofstudents.arizona.edu/policies/code-academic-integrity) and [Syllabus policy](https://catalog.arizona.edu/syllabus-policies) for more information.
+
+### **LLMs and ChatGPT**
+
+Large language models (LLMs) like ChatGPT are a type of artificial intelligence (AI) engine that can look like it generates the code you need for R labs and short answer questions. You are encouraged to use ChatGPT to debug code and experiment. However, abuse of ChatGPT can be traced (e.g., failing to give credit or cite ChatGPT when it is used) which could result in your suspension or termination from the course and even your program of study. Keep in mind, too, that while the code may appear legitimate, early studies have shown ChatGPT is not all that accurate with sophisticated coding. Exercise your scholarly discretion and maintain a sense of integrity in your statistical learning journey.
+
+*See my policies on this subject above.*
 
 ### Late work & extensions
 
@@ -245,7 +283,7 @@ Policy on late work depends on the particular course component:
 
 ### Waiver for extenuating circumstances
 
-If there are circumstances that prevent you from completing a reading quiz or homework assignment by the stated due date, you may email me ([mailto:gchism\@arizona.edu](jacquelyn.du@duke.edu)) before the deadline to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide explanation. This waiver may only be used for once in the semester, so only use it for a truly extenuating circumstance.
+If there are circumstances that prevent you from completing a reading quiz or homework assignment by the stated due date, you may email me ([gchism\@arizona.edu](mailto:gchism@arizona.edu)) before the deadline to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide explanation. This waiver may only be used for once in the semester, so only use it for a truly extenuating circumstance.
 
 If there are circumstances that are having a longer-term impact on your academic performance, please let your academic dean know, as they can be a resource. Please let me know if you need help contacting your academic dean.
 
@@ -259,6 +297,10 @@ Regrade requests must be made within one week of when the assignment is returned
 
 The grade of "I" may be awarded only at the end of a term, when all but a minor portion of the course work has been satisfactorily completed. The grade of I is not to be awarded in place of a failing grade or when the student is expected to repeat the course; in such a case, a grade other than I must be assigned. Students should make arrangements with the instructor to receive an incomplete grade before the end of the term, ..., If the incomplete is not removed by the instructor within one year the I grade will revert to a failing grade.
 
+### **Tutoring**
+
+Tutoring can be found through the UArizona [Think Tank](#0 "https://thinktank.arizona.edu/").
+
 ### Attendance policy
 
 Responsibility for class attendance rests with individual students. Since regular and punctual class attendance is expected, students must accept the consequences of failure to attend.
@@ -266,12 +308,6 @@ Responsibility for class attendance rests with individual students. Since regula
 However, there may be many reasons why you cannot be in class on a given day, particularly with possible extra personal and academic stress and health concerns this semester. All course lectures will be recorded and available to enrolled students after class. If you miss a lecture, make sure to watch the recording and review the material before the next class session. Overall this policy is put in place to ensure communication between team members, respect for each others' time, and also to give you a safety net in the case of illness or other reasons that keep you away from attending class.
 
 Note that attendance and participation is part of your grade as well.
-
-The UA's policy concerning Class Attendance, Participation, and Administrative Drops is available at <https://catalog.arizona.edu/policy/class-attendance-and-participation>
-
-The UA policy regarding absences for any sincerely held religious belief, observance or practice will be accommodated where reasonable: <http://policy.arizona.edu/human-resources/religious-accommodation-policy>.
-
-Absences pre-approved by the UA Dean of Students (or dean's designee) will be honored. See <https://deanofstudents.arizona.edu/policies/attendance-policies-and-practices>
 
 ### Attendance policy related to COVID symptoms, exposure, or infection
 
@@ -283,33 +319,17 @@ If you must miss the equivalent of more than one week of class and have an emerg
 
 Please understand that there is no guarantee of an extension when you are absent from class and/or miss a deadline.
 
-### Inclement weather policy
-
-In the event of inclement weather or other connectivity-related events that prohibit class attendance, I will notify you how we will make up missed course content and work. This might entail holding the class on Zoom synchronously or watching a recording of the class.
-
-## Accommodations
-
-### Academic accommodations
-
-At the University of Arizona, we strive to make learning experiences as accessible as possible. If you anticipate or experience barriers based on disability or pregnancy, please contact the Disability Resource Center (520-621-3268, [https://drc.arizona.edu/(link is external)](https://drc.arizona.edu/)) to establish reasonable accommodations.
-
-See [http://drc.arizona.edu/instructors/syllabus-statement(link is external)](http://drc.arizona.edu/instructors/syllabus-statement).
-
-### Religious accommodations
-
-Students are permitted by university policy to be absent from class to observe a religious holiday. You can find the policy and relevant information [here](https://policy.arizona.edu/human-resources/religious-accommodation-policy?_gl=1*4dmji1*_ga*MTIzMDYwMTIzLjE2ODAxMDkzNzM.*_ga_7PV3540XS3*MTY4OTcyNjA5MS4xMTUuMS4xNjg5NzI2NDU5LjU0LjAuMA..).
-
-### Nondiscrimination and Anti-Harassment Poilicy
-
-The University of Arizona is committed to creating and maintaining an environment free of discrimination. In support of this commitment, the University prohibits discrimination, including harassment and retaliation, based on a protected classification, including race, color, religion, sex, national origin, age, disability, veteran status, sexual orientation, gender identity, or genetic information. For more information, including how to report a concern, please see [http://policy.arizona.edu/human-resources/nondiscrimination-and-anti-harassment-policy(link is external)](http://policy.arizona.edu/human-resources/nondiscrimination-and-anti-harassment-policy).
-
-### Safety on Campus and in the Classroom
-
-For a list of emergency procedures for all types on incidents, please visit the website of the Critical Incident Response Team (CIRT): [https://cirt.arizona.edu/case-emergency/overview(link is external)](https://cirt.arizona.edu/case-emergency/overview).
-
-Also watch the following [video](https://arizona.sabacloud.com/Saba/Web_spf/NA7P1PRD161/common/learningeventdetail/crtfy000000000003560).
-
 *Note: If you've read this far in the syllabus, email me a picture of your pet if you have one or your favorite meme!*
+
+## Additional university policies
+
+Additional policies can be found at this link (please read through them): <https://catalog.arizona.edu/syllabus-policies>
+
+## Safety on Campus and in the Classroom
+
+For a list of emergency procedures for all types of incidents, please visit the website of the Critical Incident Response Team (CIRT): <https://cirt.arizona.edu/case-emergency/overview>
+
+Also watch the video available at <https://arizona.sabacloud.com/Saba/Web_spf/NA7P1PRD161/common/learningeventdetail/crtfy000000000003560>
 
 ## Important dates
 
@@ -323,3 +343,7 @@ Also watch the following [video](https://arizona.sabacloud.com/Saba/Web_spf/NA7P
 -   **Tuesday, December 12**: Project 2 presentations
 
 For more important dates, see the full [UArizona Academic Calendar](https://catalog.arizona.edu/2023-2024-academic-calendar).
+
+## Graduate Student Resources
+
+University of Arizona's Basic Needs Resources page for graduate students: <http://basicneeds.arizona.edu/index.html>

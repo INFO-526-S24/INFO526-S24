@@ -19,19 +19,19 @@ auto-stretch: false
 
 Dr. Greg Chism
 
-Office
+Office: Harvill 520,
 
 [gchism\@arizona.edu](mailto:gchism@arizona.edu)
 :::
 
 ::: {.column width="50%"}
-### Teaching assistants
+### Teaching assistant
 
--   TA
+Laura Dozal
+
+[lwerthmann\@arizona.edu](mailto:lwerthmann@arizona.edu)
 :::
 :::
-
-### 
 
 ## Timetable
 
@@ -91,7 +91,7 @@ aka "the one link to rule them all"
 
 ::: {style="text-align: center;"}
 ```{=html}
-<iframe width="1000" height="400" src="https://www.vizdata.org/" frameborder="1" style="background:white;"></iframe>
+<iframe width="1000" height="400" src="datavizaz.org" frameborder="1" style="background:white;"></iframe>
 ```
 :::
 
@@ -111,7 +111,7 @@ aka "the one link to rule them all"
 
 ## Announcements
 
--   Posted on D2L (Announcements tool) and sent via email, be sure to check both regularly
+-   Posted on D2L (Announcements tool) and sent via Slack, be sure to check both regularly
 
 -   I'll assume that you've read an announcement by the next "business" day
 
@@ -197,7 +197,7 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 This course is assessed 100% on your coursework (there is no exam). We will be assessing you based on the following assignments,
 
 | Assignment                 | Type       | Value | n   | Due                                        |
-|:---------------------------|:-----------|:------|:----|--------------------------------------------|
+|:-------------|:----------|:----------|:----------|-------------------------|
 | Attendance + participation | Individual | 5%    |     |                                            |
 | Reading quizzes            | Individual | 10%   | 7   | \~ Every other week                        |
 | Homeworks                  | Individual | 45%   | 6   | \~ Every other week                        |
@@ -304,7 +304,7 @@ ask if you're not sure if something violates a policy!
 
 -   TAs:
 
-    -   
+    -   By appointment
 
 -   \+ lots more resources listed on the syllabus!
 
