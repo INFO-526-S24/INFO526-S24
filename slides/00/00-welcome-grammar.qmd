@@ -36,8 +36,8 @@ Laura Dozal
 ## Timetable
 
 -   Lectures (weekly)
-    -   Mondays, 3:30 - 4:45 pm - M Pacheco ILC, RM 130
-    -   Wednesdays, 3:30 - 4:45 pm - M Pacheco ILC, RM 130
+    -   Mondays, 3:30 - 4:45 pm - Modern Languages, RM 410
+    -   Wednesdays, 3:30 - 4:45 pm - Modern Languages, RM 410
 -   Meeting dates
     -   08/21/2023 - 12/06/2023
 
@@ -197,7 +197,7 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 This course is assessed 100% on your coursework (there is no exam). We will be assessing you based on the following assignments,
 
 | Assignment                 | Type       | Value | n   | Due                                        |
-|:-------------|:----------|:----------|:----------|-------------------------|
+|:------------|:------------|:------------|:------------|--------------------|
 | Attendance + participation | Individual | 5%    |     |                                            |
 | Reading quizzes            | Individual | 10%   | 7   | \~ Every other week                        |
 | Homeworks                  | Individual | 45%   | 6   | \~ Every other week                        |
