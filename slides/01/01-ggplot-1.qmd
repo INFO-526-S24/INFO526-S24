@@ -13,10 +13,18 @@ editor_options:
   chunk_output_type: console
 ---
 
+# Warm up
+
+## Announcements
+
+-   Reading Quiz #1 is due Monday, by 3:30pm.
+
+-   A note on readings for next week: Some of it is review so feel free to skim those parts.
+
 ## Overview
 
 ::: incremental
-In Week 1 of this series, we will:
+In this lecture, we will:
 
 -   Explore the grammar of graphics
 
@@ -1050,6 +1058,4 @@ ggplot(penguins,
 -   Hadley Wickham's "ggplot2: Elegant Graphics for Data Analysis, 3rd edition", now available [online](https://ggplot2-book.org/)
 
 -   "R for Data Science", by Hadley Wickham, Mine Cetinkaya-Rundel, & Garret Grolemund, especially chapters [2](https://r4ds.hadley.nz/data-visualize.html), [10](https://r4ds.hadley.nz/layers.html), and [12](https://r4ds.hadley.nz/communication.html)
-
--   See us at [drop-in hours](https://datascience.cct.arizona.edu/drop-in-hours)
 :::

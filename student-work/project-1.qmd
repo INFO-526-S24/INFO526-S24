@@ -47,7 +47,7 @@ Highlight various trends and disparities in college sports funding, and provide 
 
 ------------------------------------------------------------------------
 
-[![Games\' ratings and total expansions have both increased over time.](images/project-1/marvel_cinematic_tidyverse.png){width="640"}](https://vizdata-s23.github.io/project-01-marvel_cinematic_tidyverse/)
+[![Games' ratings and total expansions have both increased over time.](images/project-1/marvel_cinematic_tidyverse.png){width="640"}](https://vizdata-s23.github.io/project-01-marvel_cinematic_tidyverse/)
 
 ------------------------------------------------------------------------
 

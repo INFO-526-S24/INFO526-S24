@@ -19,7 +19,7 @@ auto-stretch: false
 
 Dr. Greg Chism
 
-Office: Harvill 520,
+Office: Harvill 420,
 
 [gchism\@arizona.edu](mailto:gchism@arizona.edu)
 :::
@@ -70,11 +70,11 @@ Laura Dozal
 
 -   First, introduce yourselves to each other -- name (and proper pronunciation of name), year, major, where are you from, etc.
 
--   Start with the bad graphs -- Share your examples of "bad" graphs and why you think they're bad.
+-   Start what you think makes a graph/plot "bad".
 
--   Then, share your good graphs -- Same deal, share your examples of "good" graphs and why you think they're good.
+-   Then, discuss what makes a graph/plot "good".
 
--   Finally, choose the **one** plot from your group that you think is most striking, either because it's bad or because it's good, and have one team member share the graph on #general in Slack.
+-   Finally, choose the **one** plot discussion from your group, either "bad" or "good", and have one team member share the discussion on #general in Slack.
 :::
 
 # Course components
@@ -82,7 +82,7 @@ Laura Dozal
 ## Course website
 
 ::: {.large style="text-align: center;"}
-[datavizaz.org](https://www.datavizaz.org/)
+[datavizaz.org](https://datavizaz.org/)
 :::
 
 ::: {.hand style="text-align: center;"}
@@ -91,7 +91,7 @@ aka "the one link to rule them all"
 
 ::: {style="text-align: center;"}
 ```{=html}
-<iframe width="1000" height="400" src="datavizaz.org" frameborder="1" style="background:white;"></iframe>
+<iframe width="1000" height="400" src="https://datavizaz.org" frameborder="1" style="background:white;"></iframe>
 ```
 :::
 
@@ -104,10 +104,10 @@ aka "the one link to rule them all"
 -   A little bit of everything:
 
     -   Traditional lecture
-    -   Live coding + demos
-    -   Short exercises + solution discussion
 
--   Recordings will be posted after class -- to be used for review + make-up if you can't make it to class due to health reasons, they're not an alternative to class attendance
+    -   Live coding + demos
+
+    -   Short exercises + solution discussion
 
 ## Announcements
 
@@ -141,8 +141,6 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 -   Students who attend at least 80% of the lectures and participate regularly in lecture and/or other course venues (Slack) will receive full credit for this portion of their grade
 
--   Participation in labs as well as on Slack will also count towards this component
-
 ## Reading quizzes (10%)
 
 -   Online, individual
@@ -157,11 +155,11 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 -   Due by 3:30 pm AZ Time (beginning of class) on the indicated day on the course schedule
 -   **Lowest dropped**
 
-## Projects
+## Projects (40%)
 
 -   Submitted on GitHub, team-based
+
 -   Interim deadlines, peer review on content, peer evaluation for team contribution
--   Some lab sessions allocated to working on projects, doing peer review, getting feedback from your TA
 
 ## Teams
 
@@ -286,15 +284,13 @@ most importantly:
 ask if you're not sure if something violates a policy!
 :::
 
-## 
-
 # Support
 
 ## Office hours {.smaller}
 
 -   Mine:
 
-    -   Mondays 1 - 3 pm - Harvill 420
+    -   Mondays 1 - 2 pm - Harvill 420
 
         -   Except Mon, Sept 4
 
@@ -302,7 +298,7 @@ ask if you're not sure if something violates a policy!
 
     -   By appointment - Zoom or Harvill 420
 
--   TAs:
+-   Laura's (TA):
 
     -   By appointment
 
@@ -345,7 +341,7 @@ I want to make sure that you learn everything you were hoping to learn from this
 -   Feedback on assignments is given as GitHub issues, scores recorded on D2L Gradebook
 
 ::: task
-Fill out the *Getting to know you* survey for collection of your account names, later this week you will be invited to the course organization.
+Send me your Github account names on Slack, later this week you will be invited to the course organization.
 :::
 
 ## Username advice {.smaller}
@@ -390,13 +386,13 @@ Demo on Wednesday for asking good questions with proper code formatting.
 
 1.  Create a GitHub account if you don't have one
 
-2.  Read the [syllabus](https://www.vizdata.org/syllabus.html)
+2.  Read the [syllabus](https://datavizaz.org/course-syllabus)
 
-3.  Make sure you can login in to RStudio Cloud and join the organization for INFO 526: [cmgr.oit.duke.edu/containers](https://cmgr.oit.duke.edu/containers)
+3.  Make sure you can login in to RStudio Cloud
 
-4.  Complete the *Getting to know you* survey on D2L -- to be posted
+4.  Complete the *Pre-Class Questionnaire* survey on D2L
 
-5.  Complete the readings and Reading Quiz 1 -- to be posted
+5.  Complete the readings and Reading Quiz 1
 
 # Grammar of graphics
 

@@ -65,6 +65,19 @@ website:
             text: Troubleshooting
           - href: computing/computing-cheatsheets.qmd
             text: Cheatsheets
+      - section: "Projects"
+        contents:
+          - href: project/project-1.qmd
+            text: Project 1
+          - href: student-work/project-1.qmd
+            text: Project 1 Examples
+          - href: project/project-tips-resources.qmd
+            text: Tips & Resources
+      - section: "HW"
+        contents:
+          - text: HW 01
+            href: https://github.com/INFO526-DataViz/hw-01
+          
 
   page-footer:
     right: "This page is built with 💛 and [Quarto](https://quarto.org/)."

@@ -73,4 +73,4 @@ Replace the height and width values with values appropriate for your write up.
 
 Arrange plots in a grid, instead of one after the other. This is especially useful when displaying plots for exploratory data analysis and to check assumptions.
 
-If you're using ggplot2 functions, the [patchwork package](https://patchwork.data-imaginist.com/) makes it easy to arrange plots in a grid.
+If you're using `ggplot2` functions, the [patchwork package](https://patchwork.data-imaginist.com/) makes it easy to arrange plots in a grid.

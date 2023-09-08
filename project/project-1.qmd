@@ -18,19 +18,19 @@ Each of the two questions you come up with should involve more than two variable
 
 ## Workflow
 
--   Week 1 of project (week of January 30): Choose a dataset and write up your proposal in `proposal.qmd`.
+-   Week 1 of project (week of September 11): Choose a dataset and write up your proposal in `proposal.qmd`.
 
--   Week 2 of project (week of February 6): Provide peer review to two other teams in the form of issues in their GitHub repos, address the issues left on your team's project repo by closing them with explicit commits. Feel free to get started on your presentation as well.
+-   Week 2 of project (week of September 18): Provide peer review to two other teams in the form of issues in their GitHub repos, address the issues left on your team's project repo by closing them with explicit commits. Feel free to get started on your presentation as well.
 
--   Week 3 of project (week of February 13): Review feedback from me on your proposal and close any remaining issues. Work on your presentation in `presentation.qmd` and write-up in `index.qmd`.
+-   Week 3 of project (week of September 25): Review feedback from me on your proposal and close any remaining issues. Work on your presentation in `presentation.qmd` and write-up in `index.qmd`.
 
--   Week 4 of project (week of February 20): Finalize your write-up, presentation, and your project website. Present in lab on the Wednesday of this week.
+-   Weeks 4-5 of project (week of October 2, 9): Finalize your write-up, presentation, and your project website. Present in class on Monday the following week.
 
 ## Due dates
 
--   Proposals for peer review: due on Tuesday, February 7 at noon.
--   Revised proposals for teaching team review: due Friday, February 10 at 5pm.
--   Write-up and presentation: due Wednesday, February 22 at the **beginning** of your lab section.
+-   Proposals for peer review: due on Wednesday, September 20 at 3:30pm.
+-   Revised proposals for teaching team review: due Monday, September 25 at 11:59pm.
+-   Write-up and presentation: due Monday, October 16 at the **beginning** of class.
 
 ## Deliverables
 
@@ -47,11 +47,11 @@ Your proposal should include:
 
 #### Reviewer tasks {.unnumbered}
 
-Each team will review the proposals of two other teams. The peer review will be completed during the lab session on Wednesday, February 8. On that day teams will have access to the project repos of the two teams whose work they're reviewing. Reviews should start by cloning the team's repo, re-rendering it locally to make sure you can reproduce their work, and then adding an issue to their repo with your peer review feedback.
+Each team will review the proposals of two other teams. The peer review will be completed during class on Wednesday, September 20. On that day teams will have access to the project repos of the two teams whose work they're reviewing. Reviews should start by cloning the team's repo, re-rendering it locally to make sure you can reproduce their work, and then adding an issue to their repo with your peer review feedback.
 
-The reviewer / reviewee assignments can be found below:
+The reviewer / reviewee assignments will be assigned soon.
 
-```{r}
+```{r, echo=FALSE, eval=FALSE}
 #| message: false
 #| echo: false
 library(tidyverse)
@@ -98,7 +98,7 @@ Your presentation should generally follow the same structure as your write-up. E
 
 ### Website
 
-Each of your projects will have a website that looks like <https://vizdata-s23.github.io/project-01>. You are not expected to change the styling of the website, but if you want to, you'll need to edit the `_quarto.yml` file in your repo. Feel free to google your way around it or ask on the discussion forum / office hours!
+Each of your projects will have a website that looks like <https://info526-dataviz.github.io/project-01/>. You are not expected to change the styling of the website, but if you want to, you'll need to edit the `_quarto.yml` file in your repo. Feel free to google your way around it or ask on the discussion forum / office hours!
 
 ## Repo organization
 

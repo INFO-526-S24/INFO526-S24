@@ -15,11 +15,8 @@ execute:
 
 ## Announcements
 
--   Office hours + locations finalized at [vizdata.org/course-team.html](https://vizdata.org/course-team.html).
-
--   Don't forget to complete the getting to know you survey by 8pm today at the latest!
-
 -   A note on readings for this week: Some of it is review so feel free to skim those parts.
+-   Please fill out the class questionnaire, found within the #announcements Slack channel.
 
 ## Setup
 
@@ -225,12 +222,6 @@ ggplot(
   ) +
   scale_color_viridis_d(end = 0.9)
 ```
-
-## Vote
-
-```{=html}
-<iframe src="https://app.sli.do/event/auLA4rVMFz8JRc5PrANtpf/embed/polls/d3be2a9c-92c1-476d-a454-97b8614a06e4" width="1000" height="400"></iframe>
-```
 :::
 
 ## Test 2
@@ -265,12 +256,6 @@ ggplot(
     title = "Price and area of houses in Tucson"
   ) +
   theme_gray(base_size = 16)
-```
-
-## Vote
-
-```{=html}
-<iframe src="https://app.sli.do/event/auLA4rVMFz8JRc5PrANtpf/embed/polls/d3be2a9c-92c1-476d-a454-97b8614a06e4" width="1000" height="400"></iframe>
 ```
 :::
 
@@ -350,12 +335,6 @@ ggplot(
     title = "Mean area of houses in Tucson, by decade built"
   )
 ```
-
-## Vote
-
-```{=html}
-<iframe src="https://app.sli.do/event/auLA4rVMFz8JRc5PrANtpf/embed/polls/d3be2a9c-92c1-476d-a454-97b8614a06e4" width="1000" height="400"></iframe>
-```
 :::
 
 ## A deeper look {.center}
@@ -390,7 +369,7 @@ at the plotting code
 ```
 :::
 
-## Scaterplot
+## Scatterplot
 
 ::: panel-tabset
 ## Code
@@ -439,7 +418,7 @@ ggplot(
 
 -   Clone the repo called `ae-02` and work on the exercise.
 
-    -   Note: For today, this is not a personalized repo for you. The repo is public so everyone can clone it, but you won't be able to push to it. Starting Thursday you'll start getting your personalized repos you can push to.
+    -   Note: For today, this is not a personalized repo for you. The repo is public so everyone can clone it, but you won't be able to push to it. Starting Wednesday (hopefully) you'll start getting your personalized repos you can push to.
 
 -   Once you're done, share your code on Slack in #general.
 
@@ -457,11 +436,11 @@ countdown(minutes = 10, color_background = "white")
 ::: panel-tabset
 ## Original
 
-![](images/healy-democracy-nyt-version.png){fig-alt="Faceted plot showing the average importance of democracy in 6 countries over time." fig-align="center" width="800"}
+![](images/healy-democracy-nyt-version.png){fig-alt="Faceted plot showing the average importance of democracy in 6 countries over time." fig-align="center" width="665"}
 
 ## Improved
 
-![](images/healy-democracy-voeten-version-2.png){fig-alt="Faceted plot showing the average importance of democracy in 6 countries over time." width="800"}
+![](images/healy-democracy-voeten-version-2.png){fig-alt="Faceted plot showing the average importance of democracy in 6 countries over time." fig-align="center" width="675"}
 
 ::: aside
 Healy, Data Visualization: A practical introduction. [Chapter 1](https://socviz.co/lookatdata.html). Figures 1.8 and 1.9.
@@ -548,10 +527,6 @@ ggplot(
 ## Discussion
 
 Can you spot the differences between the code here and the one provided in the previous slide? Are there any differences in the resulting plot? Work in a pair (or group) to answer.
-
-```{=html}
-<iframe src="https://app.sli.do/event/auLA4rVMFz8JRc5PrANtpf/embed/polls/561d1486-315f-4085-bd9a-05521416af86" width="1000" height="400"></iframe>
-```
 :::
 
 ```{r echo = FALSE}
@@ -566,13 +541,13 @@ countdown(minutes = 3, color_background = "white")
 
 -   If you only have one layer in the plot, the way you specify aesthetics doesn't make any difference. However, the distinction is important when you start adding additional layers.
 
-## Activity: Spot the differences I\| {.smaller}
+## Activity: Spot the differences II {.smaller}
 
 ::: task
 Do you expect the following plots to be the same or different? If different, how? Discuss in a pair (or group) without running the code and sketch the resulting plots based on what you think the code will produce.
 :::
 
-::: panel-tabset
+::: task
 ## Plot
 
 ```{r}
@@ -591,12 +566,6 @@ ggplot(tucsonHousing, aes(x = area, y = price)) +
 ggplot(tucsonHousing, aes(x = area, y = price)) +
   geom_point(color = "#a493ba")
 ```
-
-## Discussion
-
-```{=html}
-<iframe src="https://app.sli.do/event/auLA4rVMFz8JRc5PrANtpf/embed/polls/561d1486-315f-4085-bd9a-05521416af86" width="1000" height="400"></iframe>
-```
 :::
 
 ```{r echo = FALSE}
@@ -608,7 +577,3 @@ countdown(minutes = 3, color_background = "white")
 ::: task
 Think back to all the plots you saw in the lecture, without flipping back through the slides. Which plot first comes to mind? Describe it in words.
 :::
-
-```{=html}
-<iframe src="https://app.sli.do/event/auLA4rVMFz8JRc5PrANtpf/embed/polls/c4ba1e80-c7c0-435d-8bf8-b78945330769" width="1000" height="400"></iframe>
-```

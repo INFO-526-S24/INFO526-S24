@@ -21,10 +21,10 @@ editor_options:
 
 -   At this point everyone should be:
 
-    -   On Slack, in public channels for #general, #homework, #project-1, #project-2, #quizzes, and #random as well as in a private channel for their lab section.
+    -   On Slack, in public channels for #general, #homework, #course-questions, #project-1, #project-2, #quizzes, and #random
     -   Make sure your profile photo/avatar and name matches between GitHub and Slack.
 
--   HW 1 will be posted after class, due next Monday (Sept 11).
+-   HW 1 is live on the course website, due Monday (Sept 11).
 
 ## Setup {.smaller}
 
@@ -171,7 +171,7 @@ ggplot(tucsonHousing, aes(x = price, color = decade_built_cat)) +
 ::: task
 -   Go to the course GitHub organization: <https://github.com/INFO526-DataViz>
 
--   Clone the repo called `ae-03-[YOUR-GITHUB-USERNAME]` and work on the exercises for Part 1.
+-   Clone the repo called `ae-03`, but include your username in the version: `ae-03-[YOUR-GITHUB-USERNAME]`, then work on the exercises for Part 1.
 
 -   Once you're done, share your plots on Slack in #general.
 
@@ -359,7 +359,7 @@ ggplot(mean_price_year, aes(x = year_built, y = mean_price)) +
 ::: task
 -   Go to the course GitHub organization: <https://github.com/INFO526-DataViz>
 
--   Clone the repo called `ae-03-[YOUR-GITHUB-USERNAME]` and work on the exercises for Part 2.
+-   Work on part 2 of the repo called `ae-03-[YOUR-GITHUB-USERNAME]`.
 
 -   Once you're done, share your plot on Slack in #general.
 
@@ -384,18 +384,8 @@ let's clean things up a bit!
 ## Code
 
 ```{r}
-#| ref.label: clean-up
-#| echo: false
-#| code-line-numbers: "|3-4"
-```
-
-## Plot
-
-```{r}
 #| label: clean-up
 #| fig-show: hide
-#| fig-asp: 0.55
-
 ggplot(tucsonHousing, aes(x = area, y = price)) +
   geom_point(alpha = 0.6, size = 2, color = "#012169") +
   scale_x_continuous(labels = label_number(big.mark = ",")) +
@@ -408,6 +398,15 @@ ggplot(tucsonHousing, aes(x = area, y = price)) +
     caption = "Source: Zillow.com"
   )
 ```
+
+## Plot
+
+```{r}
+#| ref.label: clean-up
+#| echo: false
+#| code-line-numbers: "|3-4"
+#| fig.asp: 0.55
+```
 :::
 
 ## Three variables
@@ -419,8 +418,7 @@ ggplot(tucsonHousing, aes(x = area, y = price)) +
 ## `geom_tile()`
 
 ```{r}
+#| fig.asp: 0.55
 ggplot(tucsonHousing, aes(x = bed, y = bath)) +
  geom_tile(aes(fill = price))
 ```
-
-# 

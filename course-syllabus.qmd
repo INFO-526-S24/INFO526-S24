@@ -137,7 +137,7 @@ Assessment for the course is comprised of four components: attendance and partic
 
     Reading quizzes will be linked from the [course schedule](https://datavizaz.org/). They always cover reading that is due since the previous quiz and up to and including the deadline for the given quiz. They're due by 12pm ET (beginning of class) on the indicated day on the [course schedule](https://datavizaz.org/).
 
--   **Homework assignments** (6), due every other week (roughly), completed individually. Each homework assignment is worth 8% of the course grade. Lowest homework assignment score is dropped.
+-   **Homework assignments** (6), due every other week (roughly), completed individually. Each homework assignment is worth 9% of the course grade. Lowest homework assignment score is dropped.
 
     Homework assignments are due by 12pm ET (beginning of class) on the indicated day on the [course schedule](https://datavizaz.org/).
 
