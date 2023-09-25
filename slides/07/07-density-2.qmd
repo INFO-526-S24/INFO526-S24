@@ -19,14 +19,8 @@ revealjs-plugins:
 
 ## Announcements
 
--   HW 02 is due Monday
--   Project 1 proposal are due for my review.
-
-## Checks
-
-::: task
-Go to your HW 02 repo and make sure all your changes are committed. Then **pull**. You'll see there were some updates. Fix merge conflicts, if any. Then **push**. Check that your document renders.
-:::
+-   HW 02 is due October 2nd
+-   Project 1 proposal peer reviews are Wednesday (full group attendance is **mandatory**)
 
 ## Warnings and messages
 
@@ -41,6 +35,16 @@ Go to your HW 02 repo and make sure all your changes are committed. Then **pull*
 -   Review HW 1 issues, and show us you reviewed them by closing the issue.
 
 -   DO NOT hard code paths! Use the **`here`** package to help with relative paths, if you need.
+
+-   Make sure that all packages are installed/loaded. I suggest the `pacman` workflow we saw before:
+
+```{r, eval=FALSE}
+if (!require("pacman")) 
+  install.packages("pacman")
+
+pacman::p_load(package1, package2, ...)
+pacman::p_load_gh("GitHubPackage1")
+```
 
 ## Setup {.smaller}
 
@@ -124,9 +128,10 @@ ggplot(example_data, aes(random_values)) +
 :::
 :::
 
-## Data
+## Data {.smaller}
 
-::: small
+<div>
+
 ```{r}
 #| label: load-data
 #| echo: TRUE
@@ -146,13 +151,14 @@ home_runs <- Batting |>
 Our dataset comes from the R package `Lahman`. Each row in the data frame is the hitting stats of a player for a given year. Today we will use the following columns:
 
 | Variable | Description                                                                        |
-|----------------------|--------------------------------------------------|
+|-----------------------|-------------------------------------------------|
 | `yearID` | The year for the statistics                                                        |
 | `HR`     | The number of home runs a player hit in a given year                               |
 | `G`      | Number of games played; there are 162 games in a baseball season (154 before 1961) |
 
 In particular we are interested in the distribution of home runs per year!
-:::
+
+</div>
 
 ## Important notes from last time {.smaller}
 

@@ -65,6 +65,8 @@ website:
             text: Troubleshooting
           - href: computing/computing-cheatsheets.qmd
             text: Cheatsheets
+          - href: computing/computing-git.qmd
+            text: Setting up Git
       - section: "Projects"
         contents:
           - href: project/project-1.qmd
@@ -77,6 +79,8 @@ website:
         contents:
           - text: HW 01
             href: https://github.com/INFO526-DataViz/hw-01
+          - text: HW 02
+            href: https://github.com/INFO526-DataViz/hw-02
           
 
   page-footer:

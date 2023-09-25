@@ -133,7 +133,7 @@ Is it ok to suppress the following warning? Or should you update your code to el
 p + scale_x_continuous(limits = c(0, 2))
 ```
 
-## Missing values II {.smaller}
+## Missing values II
 
 ::: task
 Why doesn't the following generate a warning?

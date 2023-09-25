@@ -18,11 +18,11 @@ revealjs-plugins:
 ## Announcements
 
 -   Office Hours Monday will be devoted to Project 1!
--   Project 1 proposals submitted for peer review by 3pm Monday
+-   Project 1 proposals submitted for peer review by 3pm Wednesday, September 20th
 -   Project proposal peer review
     -   You'll be assessed on the quality (and participation) of your peer review
 
-    -   Updates based on peer review are due Friday at 5pm
+    -   Updates based on peer review are due Monday, September 25th at 5pm
 
     -   Your proposal will be "graded" after that, by me
 
@@ -192,7 +192,7 @@ names(Batting)
 Our dataset comes from the R package `Lahman`. Each row in the data frame is the hitting stats of a player for a given year. We will mostly be using the following columns:
 
 | Variable   | Description                                                                        |
-|------------|------------------------------------------------------------------------------------|
+|--------------|---------------------------------------------------------|
 | `yearID`   | The year for the statistics                                                        |
 | `playerID` | Player unique ID to distinguish rows                                               |
 | `HR`       | The number of home runs a player hit in a given year                               |
