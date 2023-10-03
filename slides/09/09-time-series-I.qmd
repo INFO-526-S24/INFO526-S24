@@ -245,10 +245,6 @@ How would you improve this visualization?
 
 ## Visualizing Tucson AQI
 
-::: task
-Recreate the following visualization: `ae-09`
-:::
-
 ```{r}
 #| label: tuc_2022-2
 #| echo: false
@@ -298,18 +294,14 @@ tuc_2022 |>
   )
 ```
 
-````{=html}
-<!--
-
 ## Livecoding {.smaller}
 
 Reveal below for code developed during live coding session.
 
 ```{r}
-#| ref.label: tuc-2022-2
+#| ref.label: tuc_2022-2
 #| fig-show: hide
 #| code-fold: true
 ```
 
--->
-````
+

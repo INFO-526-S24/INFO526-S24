@@ -23,46 +23,14 @@ editor_options:
 ## Project next steps I {.smaller}
 
 -   Proposal feedback is available.
-    -   Required: Address all issues and close them with keywords.
-    -   Optional: Submit for regrade, by replying to the "Proposal feedback" issue and tagging me in your reply. Due 5pm tomorrow (Tuesday). Final proposal score will be average of original and updated score.
--   Within team peer evaluations due today at 5pm, so that we can share them with you before lab tomorrow. Please take 5 minutes to complete the survey (from TEAMMATES).
+    -   Required: Address all issues and close them.
+
+    -   Optional: Submit for regrade, by replying to the "Proposal feedback" issue and tagging me in your reply. Due 5pm tomorrow (Tuesday). Final proposal score will be midpoint of original and updated score.
 
 ## Project next steps II {.smaller}
 
-If you haven't yet done so, schedule meetings with your project mentor TA:
-
-::: columns
-::: {.column width="50%"}
-| Team                | TA      |
-|---------------------|---------|
-| the_tibbles         | Lorenzo |
-| stats_fm            | Lorenzo |
-| phans_of_statistics | Lorenzo |
-| skaz                | Lorenzo |
-| messi               | Lorenzo |
-| team_six            | Lorenzo |
-| cia                 | Jackie  |
-| blue_team           | Jackie  |
-:::
-
-::: {.column width="50%"}
-| Team                       | TA     |
-|----------------------------|--------|
-| pipe_it_up                 | Jackie |
-| co_medians                 | Jackie |
-| viz_villians               | Jackie |
-| o_ggs                      | Jackie |
-| visualization_warriors     | Sam    |
-| ggplot_lessthan_3          | Sam    |
-| marvel_cinematic_tidyverse | Sam    |
-| rgodz                      | Sam    |
-:::
-:::
-
-## Project next steps III {.smaller}
-
 -   Create a slide deck in `presentation.qmd`, replacing the placeholder text.
--   Add your writeup to `index.qmd`, replacing the placeholder text.
+-   Add your write-up to `index.qmd`, replacing the placeholder text.
 -   In both outputs, hide the code with `echo: false` prior to turning them in.
 -   Due: Wednesday, Monday, October 16th, 3pm.
 
@@ -165,10 +133,6 @@ options(dplyr.print_min = 3, dplyr.print_max = 3)
 
 ## Visualizing Tucson AQI
 
-::: task
-Recreate the following visualization.
-:::
-
 ```{r}
 #| label: tuc-2022-2
 #| echo: false
@@ -216,16 +180,6 @@ tuc_2022 |>
     panel.grid.minor.x = element_blank(),
     plot.margin = unit(c(1, 1, 3, 1), "lines")
   )
-```
-
-## Livecoding {.smaller}
-
-Reveal below for code developed during live coding session.
-
-```{r}
-#| ref.label: tuc-2022-2
-#| fig-show: hide
-#| code-fold: true
 ```
 
 ## Another visualization of Tucson AQI
@@ -452,7 +406,7 @@ tuc |>
   geom_smooth(method = "lm", color = "pink") +
   geom_line() +
   scale_x_date(
-    expand = expansion(mult = 0.07),
+    expand = expansion(mult = 0.02),
     date_labels = "%Y"
   ) +
   labs(
@@ -520,7 +474,7 @@ tuc_aug |>
   geom_hline(yintercept = 1, color = "gray") +
   geom_line() +
   scale_x_date(
-    expand = expansion(mult = 0.07),
+    expand = expansion(mult = 0.1),
     date_labels = "%Y"
   ) +
   labs(
