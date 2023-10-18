@@ -27,24 +27,23 @@ editor_options:
 #| message: false
 
 # load packages
-library(countdown)
-library(tidyverse)
-library(lubridate)
-library(mgcv)
-library(colorspace)
-library(broom)
-library(emmeans)
-library(ungeviz)
-library(ggridges)
-library(tidybayes)
-library(pkgsimon)
-library(dviz.supp)
-library(ggpubr)
-library(ggtext)
-library(extrafont)
-library(ggstance)
-library(gganimate)
-library(emo)
+library(countdown) # countdown in slides
+library(tidyverse) # data wrangling & viz
+library(lubridate) # dealing with dates
+library(mgcv)      # estimate penalized Generalized linear models
+library(colorspace)# color scales
+library(broom)     # turn model outputs to tibbles
+library(emmeans)   # estimate marginal means (least-squares)
+library(ungeviz)   # vizualize uncertainty
+library(ggridges)  # ridgeline plots
+library(tidybayes) # tidy bayesian functions
+library(dviz.supp) # supplementary materials for C. Wilke's data viz book
+library(ggpubr)    # publication ready plots
+library(ggtext)    # format ggplot text
+library(extrafont) # fonts
+library(ggstance)  # horiz flipped stats, geoms; vert flipped positions
+library(gganimate) # animated ggplots
+library(emo)       # emojis
 
 # set theme for ggplot2
 ggplot2::theme_set(ggplot2::theme_minimal(base_size = 14, base_family = "Myriad Pro"))
@@ -71,7 +70,7 @@ loadfonts(device = "all")
 
 ![](images/Disappearing_dots.gif){fig-align="center"}
 
-Image by Wikiemdia user [Jahobr](https://commons.wikimedia.org/wiki/User:Jahobr), released into the public domain.
+Image by Wikimedia user [Jahobr](https://commons.wikimedia.org/wiki/User:Jahobr), released into the public domain.
 
 [https://commons.wikimedia.org/wiki/File:Disappearing_dots.gif](https://commons.wikimedia.org/wiki/File:Disappearing_dots.gif){style=".aside"}
 

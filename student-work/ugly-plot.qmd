@@ -4,9 +4,25 @@ title: "Ugly plots"
 
 Mirror mirror on the wall, who is the ugliest of them all?
 
-Each of these ugly plots are made in R with ggplot2 by students in STA/ISS 313.
+Each of these ugly plots are made in R with ggplot2 by students in INFO 526.
 
 ```{r out.width = "80%", echo = FALSE, fig.alt = "Ugly plots created with ggplot2."}
 thank_you_paths <- fs::dir_ls("images/ugly-plots", regexp = "*md", invert = TRUE)
 knitr::include_graphics(thank_you_paths)
+```
+
+```{r}
+#| label: ugly-plot-eshaanmathakari
+#| echo: false
+#| eval: true
+#| warning: false
+pacman::p_load(tidyverse, palmerpenguins, plotly)
+# Create a 3D scatterplot with three variables: bill_length_mm, bill_depth_mm, and flipper_length_mm
+plot_ly(data = penguins, x = ~bill_length_mm, y = ~bill_depth_mm, z = ~flipper_length_mm, 
+        type = "scatter3d", mode = "markers", 
+        marker = list(size = 5, color = "yellow")) %>%
+  layout(scene = list(xaxis = list(title = "Bill Length (mm)"),
+                      yaxis = list(title = "Bill Depth (mm)"),
+                      zaxis = list(title = "Flipper Length (mm)")),
+         title = "3D Scatterplot of Penguin Measurements")
 ```

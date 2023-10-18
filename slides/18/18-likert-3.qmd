@@ -18,8 +18,8 @@ editor_options:
 
 ## Announcements
 
--   HW 4 due Wednesday
--   Project 2 proposals for peer review due next Monday -- start working on them today
+-   HW 4 due Wednesday, November 8th
+-   Project 2 proposals for peer review due Monday, November 13th -- start working on them today
 
 ## Setup {.smaller}
 
@@ -62,8 +62,6 @@ What have you learned from the reading about these considerations?
 :::
 
 ## Let's make some!
-
-Go to `ae-18`.
 
 ![](images/durham-100perc-1.png){fig-align="center" width="500"}
 

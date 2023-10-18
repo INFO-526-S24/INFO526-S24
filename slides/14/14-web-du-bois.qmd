@@ -20,29 +20,60 @@ editor_options:
 
 -   Project 1 feedback is posted
 
--   Scores for all assignments so far are on D2L
+-   Scores for all assignments so far will be on D2L soon
 
--   Project 2 groups will be announced next week -- if you have specific requests, let me know before the end of the week
+-   Project 2 groups will be announced by the end of this week 
 
 -   Take a note of the deadlines for the rest of the semester
 
-## Midterm course feedback
+# Project 2
+
+## Project 2 - potential directions {.smaller}
 
 ::: incremental
--   Enjoying the most: live coding
+-   Present and visualize a technical topic in statistics or mathematics, e.g., Gradient descent, quadrature, autoregressive (AR) models, etc.
 
--   Would like to:
+-   Build a Shiny app that that has an Instagram-like user interface for applying filters, except not filters but themes for ggplots.
 
-    -   learn how to get emojis working
-    -   add images to plots -- a bit of this today!
-    -   better understand density concepts from earlier -- Project 2 idea?
+-   Create an R package that provides functionality for a set of ggplot2 themes and/or color palettes.
 
--   Change: Either shorter and more HW assignments or post the HW earlier -- we'll do the latter!
+-   Build a generative art system.
+
+-   Do a deep dive into accessibility for data visualization and build a lesson plan for creating accessible visualizations with ggplot2, R Markdown, and generally within the R ecosystem.
+
+-   Create an interactive and/or animated spatio-temporal visualization on a topic of interest to you, e.g., redistricting, COVID-19, voter suppression, etc.
+
+-   Recreate art pieces with ggplot2.
+
+-   Make a data visualization telling a story and convert it to an illustration, presenting both the computational and artistic piece side by side.
+
+-   Build a dashboard.
+
+-   Or... Visualize a (non-TidyTuesday) dataset, answering a research question of interest to you.
 :::
+
+## Project 2 - all the details
+
+::: large
+<https://datavizaz.org/project/project-2.html>
+:::
+
+<br>
+
+::: callout-tip
+Brainstorm a bunch of ideas and discard them until you settle on a topic that everyone in the team is happy with and feels like a good choice for showcasing what you've learned in the class and how you can use that to learn something new and implement for your project.
+:::
+
+## Project 2 - inspiration
+
+-   animatedata - [Formula 1 racing](https://charts.animateddata.co.uk/f1/)
+
+-   Nicole Rennie - [Life Expectancy](https://github.com/nrennie/Significance/tree/main/Were_not_getting_any_younger_Or_should_that_be_older)
+
+-   Nicole Rennie - [Generative Art](https://github.com/nrennie/nrennie_aRt)
 
 # W.E.B. Du Bois
 
-# 
 
 ::: callout-important
 The visualizations presented in this lecture are original data visualizations by W.E.B. Du Bois and the captions reflect the language of the time in history.

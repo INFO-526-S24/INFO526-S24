@@ -73,6 +73,8 @@ website:
             text: Project 1
           - href: student-work/project-1.qmd
             text: Project 1 Examples
+          - href: project/project-2.qmd
+            text: Project 2
           - href: project/project-tips-resources.qmd
             text: Tips & Resources
       - section: "HW"
@@ -81,6 +83,12 @@ website:
             href: https://github.com/INFO526-DataViz/hw-01
           - text: HW 02
             href: https://github.com/INFO526-DataViz/hw-02
+          - text: HW 03
+            href: https://github.com/INFO526-DataViz/hw-03
+      - section: "Student work"
+        contents:
+          - href: student-work/ugly-plot.qmd
+            text: Ugly plots
           
 
   page-footer:

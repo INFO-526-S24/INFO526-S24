@@ -54,8 +54,10 @@ Each team will review the proposals of two other teams. The peer review will be 
 ```{r, echo=FALSE}
 #| message: false
 #| echo: false
-library(tidyverse)
-library(gt)
+if (!require(pacman))
+  install.packages("pacman")
+pacman::p_load(tidyverse,
+               gt)
 p1_pr <- read_csv("project-1-peer-review.csv")
 gt(p1_pr) 
 ```
@@ -96,6 +98,19 @@ You are not required to perform any statistical tests in this project, but you m
 
 Your presentation should generally follow the same structure as your write-up. Each team will have 5 minutes for their presentation, and each team member must speak (roughly equally) during this time. Your presentation will be created using Quarto, which allows you to write slides using the same Quarto structure you're used to. There is a sample Quarto slide template in your repo you can edit to your heart's desire to create your presentation. Roughly I recommend 1 slide for introduction, 2 slides for Question 1, ans 2 slides for Question 2. You can imagine spending roughly one minute on each slide. You should feel free to have more (or fewer) slides. Your evaluation will be based on your content, professionalism (including sticking to time), and your performance during the Q&A (question and answer). We don't care how many slides you use to do this.
 
+#### **The reviewer / reviewee assignments for presentation peer-review are as follows**:
+
+```{r, echo=FALSE}
+# Create a dataframe
+reviewer <- c("Aes-thetics Squad", "DataInk Drinkers", "ggplotGurus", "R-tisans of Visuals", "The Plotting Pandas", "ScatterPlot Sorcerers")
+reviewee <- c("The Plotting Pandas", "ggplotGurus", "ScatterPlot Sorcerers", "Aes-thetics Squad", "R-tisans of Visuals", "DataInk Drinkers")
+
+df <- data.frame(reviewer, reviewee)
+gt(df) 
+```
+
+Also find the rubric [here](https://datavizaz.org/project/project-1#reviewee-tasks).
+
 ### Website
 
 Each of your projects will have a website that looks like <https://info526-dataviz.github.io/project-01/>. You are not expected to change the styling of the website, but if you want to, you'll need to edit the `_quarto.yml` file in your repo. Feel free to google your way around it or ask on the discussion forum / office hours!
@@ -122,23 +137,23 @@ The following folders and files in your project repository:
 
 ## Grading
 
-+----------------------------------------------+--------------------------------------------------+
-| Total                                        | 100 pts                                          |
-+==============================================+==================================================+
-| Proposal[^2]                                 | 10 pts                                           |
-+----------------------------------------------+--------------------------------------------------+
-| Presentation[^3]                             | 30 pts                                           |
-|                                              |                                                  |
-|                                              | (25 pts from teaching team, 5 pts from audience) |
-+----------------------------------------------+--------------------------------------------------+
-| Write-up[^4]                                 | 30 pts                                           |
-+----------------------------------------------+--------------------------------------------------+
-| Reproducibility, style, and organization[^5] | 10 pts                                           |
-+----------------------------------------------+--------------------------------------------------+
-| Within team peer evaluation[^6]              | 10 pts                                           |
-+----------------------------------------------+--------------------------------------------------+
-| Between team peer evaluation[^7]             | 10 pts                                           |
-+----------------------------------------------+--------------------------------------------------+
++------------------------------------------------------------------------+--------------------------------------------------+
+| Total                                                                  | 100 pts                                          |
++========================================================================+==================================================+
+| Proposal[^2]                                                           | 10 pts                                           |
++------------------------------------------------------------------------+--------------------------------------------------+
+| Presentation[^3]                                                       | 30 pts                                           |
+|                                                                        |                                                  |
+|                                                                        | (25 pts from teaching team, 5 pts from audience) |
++------------------------------------------------------------------------+--------------------------------------------------+
+| Write-up[^4]                                                           | 30 pts                                           |
++------------------------------------------------------------------------+--------------------------------------------------+
+| Reproducibility, style, and organization[^5]                           | 10 pts                                           |
++------------------------------------------------------------------------+--------------------------------------------------+
+| [Within team peer evaluation](https://forms.gle/oh8Rjhjx3HnCM54s9)[^6] | 10 pts                                           |
++------------------------------------------------------------------------+--------------------------------------------------+
+| Between team peer evaluation[^7]                                       | 10 pts                                           |
++------------------------------------------------------------------------+--------------------------------------------------+
 
 [^2]: Your proposal score will also take into consideration how much you've improved your proposal based on peer feedback.
 

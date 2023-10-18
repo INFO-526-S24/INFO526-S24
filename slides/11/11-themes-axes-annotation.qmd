@@ -35,6 +35,7 @@ library(lubridate)
 library(scales)
 library(openintro)
 library(colorspace)
+library(gghighlight)
 library(glue)
 
 # set theme for ggplot2
@@ -142,7 +143,7 @@ pac <- read_csv(list_of_files, id = "year")
 pac <- pac |>
   janitor::clean_names() |>
   mutate(
-    year = str_remove(year, "./INFO526-F23/slides/11/data/Foreign Connected PACs, "),
+    year = str_remove(year, "/Users/gchism/Desktop/INFO526-F23/slides/11/data/Foreign Connected PACs, "),
     year = str_remove(year, ".csv")
   ) |>
   separate(year, into = c("year_discard", "year"), convert = TRUE) |>
@@ -167,6 +168,7 @@ country_yearly_totals <- pac_longer |>
   filter(country_of_origin == "UK") |>
   group_by(year, party) |>
   summarise(total_amount = sum(amount), .groups = "drop")
+
 ```
 
 ```{r}
@@ -198,7 +200,7 @@ pac_plot
 
 ## Context matters
 
-```{r, eval=FALSE}
+```{r, eval=TRUE}
 #| message: false
 #| warning: false
 #| fig-asp: 0.5
@@ -210,7 +212,7 @@ pac_plot +
 
 ## Conciseness matters
 
-```{r, eval=FALSE}
+```{r, eval=TRUE}
 #| message: false
 #| warning: false
 #| fig-asp: 0.5
@@ -222,7 +224,7 @@ pac_plot +
 
 ## Precision matters
 
-```{r, eval=FALSE}
+```{r, eval=TRUE}
 #| message: false
 #| warning: false
 #| fig-asp: 0.5
@@ -285,17 +287,7 @@ ggplot(state_stats, aes(x = homeownership, y = pop2010)) +
 countdown(minutes = 3)
 ```
 
-## Now go ahead and improve it!
-
-::: task
-Open `ae-11` and implement the improvements you came up with in Part 1.
-:::
-
 ## Revisit Tucson AQI
-
-::: task
-Recreate the following visualization, in Part 2 of `ae-11`. This picks up where you left off in `ae-09`.
-:::
 
 ```{r}
 #| label: dch-2022-3-data-prep
@@ -549,8 +541,44 @@ ggplot(sf, aes(x = day_of_year, y = aqi_value, group = year)) +
 
 ## Highlight with gghighlight
 
-Time permitting!
+::: panel-tabset
+## Plot
 
-::: task
-Highlight years using **gghighlight** in Part 3 of `ae-11`.
+```{r, warning=FALSE, fig.height=3, fig.width=6}
+#| ref.label: gghighlight
+#| echo: false
+```
+
+## Code
+
+```{r, warning = FALSE}
+#| label: gghighlight
+year_to_highlight <- 2018
+sf |> 
+  ungroup() |>
+ggplot(aes(x = day_of_year, y = aqi_value, group = year)) +
+  geom_line(color = "red") + 
+  gghighlight(year == 2018, use_direct_label = FALSE) +
+  labs(
+    title = glue("AQI levels in SF in {year_to_highlight}"),
+    subtitle = "Versus all years 2016 - 2022",
+    x = "Day of year", y = "AQI value"
+  ) +
+  theme(legend.position = "none")  # Hide the legend
+```
 :::
+
+```{r, warning = FALSE}
+year_to_highlight <- 2018
+sf |> 
+  ungroup() |>
+ggplot(aes(x = day_of_year, y = aqi_value, group = year)) +
+  geom_line(color = "red") + 
+  gghighlight(year == 2018, use_direct_label = FALSE) +
+  labs(
+    title = glue("AQI levels in SF in {year_to_highlight}"),
+    subtitle = "Versus all years 2016 - 2022",
+    x = "Day of year", y = "AQI value"
+  ) +
+  theme(legend.position = "none")  # Hide the legend
+```

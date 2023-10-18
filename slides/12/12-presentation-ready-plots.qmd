@@ -27,7 +27,7 @@ Presentations Monday Oct 16 in lecture:
 -   Presentation order to be announced in class tomorrow
 
 ::: {.callout-note appearance="minimal"}
-We might go over by 10 mins max for lecture. Let me know if this presents a big issue for getting to your next class.
+We might go over by 10 mins max for lecture.
 :::
 
 ## Announcements II
@@ -35,6 +35,30 @@ We might go over by 10 mins max for lecture. Let me know if this presents a big 
 -   Take note of Project 2 presentation date: must be in class in person to present or present live via Zoom in case of isolation
 
 -   New teams to be announced next week
+
+## Lessons from HW 02 {.smaller}
+
+-   **Read the question carefully**
+
+    -   Several instances of no written narrative
+
+    -   "Default theme" means `theme_gray`
+
+-   **Colors are important**
+
+    -   Contextual colors (e.g., political party colors) should be adhered to
+
+-   **Narrative format**
+
+    -   Narrative text needs to be plain text, with a \## or \### level "Narrative" header above
+
+-   **Suppress warnings and messages**
+
+    -   Use `#| warning: false` and `#| message: false`
+
+-   **GitHub commits are important**
+
+    -   You must use at least one commit for each question, otherwise you won't be able to revert to prior commits.
 
 ## Setup {.smaller}
 
@@ -74,7 +98,7 @@ knitr::opts_chunk$set(
 **Project note:** you're asked to create two plots per question. One possible approach: Start with a plot showing the raw data, and show derived quantities (e.g. percent increases, averages, coefficients of fitted models) in the subsequent plot.
 :::
 
-## Simplicity vs. complexity
+## Simplicity vs. complexity {.smaller}
 
 > When you're trying to show too much data at once you may end up not showing anything.
 
@@ -133,11 +157,11 @@ ggplot(d, aes(y = fct_reorder(category, value), x = value)) +
 
 ## Judging relative area
 
-![](images/pie-areas.png){fig-align="center" width="900"}
+![](images/pie-areas.png){fig-align="center" width="643"}
 
 . . .
 
-![](images/bar-areas.png){fig-align="center" width="900"}
+![](images/bar-areas.png){fig-align="center" width="688"}
 
 ::: aside
 From Data to Viz caveat collection - [The issue with pie chart](https://www.data-to-viz.com/caveat/pie.html)
@@ -415,8 +439,6 @@ Visualize the data at [\[url\]](https://raw.githubusercontent.com/rfordatascienc
 
 ## Demo {.smaller}
 
-`ae-12`
-
 -   Rendering individual documents
 -   Write-up:
     -   Cross referencing
@@ -424,7 +446,7 @@ Visualize the data at [\[url\]](https://raw.githubusercontent.com/rfordatascienc
 -   Presentation:
     -   Pauses
     -   Smaller text
--   Website: `https://vizdata-s23.github.io/ae-12-YOUR_GITHUB_NAME/`
+-   Website:
     -   Rendering site
     -   Making sure your website reflects your latest changes
     -   Customizing the look of your website.
@@ -638,4 +660,4 @@ Learn more at [https://patchwork.data-imaginist.com](https://patchwork.data-imag
 
 <br>
 
-Look into the source code at <https://github.com/vizdata-s23/website/slides>.
+Look into the source code at [https://github.com/INFO526-DataViz/INFO526-F23/slides](https://github.com/INFO526-DataViz/INFO526-F23/tree/main/slides).
