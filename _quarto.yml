@@ -85,6 +85,12 @@ website:
             href: https://github.com/INFO526-DataViz/hw-02
           - text: HW 03
             href: https://github.com/INFO526-DataViz/hw-03
+          - text: HW 04
+            href: https://github.com/INFO526-DataViz/hw-04
+          - text: HW 05
+            href: https://github.com/INFO526-DataViz/hw-05
+          - text: HW 06
+            href: https://github.com/INFO526-DataViz/hw-06
       - section: "Student work"
         contents:
           - href: student-work/ugly-plot.qmd
