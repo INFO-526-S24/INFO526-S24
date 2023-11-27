@@ -22,7 +22,7 @@ editor_options:
 
 -   Scores for all assignments so far will be on D2L soon
 
--   Project 2 groups will be announced by the end of this week 
+-   Project 2 groups have been announced, repos will be assigned by the end of the week 
 
 -   Take a note of the deadlines for the rest of the semester
 
@@ -37,13 +37,11 @@ editor_options:
 
 -   Create an R package that provides functionality for a set of ggplot2 themes and/or color palettes.
 
--   Build a generative art system.
+-   Build a generative art system / Recreate art pieces with ggplot2.
 
 -   Do a deep dive into accessibility for data visualization and build a lesson plan for creating accessible visualizations with ggplot2, R Markdown, and generally within the R ecosystem.
 
 -   Create an interactive and/or animated spatio-temporal visualization on a topic of interest to you, e.g., redistricting, COVID-19, voter suppression, etc.
-
--   Recreate art pieces with ggplot2.
 
 -   Make a data visualization telling a story and convert it to an illustration, presenting both the computational and artistic piece side by side.
 

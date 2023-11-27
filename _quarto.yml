@@ -89,6 +89,10 @@ website:
         contents:
           - href: student-work/ugly-plot.qmd
             text: Ugly plots
+          - href: student-work/thank-you.qmd
+            text: Thank you cards
+          - href: student-work/project-1.qmd
+            text: Project 1
           
 
   page-footer:

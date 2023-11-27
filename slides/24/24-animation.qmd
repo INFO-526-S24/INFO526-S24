@@ -20,15 +20,16 @@ editor_options:
 
 **Remainder of the semester:**
 
--   Labs:
+-   Lectures (lab time):
 
-    -   This week: Work on projects + fill out peer evals
-    -   Next week: Project peer code review
-    -   Following week (LDOC): Work on HW 6
+    -   This week: Work on projects
+    -   Next week: Project peer code review + fill out peer evals
 
--   HW: HW 6 is optional, you'll need to explicitly indicate if you're opting out
+-   HW: HW 6 is optional, you'll need to explicitly indicate if you're opting out (only if you have done HWs 1-5)
 
 -   Project: Presentations Tue, Dec 12, 3:30pm - 5:30pm (all team members must be there!)
+
+    -   You can opt into presenting Dec 06
 
 ## Setup {.smaller}
 
@@ -64,146 +65,6 @@ knitr::opts_chunk$set(
   dpi = 300 # higher dpi, sharper image
 )
 ```
-
-# From last time...
-
-## 
-
-::: task
-Your turn: Add **color** to the previous table.
-:::
-
-<br>
-
-```{r}
-#| echo: false
-#| message: false
-
-BA_degrees <- read_csv(here::here("slides/24", "data/BA_degrees.csv"))
-
-BA_degrees_other <- BA_degrees |>
-  mutate(
-    field = if_else(field == "Health professions and related programs", "Health professions", field),
-    field = fct_other(field,
-      keep = c(
-        "Business",
-        "Health professions",
-        "Social sciences and history"
-      )
-    ),
-  ) |>
-  group_by(year, field) |>
-  summarize(perc = sum(perc), .groups = "drop")
-
-plot_spark_color <- function(df){
-  ggplot(df, aes(x = year, y = perc, color = line_color)) +
-    geom_line(linewidth = 20) +
-    theme_void() +
-    scale_color_identity()
-}
-
-BA_degrees_other_plots_color <- BA_degrees_other |>
-  mutate(line_color = case_when(
-    field == "Business" ~ "#9D6C06",
-    field == "Health professions" ~ "#077DAA",
-    field == "Social sciences and history" ~ "#026D4E",
-    field == "Other" ~ "#A39A09"
-  )) |>
-  nest(field_df = c(year, perc, line_color)) |>
-  mutate(plot = map(field_df, plot_spark_color))
-
-BA_degrees_other |> 
-  pivot_wider(names_from = year, values_from = perc) |>
-  mutate(ggplot = NA, .after = field) |> 
-  gt() |> 
-  text_transform(
-    locations = cells_body(columns = ggplot),
-    fn = function(x){
-      map(BA_degrees_other_plots_color$plot, ggplot_image, height = px(15), aspect_ratio = 4)
-    }
-  ) |> 
-  cols_width(
-    ggplot ~ px(1000)
-    ) |> 
-  cols_align(
-    align = "left",
-    columns = field
-  ) |>
-  fmt_percent(
-    columns = where(is.numeric),
-    decimals = 0
-  ) |>
-  tab_style(
-    style = cell_text(color = "#9D6C06"),
-    locations = cells_body(rows = 1, columns = field)
-  ) |>
-  tab_style(
-    style = cell_text(color = "#077DAA"),
-    locations = cells_body(rows = 2, columns = field)
-  ) |>
-  tab_style(
-    style = cell_text(color = "#026D4E"),
-    locations = cells_body(rows = 3, columns = field)
-  ) |>
-  tab_style(
-    style = cell_text(color = "#A39A09"),
-    locations = cells_body(rows = 4, columns = field)
-  ) |> 
-  cols_label(
-    field  = "Field",
-    ggplot = "Trend"
-  ) |>
-  tab_spanner(
-    label = "Popular Bachelor's degrees over the years",
-    columns = everything()
-  ) |>
-  tab_style(
-    style = cell_text(weight = "bold"),
-    locations = cells_column_spanners()
-  )
-```
-
-```{r}
-#| echo: false
-
-countdown(minutes = 10)
-```
-
-## 10 guidelines for better tables {.smaller}
-
-::: incremental
-1.  Offset the heads from the body
-2.  Use subtle dividers rather than heavy gridlines
-3.  Right-align numbers and heads
-4.  Left-align text and heads
-5.  Select the appropriate level of precision
-6.  Guide your reader with space between rows and columns
-7.  Remove unit repetition
-8.  Highlight outliers
-9.  Group similar data and increase white space
-10. Add visualizations when appropriate
-:::
-
-::: aside
-Source: Schwabish, Jonathan A. "Ten Guidelines for Better Tables." Journal of Benefit-Cost Analysis 11.2 (2020): 151-178.
-:::
-
-## Other packages
-
--   `knitr::kable()`: "Cheapest" pretty tables in R Markdown
--   Other (than HTML) outputs:
-    -   LaTeX/PDF: [**kableExtra**](https://haozhu233.github.io/kableExtra/)
-    -   Word: [**flextable**](https://davidgohel.github.io/flextable/)
--   gtsummary: For summarizing statistical output with **gt**
--   Interactivity: We will work with these when we learn Shiny! - [**DT**](https://rstudio.github.io/DT/) - [**reactable**](https://glin.github.io/reactable/)
-
-## Table inspiration
-
--   Storytelling with data: [storytellingwithdata.com/blog/2020/9/1/swdchallenge-build-a-table](https://www.storytellingwithdata.com/blog/2020/9/1/swdchallenge-build-a-table) - [#23SWDchallenge on Twitter](https://twitter.com/search?q=%23SWDchallenge&src=typed_query&f=top)
-
--   2022 Posit table contest: [Winners of the 2022 Table Contest](https://posit.co/blog/winners-of-the-2022-table-contest/)
-
-    -   Look out for 2023 table contest anouncement!
 
 # Animation
 
@@ -443,7 +304,7 @@ anim_save("gifs/turkey_cl.gif")
 
 # Grammar of animation
 
-## Grammar of animation
+## Grammar of animation {.smaller}
 
 ::: incremental
 -   Transitions: `transition_*()` defines how the data should be spread out and how it relates to itself across time
@@ -669,7 +530,7 @@ shadow_wake <- penguins |>
   transition_states(species, 
                     transition_length = 4, 
                     state_length = 1) +
-  shadow_wake(wake_length = 0.1)
+  shadow_wake(wake_length = 0.25)
 
 animate(
   shadow_wake,
@@ -918,12 +779,6 @@ Sometimes you need more frames, sometimes fewer
 . . .
 
 -   Purpose: Usefulness of using animation Is animation needed? Does it provide additional value?
-
-## Racing bar chart, the making of
-
-::: task
-Go to `ae-24`. We'll live-code tasks 1 and 2. You'll work on Task 3.
-:::
 
 ## Acknowledgements
 

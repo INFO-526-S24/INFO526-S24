@@ -62,7 +62,7 @@ Most importantly, be prepared to brainstorm a bunch of ideas and discard them un
 -   Peer review of proposals: Wed, Nov 1 in class
 -   Revised proposals for instructor review: due Fri, Nov 3 at 5pm.
 -   Peer review of code: Wed, Dec 04 in class
--   Write-up and presentation: due Mon, Dec 13, 1pm (scheduled final date)
+-   Write-up and presentation: due Tues, Dec 12, 3:30pm (scheduled final date)
 
 ## Deliverables
 
@@ -100,12 +100,12 @@ Once you receive feedback from your peers, you should address them. You should d
 
 #### Peer review assignments
 
-The peer review assignments for **proposal peer reviews** are as follows (TBD):
+The peer review assignments for **proposal peer reviews** are as follows:
 
 ```{r}
 #| echo: false
 #| message: false
-#| eval: false
+#| eval: true
 
 p2_pr <- read_csv("project-2-peer-review.csv")
 gt(p2_pr)

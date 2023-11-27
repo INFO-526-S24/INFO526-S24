@@ -1,5 +1,5 @@
 ---
-title: Project 2 preview + <br>Visualizing Likert data I
+title: Visualizing Likert data I
 subtitle: Lecture 16
 title-slide-attributes:
   data-background-image: ../vizdata-bg.png
@@ -18,10 +18,9 @@ editor_options:
 
 ## Announcements
 
--   HW 3 is due Wednesday, October 25th
+-   HW 3 is due October 27th (but you can also use free-passes)
     -   Question 2: Include old figure from project as starting point
     -   All questions: Add alt text with `fig-alt`
--   Make sure to reply to "Sharing your project" issues on Project 1 if you haven't already
 
 ## Setup {.smaller}
 
@@ -316,7 +315,7 @@ nature_bullying |>
 
 ## Let's actually make these figures!
 
-Go to `ae-16`.
+Code Demo.
 
 # Visualizing Likert data
 

@@ -14,13 +14,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Warm up
-
-## Announcements
-
--   Project proposals for my review due Friday at 5pm
--   HW 5 to be posted soon, HW 4 feedback available Monday
-
 ## Setup {.smaller}
 
 ```{r}
@@ -54,7 +47,7 @@ knitr::opts_chunk$set(
 
 # Layering maps
 
-## From last time
+## From last lecture
 
 ```{r}
 nc <- read_sf("data/nc_counties/", quiet = TRUE)
@@ -62,11 +55,7 @@ air <- read_sf("data/airports/", quiet = TRUE)
 hwy <- read_sf("data/us_interstates/", quiet = TRUE)
 ```
 
-## From last time...
-
-::: task
-`ae-20`: Recreate the following visualization.
-:::
+## From last lecture...
 
 ```{r}
 #| label: nc-highways-airports
@@ -94,7 +83,7 @@ ggplot() +
   labs(x = "Longitude", y = "Latitude")
 ```
 
-## From last time...
+## From last lecture...
 
 ```{r}
 #| ref.label: nc-highways-airports
@@ -102,18 +91,6 @@ ggplot() +
 #| fig-width: 10
 #| warning: false
 #| message: false
-```
-
-## Which counties have airports?
-
-::: task
-`ae-20`: On the map of NC you made previously, highlight the counties that have airports.
-:::
-
-```{r}
-#| echo: false
-
-countdown(minutes = 10)
 ```
 
 # Using stars
@@ -261,9 +238,8 @@ points <- read_sf("data/easter_island/ei_points.gpkg")
 
 ## Layering with ggplot2
 
-::: task
-`ae-21`: Recreate the visualization below.
-:::
+::: panel-tabset
+## Plot
 
 ```{r}
 #| echo: false
@@ -281,3 +257,23 @@ ggplot() +
   guides(linewidth = "none") +
   labs(x = NULL, y = NULL)
 ```
+
+## Code
+
+```{r}
+#| eval: false
+
+ggplot() +
+  geom_sf(data = border) +
+  geom_stars(data = elev) +
+  scale_fill_distiller(name = "Elevation", palette = "RdYlGn", na.value = "transparent") +
+  geom_sf(data = roads, aes(linewidth = strokelwd)) +
+  scale_linewidth_continuous(range = c(0.1, 1)) +
+  new_scale_fill() +
+  geom_sf(data = points, aes(fill = type), shape = 24, size = 3) +
+  scale_fill_manual(name = "Type", values = c("gray50", "gold", "firebrick3")) +
+  theme_minimal() +
+  guides(linewidth = "none") +
+  labs(x = NULL, y = NULL)
+```
+:::

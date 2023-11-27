@@ -18,9 +18,8 @@ editor_options:
 
 ## Announcements
 
--   Peer evals due Friday at 5pm
--   Meet with your mentor / TAs
--   HW 06 is due next Monday
+-   Peer evals are next week (survey to be announced soon)
+-   HW 06 is due Dec 6th, 11:59pm
 
 ## Setup {.smaller}
 
@@ -185,8 +184,8 @@ knitr::include_graphics("images/high-level-4.png")
 ::: columns
 ::: {.column width="50%"}
 ::: task
--   Clone the `ae-25` repo.
--   Navigate to the `goog-index` folder, and launch the app by opening the `app.R` file and clicking on *Run App*.
+-   Clone the [`shiny-ex`](https://github.com/INFO526-DataViz/shiny-ex) repo.
+-   Launch the app by opening the `app.R` file and clicking on *Run App*.
 -   Close the app by clicking the stop icon
 -   Select view mode in the drop down menu next to Run App
 :::
@@ -262,7 +261,7 @@ knitr::include_app("https://minecr.shinyapps.io/manager-survey/", height ="550px
 ## Livecoding
 
 ::: task
-Go to the `ae-25` project and code along in `manager-survey/app-1.R`.
+Code along in `manager-survey/app.R`. We will do part 1 today, parts 2-3 Monday.
 :::
 
 <br>

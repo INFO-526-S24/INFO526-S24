@@ -13,6 +13,16 @@ editor_options:
   chunk_output_type: console
 ---
 
+# Warm up
+
+## Announcements
+
+-   Project 2 proposals due
+    -   Today at 11:59pm for instructor review
+-   RQ 5 due
+    -   Wednesday, Nov 15th \@ 11:59pm
+-   No lectures Thanksgiving week! 🦃
+
 ## Setup
 
 ```{r}
@@ -162,7 +172,7 @@ RColorBrewer::display.brewer.all(colorblindFriendly = TRUE)
 ```{r}
 #| label: color-palettes-carto
 #| output-location: column
-#| code-line-numbers: "9,10,11"
+#| code-line-numbers: "7,8,9"
 
 ggplot(
     bikes, 
@@ -196,7 +206,7 @@ rcartocolor::display_carto_all(colorblind_friendly = TRUE)
 ```{r}
 #| label: color-palettes-scico
 #| output-location: column
-#| code-line-numbers: "9,10,11"
+#| code-line-numbers: "7,8,9"
 
 ggplot(
     bikes, 
@@ -252,7 +262,7 @@ ggplot(
 ```{r}
 #| label: color-palettes-nord
 #| output-location: column
-#| code-line-numbers: "9,10,11"
+#| code-line-numbers: "7,8,9"
 
 ggplot(
     bikes, 
@@ -270,7 +280,7 @@ ggplot(
 ```{r}
 #| label: color-palettes-nord-cont
 #| output-location: column
-#| code-line-numbers: "9,10,11,12"
+#| code-line-numbers: "7,8,9,10"
 
 ggplot(
     bikes, 
@@ -289,7 +299,7 @@ ggplot(
 ```{r}
 #| label: color-palettes-metbrewer
 #| output-location: column
-#| code-line-numbers: "9,10,11"
+#| code-line-numbers: "7,8,9"
 
 ggplot(
     bikes, 
@@ -323,7 +333,7 @@ MetBrewer::display_all(colorblind_only = TRUE)
 ```{r}
 #| label: color-palettes-metbrewer-cont
 #| output-location: column
-#| code-line-numbers: "9,10,11"
+#| code-line-numbers: "7,8,9"
 
 ggplot(
     bikes, 
@@ -343,7 +353,7 @@ ggplot(
 ```{r}
 #| label: color-palettes-carto-default
 #| output-location: column
-#| code-line-numbers: "9,10,11"
+#| code-line-numbers: "7,8,9,10,11"
 
 ggplot(
     bikes, 
@@ -361,7 +371,7 @@ ggplot(
 ```{r}
 #| label: color-palettes-carto-manual
 #| output-location: column
-#| code-line-numbers: "9,10,11,12,13"
+#| code-line-numbers: "7,8,9,10,11"
 
 ggplot(
     bikes, 
@@ -381,7 +391,7 @@ ggplot(
 ```{r}
 #| label: color-palettes-carto-custom
 #| output-location: column
-#| code-line-numbers: "11,12"
+#| code-line-numbers: "10,11"
 
 ggplot(
     bikes, 
@@ -401,7 +411,7 @@ ggplot(
 ```{r}
 #| label: color-palettes-carto-custom-2
 #| output-location: column
-#| code-line-numbers: "11,12"
+#| code-line-numbers: "10,11"
 
 ggplot(
     bikes, 
@@ -443,7 +453,7 @@ ggplot(
 ```{r}
 #| label: color-palettes-carto-light
 #| output-location: column
-#| code-line-numbers: "2,4|13"
+#| code-line-numbers: "1,9"
 
 
 carto_light <- lighten(carto_custom, .8)

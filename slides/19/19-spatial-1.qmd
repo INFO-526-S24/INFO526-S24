@@ -18,10 +18,8 @@ editor_options:
 
 ## Announcements
 
--   Project 2 proposals due
-    -   Monday at 3 pm for peer review
-        -   Peer review will be during class
-    -   Friday at 5pm for instructor review
+-   HW 4 due Friday, November 10th
+-   Project 2 proposals for peer review due Wednesday, November 8th -- start working on them today
 
 ## Note
 
@@ -89,6 +87,17 @@ Miasma theory said it was because the air was bad
 
 ![](images/1092px-Snow-cholera-map-1.jpg){fig-align="center" width="2133"}
 
+## 
+
+::: columns
+::: {.column width="50%"}
+![](images/Snow-cholera-map.jpg)
+:::
+
+::: {.column width="50%"}
+:::
+:::
+
 ## The Broad Street pump
 
 ::: columns
@@ -97,7 +106,7 @@ Miasma theory said it was because the air was bad
 :::
 
 ::: {.column width="50%"}
-![](images/John_Snow_memorial_and_pub.jpg)
+![](images/John_Snow_memorial_and_pub.jpg){width="375"}
 :::
 :::
 
@@ -311,17 +320,12 @@ gc <- geosphere::gcIntermediate(
 ```
 
 ```{r}
-#| label: both-distances
 #| echo: false
 
 world_map +
   geom_point(
     data = cities, aes(x = long, y = lat, group = NULL),
     size = 2, color = "red"
-  ) +
-  geom_line(
-    data = cities, aes(x = long, y = lat, group = NULL),
-    linewidth = 1, color = "red"
   ) +
   geom_line(
     data = gc, aes(x = lon, y = lat, group = NULL),
@@ -349,14 +353,36 @@ gc
 ## Plotting both distances
 
 ```{r}
-#| ref.label: both-distances
+#| label: both-distances
 #| output-location: slide
+world_map +
+  geom_point(
+    data = cities, aes(x = long, y = lat, group = NULL),
+    size = 2, color = "red"
+  ) +
+  geom_line(
+    data = gc, aes(x = lon, y = lat, group = NULL),
+    linewidth = 1, color = "red", linetype = "dashed"
+  ) +
+  geom_line(
+    data = cities, aes(x = long, y = lat, group = NULL),
+    linewidth = 1, color = "red"
+  ) +
+  coord_map(projection = "mercator", xlim = c(-180, 180))
 ```
 
 ## Another distance between two points
 
 ::: task
 How long does it take to fly from the Western most point in the US to the Eastern most point? Guess.
+:::
+
+::: {.incremental}
+
+- The straight-line distance between these points is approximately 4,500 miles (7,242 km)
+- Nonstop commercial flights that travel at an average speed of about 500-550 miles per hour (805-885 km/h) 
+- Would take roughly 8 to 9 hours
+
 :::
 
 ## Dateline
@@ -392,10 +418,6 @@ plot(ak_shift, axes = TRUE, col = "black", border = NA, xlim = c(-190, -130))
 points(c(-360 + 179.776, -179.146), c(51.952, 51.273), col = "red")
 abline(v = -180, col = "blue", lty = 2)
 ```
-
-# Putting data on maps
-
-## Maps with lines
 
 # Geospatial data in the real world: <br> Freedom index
 
@@ -706,7 +728,7 @@ us_state_vaccinations
 Source: https://ourworldindata.org/us-states-vaccinations
 :::
 
-## Facet by location
+## Facet by location {.smaller}
 
 ```{r}
 #| output-location: slide

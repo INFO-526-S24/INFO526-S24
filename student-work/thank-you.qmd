@@ -8,3 +8,15 @@ Each of these thank you cards are made in R with ggplot2 by students in STA/ISS 
 thank_you_paths <- fs::dir_ls("images/thank-you-cards", regexp = "*md", invert = TRUE)
 knitr::include_graphics(thank_you_paths)
 ```
+
+```{r, echo = FALSE}
+library(wordcloud2)
+
+words_df <- data.frame(
+  word = c("Gracias", "Merci", "תודה", "Danke", "Thank you", "धन्यवाद",  "Obrigado", "شكرًا", "ありがとう"),
+  freq = c(30, 24, 20, 15, 16, 21, 12, 10, 09)
+)
+
+thank_you_plot <- wordcloud2(words_df)
+thank_you_plot
+```

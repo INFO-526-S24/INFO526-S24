@@ -21,7 +21,7 @@ editor_options:
 -   Course and TA evaluations
     -   If we can get to \>=90% participation for both, each person gets +5 points on their lowest (not dropped) homework score.
     -   Current participation rate: TA evals 8.5% and course evals 5.9%.
--   [Project 1s are posted on the course website](https://vizdata.org/student-work/project-1.html) for those who agreed to share. If you wanted to be able to fork your Project 1 repo, that's also available now. For any Project 1 repos that are made public, I've deleted the issues with scores and archived them myself, happy to share a PDF with your team if you like.
+-   [Project 1s are posted on the course website](https://vizdata.org/student-work/project-1.html). I will remove the scores from the repos after the semester ends.
 -   Also posted are your [thank you cards](https://vizdata.org/student-work/thank-you.html) and [ugly plots](https://vizdata.org/student-work/ugly-plot.html)!
 
 # From last time
@@ -41,7 +41,7 @@ knitr::include_app("https://minecr.shinyapps.io/manager-survey/", height ="550px
 ## Livecoding
 
 ::: task
-Go to the `ae-26` project and code along in `manager-survey/app-2.R`.
+Code along in `manager-survey/app.R`. (Part 2)
 :::
 
 <br>
@@ -57,7 +57,7 @@ Highlights:
 ## Livecoding
 
 ::: task
-Go to the `ae-26` project and code along in `manager-survey/app-3.R`.
+Code along in `manager-survey/app.R`. (Part 3)
 :::
 
 <br>
@@ -69,4 +69,4 @@ Highlights:
 
 ## Reference
 
-The code for the app can be found [here](https://github.com/vizdata-s23/vizdata-s23/blob/main/slides/26/manager-survey/app.R).
+The code for the app can be found [here](https://github.com/INFO526-DataViz/shiny-ex-2).

@@ -19,7 +19,6 @@ editor_options:
 ## Announcements
 
 -   HW 3 is due Wednesday
--   Make sure to reply to "Sharing your project" issues on Project 1
 
 ## Setup {.smaller}
 
