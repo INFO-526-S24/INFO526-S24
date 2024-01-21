@@ -18,7 +18,7 @@ editor_options:
 
 ## Announcements
 
--   RQ 3 is due Wednesday
+-   RQ 3 is due Feb 19th
 -   Project 1 reviews will be returned to you by Wednesday
 
 ## Setup {.smaller}

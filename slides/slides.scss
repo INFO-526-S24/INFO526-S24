@@ -11,6 +11,7 @@ $font-family-monospace: "Source Code Pro", monospace;
 $presentation-heading-color: #1E5288; /* Azurite */
 $link-color: #EF4056; /* Bloom */
 $code-color: #1E5288;
+$secondary-color: #EF4056; 
 $code-block-font-size: 0.7em;
 $presentation-h2-font-size: 1.4em !default;
 $presentation-font-size-root: 36px !default;
@@ -80,4 +81,21 @@ details>summary {
 
 b, strong {
     color: #1E5288;
+}
+
+.reveal .hand {
+  font-family: 'Gochi Hand', cursive;
+  font-size: 1.2em
+}
+
+.reveal .hand-blue {
+  font-family: 'Gochi Hand', cursive;
+  color: $secondary-color;
+  font-size: 1.2em
+}
+
+.reveal .hand-blue-large {
+  font-family: 'Gochi Hand', cursive;
+  color: $secondary-color;
+  font-size: 3em
 }

@@ -20,15 +20,13 @@ execute:
 
     If Git is installed, this command will return the version number. If not, proceed to the next steps.
 
-2.  **Install Homebrew (if not already installed)**:
-    Homebrew is a package manager for macOS that makes it easy to install software. In Terminal, type:
+2.  **Install Homebrew (if not already installed)**: Homebrew is a package manager for macOS that makes it easy to install software. In Terminal, type:
 
     ```{bash}
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     ```
 
-3.  **Install Git via Homebrew**:
-    After installing Homebrew, you can easily install Git with:
+3.  **Install Git via Homebrew**: After installing Homebrew, you can easily install Git with:
 
     ```{bash}
     brew install git
@@ -38,20 +36,15 @@ execute:
 
 **For Windows (PC):**
 
-1.  **Download the Installer**:
-    Go to [**Git's official website**](https://git-scm.com/) and download the Windows installer.
+1.  **Download the Installer**: Go to [**Git's official website**](https://git-scm.com/) and download the Windows installer.
 
-2.  **Run the Installer**:
-    Execute the downloaded **`.exe`** file. This will open the installation wizard.
+2.  **Run the Installer**: Execute the downloaded **`.exe`** file. This will open the installation wizard.
 
-3.  **Installation Settings**:
-    During installation, you'll be presented with several options. For most users, the default settings will be adequate. However, you can customize them based on your preferences.
+3.  **Installation Settings**: During installation, you'll be presented with several options. For most users, the default settings will be adequate. However, you can customize them based on your preferences.
 
-4.  **Finish the Installation**:
-    Click through the rest of the setup steps, and Git will be installed.
+4.  **Finish the Installation**: Click through the rest of the setup steps, and Git will be installed.
 
-5.  **Open Git Bash or Command Prompt**:
-    Once installed, you can use Git Bash (a Git-specific command terminal) or the regular Command Prompt to use Git.
+5.  **Open Git Bash or Command Prompt**: Once installed, you can use Git Bash (a Git-specific command terminal) or the regular Command Prompt to use Git.
 
 ## Setting up Git
 
@@ -61,8 +54,7 @@ execute:
 
 **Setting Up Git with RStudio using `usethis` and `gitcreds`**:
 
-1.  **Install and Load the Required Packages**:
-    First, you'll want to ensure you have the necessary packages installed. You can do this from within R or RStudio:
+1.  **Install and Load the Required Packages**: First, you'll want to ensure you have the necessary packages installed. You can do this from within R or RStudio:
 
     ```{r}
     if (!require(pacman))
@@ -71,8 +63,7 @@ execute:
     pacman::p_load(usethis, gitcreds)
     ```
 
-2.  **Set Up Git (if you haven't already)**:
-    If you haven't set up Git on your machine, **`usethis`** can help:
+2.  **Set Up Git (if you haven't already)**: If you haven't set up Git on your machine, **`usethis`** can help:
 
     **Method 1** (in the Terminal)
 
@@ -88,8 +79,7 @@ execute:
 
     ```
 
-3.  **Authenticate with `gitcreds`**:
-    **`gitcreds`** is designed to work with credentials for multiple Git hosting services, but it can specifically help in getting and setting credentials for GitHub.
+3.  **Authenticate with `gitcreds`**: **`gitcreds`** is designed to work with credentials for multiple Git hosting services, but it can specifically help in getting and setting credentials for GitHub.
 
     ```{r}
     gitcreds::gitcreds_set()
@@ -97,7 +87,7 @@ execute:
 
     This will prompt you to enter your GitHub username and personal access token. Remember, tokens are now used instead of passwords for HTTPS Git operations on GitHub.
 
-    **Note**: If you haven\'t yet created a personal access token on GitHub, you'll need to do so:
+    **Note**: If you haven't yet created a personal access token on GitHub, you'll need to do so:
 
     -   Go to your GitHub settings (click your profile picture in the top right \> Settings).
 
@@ -115,8 +105,7 @@ execute:
 
     For future Git operations (like push/pull) from within RStudio, your credentials are managed by **`gitcreds`**, so you won't need to re-enter them frequently.
 
-5.  **Handling Tokens in the Future**:
-    If you ever need to get, set, or forget your Git credentials, you can use:
+5.  **Handling Tokens in the Future**: If you ever need to get, set, or forget your Git credentials, you can use:
 
     ```{r}
     gitcreds::gitcreds_get()   # to retrieve
@@ -130,8 +119,7 @@ execute:
 
 1.  **Open VS Code** and ensure you have the **`Git`** extension installed. By default, VS Code comes with it.
 
-2.  **Set Git Configurations**:
-    In the terminal, set your email and name which will be used for commits:
+2.  **Set Git Configurations**: In the terminal, set your email and name which will be used for commits:
 
     ```{bash}
     git config --global user.name "Your Name"
@@ -154,13 +142,11 @@ execute:
 
 2.  **Copy the Generated Token**: Once generated, you'll see the token value. Make sure to copy the token now as you won't be able to view it again.
 
-3.  **Use Token in VS Code**:
-    When you push or pull from a GitHub repository, VS Code will prompt for authentication. Instead of your GitHub password, you'll provide the token you just generated.
+3.  **Use Token in VS Code**: When you push or pull from a GitHub repository, VS Code will prompt for authentication. Instead of your GitHub password, you'll provide the token you just generated.
 
     If you previously saved your credentials and VS Code isn't prompting for authentication, you might need to update or remove your old credentials.
 
-4.  **For Mac**:
-    If you're on a Mac and had previously saved your credentials in the Keychain, you can update them:
+4.  **For Mac**: If you're on a Mac and had previously saved your credentials in the Keychain, you can update them:
 
     -   Open **`Keychain Access`**, which you can find with Spotlight.
 
@@ -170,8 +156,7 @@ execute:
 
     -   The next time you push/pull from VS Code, you'll be prompted for your username and the new token.
 
-5.  **For Windows**:
-    If you're on Windows and had previously saved your credentials:
+5.  **For Windows**: If you're on Windows and had previously saved your credentials:
 
     -   Go to the Control Panel \> User Accounts \> Credential Manager \> Windows Credentials.
 

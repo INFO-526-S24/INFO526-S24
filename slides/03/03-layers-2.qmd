@@ -24,7 +24,9 @@ editor_options:
     -   On Slack, in public channels for #general, #homework, #course-questions, #project-1, #project-2, #quizzes, and #random
     -   Make sure your profile photo/avatar and name matches between GitHub and Slack.
 
--   HW 1 is live on the course website, due Monday (Sept 11).
+-   RQ 1 is due Friday, Jan 26
+
+-   HW 1 is live on the course website, due Monday (Jan 29).
 
 ## Setup {.smaller}
 
@@ -165,24 +167,6 @@ ggplot(tucsonHousing, aes(x = price, color = decade_built_cat)) +
 -   `geom_smooth()`: smoothed line of best fit
 
 -   `geom_text()`: text labels
-
-## Application exercise - Part 1
-
-::: task
--   Go to the course GitHub organization: <https://github.com/INFO526-DataViz>
-
--   Clone the repo called `ae-03`, but include your username in the version: `ae-03-[YOUR-GITHUB-USERNAME]`, then work on the exercises for Part 1.
-
--   Once you're done, share your plots on Slack in #general.
-
--   Label your chunk(s) and pay attention to code style and formatting!
-:::
-
-```{r}
-#| echo: false
-
-countdown(minutes = 10, color_background = "white")
-```
 
 ## Two variables - show density
 
@@ -353,30 +337,6 @@ ggplot(mean_price_year, aes(x = year_built, y = mean_price)) +
 ggplot(mean_price_year, aes(x = year_built, y = mean_price)) +
   geom_step()
 ```
-
-## Application exercise - Part 2
-
-::: task
--   Go to the course GitHub organization: <https://github.com/INFO526-DataViz>
-
--   Work on part 2 of the repo called `ae-03-[YOUR-GITHUB-USERNAME]`.
-
--   Once you're done, share your plot on Slack in #general.
-
--   Label your chunk(s) and pay attention to code style and formatting!
-:::
-
-```{r}
-#| echo: false
-
-countdown(minutes = 5, color_background = "white")
-```
-
-##  {.center}
-
-::: {.hand .large}
-let's clean things up a bit!
-:::
 
 ## Let's clean things up a bit!
 

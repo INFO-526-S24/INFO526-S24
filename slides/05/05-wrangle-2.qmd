@@ -17,13 +17,15 @@ editor_options:
 
 ## Announcements
 
--   RQ2 due Wednesday:
+-   RQ 2 due Monday (Feb 05):
 
-    -   Will be posted today
+    -   Should already be live
 
     -   Covers everything since the previous quiz
 
 -   Make sure to review the feedback on your HW 01 repo and close the issue once you're done reviewing.
+
+    -   Submit a regrade request via the template GitHub issue
 
 -   Once you review, close the issue
 

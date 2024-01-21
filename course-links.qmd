@@ -5,13 +5,13 @@ title: "Useful links"
 +----------------------------+------------------------------------------------------------------------------------+
 | Posit Cloud                | 🔗 <https://posit.cloud/>                                                          |
 +----------------------------+------------------------------------------------------------------------------------+
-| Course GitHub organization | 🔗 on [GitHub](https://github.com/INFO526-DataViz)                                 |
+| Course GitHub organization | 🔗 on [GitHub](https://github.com/INFO-526-S24/INFO526-S24)                        |
 +----------------------------+------------------------------------------------------------------------------------+
-| Slack                      | 🔗 <https://datavizaz.slack.com>                                                   |
+| Slack                      | 🔗 <https://datavizaz-spring2024.slack.com>                                        |
 +----------------------------+------------------------------------------------------------------------------------+
 | Gradebook                  | 🔗 on D2L                                                                          |
 +----------------------------+------------------------------------------------------------------------------------+
-| Texbooks                   | 🔗 [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/)        |
+| Textbooks                  | 🔗 [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/)        |
 |                            |                                                                                    |
 |                            | 🔗 [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/)           |
 |                            |                                                                                    |

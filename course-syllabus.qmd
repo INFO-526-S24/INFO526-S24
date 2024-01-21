@@ -1,5 +1,5 @@
 ---
-title: "INFO 526 Syllabus Fall 2023"
+title: "INFO 526 Syllabus Spring 2024"
 format: 
   html: default
   pdf: default
@@ -11,7 +11,7 @@ INFO 526 Data Analysis and Visualization - This course provides an overview of t
 
 ## Course offering
 
-981-2234-1 INFO 526 001 -- Data Analysis and Visualization
+860-2241-1 INFO 526 001 -- Data Analysis and Visualization
 
 ## Instructor Information
 
@@ -191,7 +191,7 @@ More information will be provided throughout the semester.
 
 ### Final Project Date
 
-**Tuesday, December 12**
+**Tuesday, May 07, 10:30am-12:30pm**
 
 ## Teams
 
@@ -273,13 +273,17 @@ Policy on late work depends on the particular course component:
 
     -   Write up: GitHub repositories will be closed to contributions at the deadline. If you need to submit your work late, Slack/email me to reopen your repository.
 
-        -   Late, but same day (before midnight): -10% of available points
+        -   Late, but next day (before noon): -10% of available points
 
-        -   Late, but next day: -20% of available points
+        -   Late, but next day (after noon): -20% of available points
 
         -   Two days late or later: No credit, and we will not provide written feedback
 
     -   Peer evaluation: Late peer evaluations are not accepted and there are no make ups for missed presentations. If you do not turn in your peer evaluation, you get 0 points for your own peer score as well, regardless of how your teammates have evaluated you.
+
+### Free passes
+
+I allow three "free passes", which extends your homework deadline by one full day. They can also be stacked, so two or three passes can apply to a single homework assignment. To utilize these passes, submit a GitHub issue with the number that you will be using. Use sparingly, I will not allow late un-penalized late work after they are gone.
 
 ### Waiver for extenuating circumstances
 
@@ -289,13 +293,19 @@ If there are circumstances that are having a longer-term impact on your academic
 
 ### Regrade requests
 
+#### Before hw-02 (training wheels on)
+
+I will regrade your homework assignments 1 once to encourage the correct format for future submissions. Your final score will be the midpoint of the first and second score (e.g., first score: 70%, second score: 100% = final score: 85%). Re-submissions must be received within 1-week of the original grade.
+
+#### From hw-02 and on (training wheels come off)
+
 Regrade requests must be made within one week of when the assignment is returned, and must be typed up and submitted via email to me. These will be considered if points were tallied incorrectly or if you feel your answer is correct but it was marked wrong. No regrade will be made to alter the number of points deducted for a mistake. There will be no grade changes after the second project presentations. Note that during the regrade process your score could go up or go down or not change.
 
 *No grades will be changed after the project presentations.*
 
 ### "Incomplete" grade
 
-The grade of "I" may be awarded only at the end of a term, when all but a minor portion of the course work has been satisfactorily completed. The grade of I is not to be awarded in place of a failing grade or when the student is expected to repeat the course; in such a case, a grade other than I must be assigned. Students should make arrangements with the instructor to receive an incomplete grade before the end of the term, ..., If the incomplete is not removed by the instructor within one year the I grade will revert to a failing grade.
+The grade of "I" may be awarded only at the end of a term, when all but a minor portion of the course work has been satisfactorily completed. The grade of I is not to be awarded in place of a failing grade or when the student is expected to repeat the course; in such a case, a grade other than I must be assigned. Students should make arrangements with the instructor to receive an incomplete grade before the end of the term. If the incomplete is not removed by the instructor within one year the I grade will revert to a failing grade.
 
 ### **Tutoring**
 
@@ -305,7 +315,7 @@ Tutoring can be found through the UArizona [Think Tank](#0 "https://thinktank.ar
 
 Responsibility for class attendance rests with individual students. Since regular and punctual class attendance is expected, students must accept the consequences of failure to attend.
 
-However, there may be many reasons why you cannot be in class on a given day, particularly with possible extra personal and academic stress and health concerns this semester. All course lectures will be recorded and available to enrolled students after class. If you miss a lecture, make sure to watch the recording and review the material before the next class session. Overall this policy is put in place to ensure communication between team members, respect for each others' time, and also to give you a safety net in the case of illness or other reasons that keep you away from attending class.
+However, there may be many reasons why you cannot be in class on a given day, particularly with possible extra personal and academic stress and health concerns this semester. I am always available to personally catch you up from missed lectures. Please contact me directly about these additional "office hours".
 
 Note that attendance and participation is part of your grade as well.
 
@@ -333,14 +343,14 @@ Also watch the video available at <https://arizona.sabacloud.com/Saba/Web_spf/N
 
 ## Important dates
 
--   **Monday, August 21:** Classes begin, Monday schedule
--   **Monday, August 28:** Drop/add ends
--   **Monday,** **September 4:** Labor Day, no class
--   **Sunday, September 17:** Last day to drop without a W (withdraw)
--   **Sunday, October 29**: Last day to withdraw from a class online through UAccess
--   **Friday, November 10**: Veteran's Day, limited support available
--   **Thursday - Sunday, November 23 - 26**: Thanksgiving recess, no support available
--   **Tuesday, December 12**: Project 2 presentations
+-   **Wednesday, January 10:** Classes begin, Wednesday schedule
+-   **Monday,** **January 15:** MLK Day, no class
+-   **Wednesday, January 17**: Drop/add ends
+-   **Tuesday, February 06**: Last day to drop without a W (withdraw)
+-   **Monday-Sunday, March 04-10**: Spring recess, no class
+-   **Tuesday, March 26**: Last day to withdraw from a class online through UAccess
+-   **Wednesday, May 01**: Last day of class, no registration changes can be made
+-   **Tuesday, May 07**: Project 2 presentations, 10:30am-12:30pm
 
 For more important dates, see the full [UArizona Academic Calendar](https://catalog.arizona.edu/2023-2024-academic-calendar).
 

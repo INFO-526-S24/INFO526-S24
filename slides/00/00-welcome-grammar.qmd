@@ -5,7 +5,9 @@ title-slide-attributes:
   data-background-image: ../vizdata-bg.png
   data-background-size: 800px, cover
   data-slide-number: none
-format: revealjs
+format: 
+  revealjs:
+    incremental: true
 auto-stretch: false
 ---
 
@@ -36,10 +38,10 @@ Laura Dozal
 ## Timetable
 
 -   Lectures (weekly)
-    -   Mondays, 3:30 - 4:45 pm - Modern Languages, RM 410
-    -   Wednesdays, 3:30 - 4:45 pm - Modern Languages, RM 410
+    -   Mondays, 11:00am - 12:15 pm - McClelland Park, RM 103
+    -   Wednesdays, 11:00am - 12:15 pm - McClelland Park, RM 103
 -   Meeting dates
-    -   08/21/2023 - 12/06/2023
+    -   01/10/2023 - 05/06/2023
 
 ## Themes: what, why, and how {.smaller}
 
@@ -111,7 +113,7 @@ aka "the one link to rule them all"
 
 ## Announcements
 
--   Posted on D2L (Announcements tool) and sent via Slack, be sure to check both regularly
+-   Sent via Slack, be sure to check regularly
 
 -   I'll assume that you've read an announcement by the next "business" day
 
@@ -145,14 +147,14 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 -   Online, individual
 -   Cover reading that is due since the previous quiz and up to and including the deadline for the given quiz
--   Due by 3:30 pm AZ Time (beginning of class) on the indicated day on the course schedule
+-   Due by 11:59 pm AZ Time on the indicated day on the course schedule
 -   **Lowest dropped**
 
 ## Homework assignments (45%)
 
 -   Submitted on GitHub, individual
 -   Some lab sessions allocated to working on homework / getting feedback from your TA
--   Due by 3:30 pm AZ Time (beginning of class) on the indicated day on the course schedule
+-   Due by 11:59 pm AZ Time on the indicated day on the course schedule
 -   **Lowest dropped**
 
 ## Projects (40%)
@@ -164,7 +166,7 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 ## Teams
 
 -   Team assignments
-    -   In class exercises and projects
+    -   Projects
     -   Assigned different teams for each project
     -   Peer evaluation during teamwork and after completion
 -   Expectations and roles
@@ -197,7 +199,7 @@ This course is assessed 100% on your coursework (there is no exam). We will be a
 | Assignment                 | Type       | Value | n   | Due                                        |
 |:------------|:------------|:------------|:------------|--------------------|
 | Attendance + participation | Individual | 5%    |     |                                            |
-| Reading quizzes            | Individual | 10%   | 7   | \~ Every other week                        |
+| Reading quizzes            | Individual | 10%   | 6   | \~ Every other week                        |
 | Homeworks                  | Individual | 45%   | 6   | \~ Every other week                        |
 | Project 1                  | Team       | 15%   | 1   | \~ Week 6 + earlier interim deadlines      |
 | Project 2                  | Team       | 25%   | 1   | \~ Finals week + earlier interim deadlines |
@@ -225,22 +227,38 @@ This is not required but highly recommended! ([Extra credit of up to 1 HW assign
 
 -   Homework assignments:
 
-    -   Late, but same day (before midnight): -10% of available points
-    -   Late, but next day: -20% of available points
+    -   Late, but next day (before noon): -10% of available points
+    -   Late, but next day (after noon): -20% of available points
     -   Two days late or later: No credit, and we will not provide written feedback
 
 -   Project presentations: Late submissions not accepted
 
 -   Project write-ups:
 
-    -   Late, but same day (before midnight): -10% of available points
-    -   Late, but next day: -20% of available points
+    -   Late, but next day (before noon): -10% of available points
+    -   Late, but next day (after noon): -20% of available points
     -   Two days late or later: No credit, and we will not provide written feedback
 
 -   Peer evaluation:
 
     -   Late submissions not accepted
     -   Must turn in peer evaluation if you want your own score from others
+
+## Free passes
+
+Three "free passes" for the semester
+
+::: incremental
+-   1 pass = 1 whole day extension
+
+-   Passes can be stacked up to 3
+
+-   Once they're gone, that's it...
+
+-   ...so use them wisely!
+
+-   *Hint: like during midterms...*
+:::
 
 ## Collaboration policy
 
@@ -288,19 +306,19 @@ ask if you're not sure if something violates a policy!
 
 ## Office hours {.smaller}
 
--   Mine:
+-   Greg:
 
     -   Mondays 1 - 2 pm - Harvill 420
 
-        -   Except Mon, Sept 4
+        -   Except Mon, Jan 15 (MLK Holiday)
 
         -   Any other exceptions will be announced in class / by email
 
     -   By appointment - Zoom or Harvill 420
 
--   Laura's (TA):
+-   Laura
 
-    -   By appointment
+    -   By appointment - Zoom
 
 -   \+ lots more resources listed on the syllabus!
 
@@ -331,14 +349,14 @@ I want to make sure that you learn everything you were hoping to learn from this
 ## GitHub {.smaller}
 
 ::: {.large style="text-align: center;"}
-<https://github.com/INFO526-DataViz>
+<https://github.com/INFO-526-S24>
 :::
 
 -   All of your work and your membership (enrollment) in the organization is private
 
 -   Each assignment is a private repo on GitHub, I distribute the assignments on GitHub and you submit them there
 
--   Feedback on assignments is given as GitHub issues, scores recorded on D2L Gradebook
+-   Feedback on assignments is given as GitHub issues, scores recorded on D2L Grade book
 
 ::: task
 Send me your Github account names on Slack, later this week you will be invited to the course organization.
@@ -379,7 +397,7 @@ Some brief advice about selecting your account names (particularly for GitHub),
 -   **Unfortunately** Slack is **not** the best place to ask coding questions, but it's a great place for real-time connection and collaboration
 
 ::: task
-Demo on Wednesday for asking good questions with proper code formatting.
+Demo on Monday for asking good questions with proper code formatting.
 :::
 
 ## Before the weekend
@@ -388,11 +406,9 @@ Demo on Wednesday for asking good questions with proper code formatting.
 
 2.  Read the [syllabus](https://datavizaz.org/course-syllabus)
 
-3.  Make sure you can login in to RStudio Cloud
+3.  Make sure you can log in to RStudio Cloud
 
 4.  Complete the *Pre-Class Questionnaire* survey on D2L
-
-5.  Complete the readings and Reading Quiz 1
 
 # Grammar of graphics
 
@@ -463,91 +479,79 @@ library(tidyverse)
 
 -   For help with ggplot2, see [ggplot2.tidyverse.org](http://ggplot2.tidyverse.org/)
 
-## Data: Palmer Penguins
+# Quarto
 
-Measurements for penguin species, island in Palmer Archipelago, size (flipper length, body mass, bill dimensions), and sex.
+# What is Quarto?
+
+## Quarto ...
+
+-   is a new, open-source, scientific, and technical publishing system.
+
+![Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst.](images/horst_quarto_schematic.png){fig-alt="A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, html, Word documents, and more) versatility of Quarto." fig-align="center"}
+
+## Quarto
+
+With Quarto you can weave together narrative text and code to produce elegantly formatted output as documents, web pages, blog posts, books and more.
+
+. . .
+
+<br>
+
+*just like R Markdown...*
+
+. . .
+
+<br>
+
+but not *just like* it, there's more to it...
+
+## Quarto unifies + extends R Markdown
+
+::: incremental
+-   Consistent implementation of attractive and handy features across outputs: tabsets, code-folding, syntax highlighting, etc.
+-   More accessible defaults as well as better support for accessibility
+-   Support for other languages like Python, Julia, Observable, and more via Jupyter engine for executable code chunks.
+:::
+
+## A tour of Quarto
+
+<br><br>
+
+::: {.hand-blue-large style="text-align: center;"}
+Sit back and enjoy!
+:::
+
+## Git + GitHub
 
 ::: columns
-::: {.column width="20%"}
-![](images/penguins.png){fig-align="left"}
+::: {.column width="50%"}
+![](images/git-icon-logo.png){fig-align="center" width="150"}
+
+::: incremental
+-   **Version Control System**
+
+-   **Local and Remote Repositories**
+
+-   **Branching and Merging**
+:::
 :::
 
-::: {.column width="80%"}
-```{r}
-library(palmerpenguins)
-glimpse(penguins)
-```
+::: {.column width="50%"}
+![](images/GitHub-Symbol.png){fig-align="center" width="250"}
+
+::: incremental
+-   **Code Hosting Platform**
+
+-   **Open Source and Private Projects**
+
+-   **Community and Networking**
 :::
 :::
-
-## Goal
-
-::: panel-tabset
-## Plot
-
-```{r}
-#| ref.label: "goal-plot"
-#| echo: false
-```
-
-## Code
-
-```{r}
-#| label: goal-plot
-#| eval: false
-
-ggplot(
-  penguins,
-  aes(x = bill_depth_mm, y = bill_length_mm, colour = species)
-) +
-  geom_point() +
-  labs(
-    title = "Bill depth and length",
-    subtitle = "Dimensions for Adelie, Chinstrap, and Gentoo Penguins",
-    x = "Bill depth (mm)", y = "Bill length (mm)",
-    colour = "Species"
-  )
-```
 :::
 
-## An improved goal {.smaller}
+## Git setup
 
-::: panel-tabset
-## Plot
-
-```{r}
-#| ref.label: "improved-goal-plot"
-#| echo: false
+```{=html}
+<iframe width="1000" height="400" src="https://datavizaz.org/computing/computing-git.html" frameborder="1" style="background:white;"></iframe>
 ```
-
-## Code
-
-```{r}
-#| label: improved-goal-plot
-#| eval: false
-
-ggplot(
-  penguins,
-  aes(x = bill_depth_mm,y = bill_length_mm,colour = species)) +
-  geom_point() +
-  labs(
-    title = "Bill depth and length",
-    subtitle = "Dimensions for Adelie, Chinstrap, and Gentoo Penguins",
-    x = "Bill depth (mm)", y = "Bill length (mm)",
-    colour = "Species",
-    caption = "Source: Palmer Station LTER / palmerpenguins package"
-  ) +
-  theme_minimal() +
-  ggthemes::scale_color_colorblind()
-```
-
-## Narrative
-
-Start with the `penguins` data frame, map bill depth to the x-axis and map bill length to the y-axis.
-
-Represent each observation with a point and map species to the colour of each point.
-
-Title the plot "Bill depth and length", add the subtitle "Dimensions for Adelie, Chinstrap, and Gentoo Penguins", label the x and y axes as "Bill depth (mm)" and "Bill length (mm)", respectively, label the legend "Species", and add a caption for the data source.
-
-Finally, use a discrete colour scale that is designed to be perceived by viewers with common forms of colour blindness.
-:::
+# Let's setup! {style="text-align: center;"}

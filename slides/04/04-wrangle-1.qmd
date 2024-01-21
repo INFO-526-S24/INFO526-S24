@@ -17,7 +17,7 @@ editor_options:
 
 ## Announcements
 
--   HW 1 due Monday at 3:30pm, make sure all checks are passing!
+-   HW 1 due Monday, Jan 29 at 11:59pm, make sure all checks are passing!
 -   See #random on Slack for playlist request
 -   Office Hours: Come with questions on HW 1, particularly Questions 1-4.
 

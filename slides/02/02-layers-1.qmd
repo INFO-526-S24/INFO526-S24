@@ -15,8 +15,8 @@ execute:
 
 ## Announcements
 
--   A note on readings for this week: Some of it is review so feel free to skim those parts.
--   Please fill out the class questionnaire, found within the #announcements Slack channel.
+-   A note on readings for this week: some of it is review so feel free to skim those parts.
+-   RQ 1 is due Friday (Jan 26)
 
 ## Setup
 
@@ -409,26 +409,6 @@ ggplot(
     x = "Mean area (square feet)", y = "Decade built",
     title = "Mean area of houses in Tucson, by decade built"
   )
-```
-
-## Application exercise {.smaller}
-
-::: task
--   Go to the course GitHub organization: <https://github.com/INFO526-DataViz>
-
--   Clone the repo called `ae-02` and work on the exercise.
-
-    -   Note: For today, this is not a personalized repo for you. The repo is public so everyone can clone it, but you won't be able to push to it. Starting Wednesday (hopefully) you'll start getting your personalized repos you can push to.
-
--   Once you're done, share your code on Slack in #general.
-
--   Label your chunk(s) and pay attention to code style and formatting!
-:::
-
-```{r}
-#| echo: false
-
-countdown(minutes = 10, color_background = "white")
 ```
 
 ## Bad data

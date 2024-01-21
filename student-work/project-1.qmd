@@ -1,5 +1,5 @@
 ---
-title: "Project 1 outputs"
+title: "Project 1 Student Examples"
 ---
 
 The assignment for Project 1 can be found [here](/project/project-1.html).

@@ -18,9 +18,9 @@ editor_options:
 
 ## Announcements
 
--   Final Project 1 due Monday, October 16th, 3pm
+-   Final Project 1 due Monday, March 11th, 11am
 
--   Project 1 presentations -- Monday October 16th in class, all team members must be there
+-   Project 1 presentations -- Monday March 11th in class, **all team members must be there**
 
 ## Setup {.smaller}
 
@@ -303,5 +303,3 @@ Reveal below for code developed during live coding session.
 #| fig-show: hide
 #| code-fold: true
 ```
-
-
