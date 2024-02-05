@@ -19,7 +19,7 @@ The website is live at [datavizaz.org](http://datavizaz.org/).
 
 ### Disclosure
 
-This content is derived from the course website for STA 313 - Advanced Data Visualization at Duke University, taught by Dr. Mine Çetinkaya-Rundel. I changed duke centric examples to Tucson centric, and created lecture activities past ae-01. The website has a new logo, color scheme, fonts, etc.
+This content is derived from the course website for [STA 313 - Advanced Data Visualization at Duke University](https://vizdata.org/), taught by Dr. Mine Çetinkaya-Rundel. I changed duke centric examples to Tucson centric, and removed lecture activities. The website has a new logo, color scheme, fonts, and style.
 
 [![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/)
 
