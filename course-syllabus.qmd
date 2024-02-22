@@ -152,7 +152,7 @@ Assessment for the course is comprised of four components: attendance and partic
 
     All team members must take part in the presentation. Presentations can be given in person in class, or via Zoom if the team prefers. My preference is that the team stick to one method of delivery (all presenters in person or all presenters on Zoom), but I realize a lot can change throughout this semester, and we'll adjust accordingly.
 
-All work is expected to be submitted by the deadline and there are no make ups for any missed assessments. See \[Late work policy\] for policies on late work.
+All work is expected to be submitted by the deadline and there are no make ups for any missed assessments. See [Late work policy](#late-work-extensions) for policies on late work.
 
 ## Grading
 
@@ -261,9 +261,9 @@ Policy on late work depends on the particular course component:
 
 -   Homework assignments: GitHub repositories will be closed to contributions at the deadline. If you need to submit your work late, send a DM on Slack to me to reopen your repository.
 
-    -   Late, but same day (before midnight): -10% of available points
+    -   Late, within 24 hours of deadline: -10% of available points
 
-    -   Late, but next day: -20% of available points
+    -   Late, within 24-48 hours of deadline: -20% of available points
 
     -   Two days late or later: No credit, and we will not provide written feedback
 
@@ -273,9 +273,9 @@ Policy on late work depends on the particular course component:
 
     -   Write up: GitHub repositories will be closed to contributions at the deadline. If you need to submit your work late, Slack/email me to reopen your repository.
 
-        -   Late, but next day (before noon): -10% of available points
+        -  Late, within 24 hours of deadline: -10% of available points
 
-        -   Late, but next day (after noon): -20% of available points
+        -   Late, within 24-48 hours of deadline: -20% of available points
 
         -   Two days late or later: No credit, and we will not provide written feedback
 

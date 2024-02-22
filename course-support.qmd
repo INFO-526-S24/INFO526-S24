@@ -22,6 +22,38 @@ Please refrain from emailing any course content questions (those should go to Sl
 
 If there is a question that's not appropriate for the public forum, you are welcome to email me directly. **If you email me, please include "INFO 526" in the subject line.** Barring extenuating circumstances, I will respond to INFO 526 emails within 48 hours Monday - Friday. I do not respond to emails sent Friday evening - Sunday, nor would I expect you to.
 
+## How to Ask For Help
+
+We\'ll see in this course that a key skill that you should develop as a data scientist is the ability to find solutions to problems. Knowing how to get help is part of that skill.
+
+### Before you ask for help:
+
+-   **Check for typos.** One of the most common causes of errors are typos, which usually throw an error such as `Error in _____ : could not find function “_____”` due to a function being misspelled
+
+-   **Check loaded packages.** You also get errors like `Error in data %>% summary() : could not find function “%>%”` when you failed to load a package.
+
+-   **Read the error message.** Don\'t ignore what R is telling you. Be aware that red text that appears in your console is not alwayws indication of errors. Sometimes it\'s just a warning.
+
+-   **Google is your friend.** Copy and paste the exact error message on a Google search. (this step also includes **read the documentation** on the package you\'re trying to use).
+
+-   If you are still stuck, you an always try **rubber duck debugging**. Describe the problem aloud, explaining it line-by-line, to a rubber duck or another person (who might not have any experience with programming of data science). This is also a good preparation step to asking other people for help (next section).
+
+### Ask other people for help
+
+Like mentioned before, you should ask your peers for help before you ask your instructor. Relying on a single person to solve all of your problems is dangerous, because that person won\'t be available throughout your career as a data scientist.
+
+-   Check **our Slack** to see if someone else has asked a question similar to yours, and whether there\'s a solution posted for it.
+
+-   **Be precise and informative**. The more context you can provide about what you\'re trying to do and what errors you\'re getting, the better. Also describe the steps you took to try to solve the problem yourself.
+
+### List of resources
+
+-   [Getting Help with R](https://www.r-project.org/help.html)
+
+-   [Roger Peng\'s How To Get Help video](https://www.youtube.com/watch?v=ZFaWxxzouCY&feature=youtu.be)
+
+-   [Rubber Duck Debugging](https://rubberduckdebugging.com/)
+
 ## Academic support
 
 There are times may need help with the class that is beyond what can be provided by the teaching team. In those instances, I encourage you to visit the Academic Resource Center. The [Student Success & Retention Innovation (SOS)](https://sos.arizona.edu/) offers free services to all students during their graduate careers at UArizona. Services include Learning Consultations, Peer Tutoring and Study Groups, ADHD/LD Coaching, and more. Because learning is a process unique to every individual, they work with each student to discover and develop their own academic strategy for success at UArizona.

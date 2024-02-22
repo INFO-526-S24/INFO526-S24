@@ -79,33 +79,51 @@ execute:
 
     ```
 
-3.  **Authenticate with `gitcreds`**: **`gitcreds`** is designed to work with credentials for multiple Git hosting services, but it can specifically help in getting and setting credentials for GitHub.
+    1.  **Authenticate with `usethis` and `gitcreds`**:
 
-    ```{r}
-    gitcreds::gitcreds_set()
-    ```
+        `usethis` can be used to create a GitHub token:
 
-    This will prompt you to enter your GitHub username and personal access token. Remember, tokens are now used instead of passwords for HTTPS Git operations on GitHub.
+        ```{r}
+        usethis::create_github_token()
+        ```
 
-    **Note**: If you haven't yet created a personal access token on GitHub, you'll need to do so:
+        This will take you to GitHub, where you then **set the name of the token** and **set the expiration** to **No expiration**:
 
-    -   Go to your GitHub settings (click your profile picture in the top right \> Settings).
+        ![](images/nameToken.png)
 
-    -   In the left sidebar, click on **`Developer settings`**.
+        Then scroll all the way down and say **Generate token**:
 
-    -   Click on **`Personal access tokens`**, then **`Generate new token`**.
+        ![](images/createToken.png){width="250"}
 
-    -   Assign the necessary permissions/scopes to the token. For typical Git operations, you'll need permissions like **`repo`**, **`workflow`**, etc.
+        **Copy** the token, then **paste it somewhere safe**, [you will never be able to view it again!]{.underline}
 
-    -   Click **`Generate token`**.
+        **`gitcreds`** is designed to work with credentials for multiple Git hosting services, but it can specifically help in getting and setting credentials for GitHub.
 
-    -   Copy the generated token value for use with **`gitcreds`**.
+        ```{r}
+        gitcreds::gitcreds_set()
+        ```
 
-4.  **Subsequent Git Operations**
+        This will prompt you to enter your personal access token. Remember, tokens are now used instead of passwords for HTTPS Git operations on GitHub.
+
+        **Note**: Another way to create a token:
+
+        -   Go to your GitHub settings (click your profile picture in the top right \> Settings).
+
+        -   In the left sidebar, click on **`Developer settings`**.
+
+        -   Click on **`Personal access tokens`**, then **`Generate new token`**.
+
+        -   Assign the necessary permissions/scopes to the token. For typical Git operations, you'll need permissions like **`repo`**, **`workflow`**, etc.
+
+        -   Click **`Generate token`**.
+
+        -   Copy the generated token value for use with **`gitcreds`**.
+
+3.  **Subsequent Git Operations**
 
     For future Git operations (like push/pull) from within RStudio, your credentials are managed by **`gitcreds`**, so you won't need to re-enter them frequently.
 
-5.  **Handling Tokens in the Future**: If you ever need to get, set, or forget your Git credentials, you can use:
+4.  **Handling Tokens in the Future**: If you ever need to get, set, or forget your Git credentials, you can use:
 
     ```{r}
     gitcreds::gitcreds_get()   # to retrieve

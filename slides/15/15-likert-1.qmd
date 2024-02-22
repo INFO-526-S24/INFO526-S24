@@ -1,0 +1,362 @@
+---
+title: Visualizing Likert data I
+subtitle: Lecture 15
+title-slide-attributes:
+  data-background-image: ../vizdata-bg.png
+  data-background-size: 800px, cover
+  data-slide-number: none
+format: revealjs
+highlight-style: a11y
+execute:
+  code-link: true
+  warning: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Warm up
+
+## Announcements
+
+-   HW 3 is due October 27th (but you can also use free-passes)
+    -   Question 2: Include old figure from project as starting point
+    -   All questions: Add alt text with `fig-alt`
+
+## Setup {.smaller}
+
+```{r}
+#| label: setup
+#| message: false
+
+# load packages
+library(countdown)
+library(tidyverse)
+library(colorspace)
+library(cowplot)
+library(colorblindr)
+library(waffle)
+
+# set theme for ggplot2
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 14))
+
+# set width of code output
+options(width = 65)
+
+# set figure parameters for knitr
+knitr::opts_chunk$set(
+  fig.width = 7,        # 7" width
+  fig.asp = 0.618,      # the golden ratio
+  fig.retina = 3,       # dpi multiplier for displaying HTML output on retina
+  fig.align = "center", # center align figures
+  dpi = 300             # higher dpi, sharper image
+)
+```
+
+# Visualizing Likert data
+
+# Nature Graduate Student 2022 Survey
+
+## Data
+
+```{r}
+#| message: false
+
+nature <- read_csv(here::here("slides/15", "data/Nature_Graduate_Survey_2022.csv"))
+glimpse(nature)
+```
+
+## Monetary concerns {.smaller}
+
++-------------------------------------------------------------------------------------+--------------------+--------------------+--------------------------------+-----------------------+-----------------------+
+| **To what extent do you agree or disagree with ...**                                | **Strongly Agree** | **Somewhat Agree** | **Neither Agree Nor Disagree** | **Somewhat Disagree** | **Strongly Disagree** |
++=====================================================================================+====================+====================+================================+=======================+=======================+
+| I am able to save money alongside my studies                                        | 5                  | 4                  | 3                              | 2                     | 1                     |
++-------------------------------------------------------------------------------------+--------------------+--------------------+--------------------------------+-----------------------+-----------------------+
+| I am worried about the increasing cost of living                                    | 5                  | 4                  | 3                              | 2                     | 1                     |
++-------------------------------------------------------------------------------------+--------------------+--------------------+--------------------------------+-----------------------+-----------------------+
+| Increased inflation will negatively impact my decision to further pursue my studies | 5                  | 4                  | 3                              | 2                     | 1                     |
++-------------------------------------------------------------------------------------+--------------------+--------------------+--------------------------------+-----------------------+-----------------------+
+| I regularly worry about my increasing student debt                                  | 5                  | 4                  | 3                              | 2                     | 1                     |
++-------------------------------------------------------------------------------------+--------------------+--------------------+--------------------------------+-----------------------+-----------------------+
+
+## Monetary concerns
+
+```{r}
+nature |>
+  select(contains("To what extent")) |>
+  glimpse()
+```
+
+## Degree related concerns {.smaller}
+
++------------------------------------------------------------------------------+--------------------------+-------+-------+-------+--------------------+
+| **What concerns have you had since you started your graduate degree?**       | **Not Concerned at All** |       |       |       | **Very Concerned** |
++==============================================================================+==========================+=======+=======+=======+====================+
+| The difficulty of getting funding / low success rates for grant applications | 5                        | 4     | 3     | 2     | 1                  |
++------------------------------------------------------------------------------+--------------------------+-------+-------+-------+--------------------+
+| Inability to finish my studies in the time period I had set out to           | 5                        | 4     | 3     | 2     | 1                  |
++------------------------------------------------------------------------------+--------------------------+-------+-------+-------+--------------------+
+| Impact of a poor relationship with my supervisor                             | 5                        | 4     | 3     | 2     | 1                  |
++------------------------------------------------------------------------------+--------------------------+-------+-------+-------+--------------------+
+| ...                                                                          | 5                        | 4     | 3     | 2     | 1                  |
++------------------------------------------------------------------------------+--------------------------+-------+-------+-------+--------------------+
+
+## Degree related concerns {.smaller}
+
+```{r}
+nature |>
+  select(contains("What concerns have you had since")) |>
+  glimpse()
+```
+
+## Satisfaction {.smaller}
+
++--------------------------------------------+--------------------------+---------+---------+---------+--------------------+
+| **How satisfied are you with ...**         | **Not Concerned at All** |         |         |         | **Very Concerned** |
++============================================+==========================+=========+=========+=========+====================+
+| Your decision to pursue a graduate degree? | 5                        | 4       | 3       | 2       | 1                  |
++--------------------------------------------+--------------------------+---------+---------+---------+--------------------+
+| Your graduate degree experience?           | 5                        | 4       | 3       | 2       | 1                  |
++--------------------------------------------+--------------------------+---------+---------+---------+--------------------+
+
+## Satisfaction
+
+```{r}
+nature |>
+  select(contains("How satisfied are you with your")) |>
+  glimpse()
+```
+
+## Bullying/Harassment {.smaller}
+
++--------------------------------------------------------------------------------------------------+--------+--------+-------------------+
+| Do you feel that you have experienced bullying during your graduate degree?                      | Yes    | No     | Prefer not to say |
++--------------------------------------------------------------------------------------------------+--------+--------+-------------------+
+| Do you feel able to speak out about your experiences of bullying without personal repercussions? | Yes    | No     | Unsure            |
++--------------------------------------------------------------------------------------------------+--------+--------+-------------------+
+| Do you feel that you have experienced discrimination or harassment during your graduate degree?  | Yes    | No     | Prefer not to say |
++--------------------------------------------------------------------------------------------------+--------+--------+-------------------+
+
+## Bullying/Harassment {.smaller}
+
+```{r}
+nature |>
+  select(contains("Do you feel")) |>
+  glimpse()
+```
+
+## Bullying/Harassment II {.smaller}
+
++----------------------------+---------------------------------+-----------------------------+--------------------+---------------------------------------+
+| **Question**               | **Options**                     | **Type of question**        | **Mandatory Y/N?** | **Routing**                           |
++============================+=================================+=============================+====================+=======================================+
+| Who was the perpetrator(s) | *Please select all that apply.* | Multiple choice             | N                  | Ask if Q31=yes (experienced bullying) |
+|                            |                                 |                             |                    |                                       |
+|                            | a\) Supervisor                  | Same page as above          |                    |                                       |
+|                            |                                 |                             |                    |                                       |
+|                            | b\) Another student             | Prefer not to say exclusive |                    |                                       |
+|                            |                                 |                             |                    |                                       |
+|                            | c\) Postdoc                     |                             |                    |                                       |
+|                            |                                 |                             |                    |                                       |
+|                            | d\) Other academic staff member |                             |                    |                                       |
+|                            |                                 |                             |                    |                                       |
+|                            | e\) Online troll                |                             |                    |                                       |
+|                            |                                 |                             |                    |                                       |
+|                            | f\) Other, please specify       |                             |                    |                                       |
++----------------------------+---------------------------------+-----------------------------+--------------------+---------------------------------------+
+
+## Bullying/Harassment II {.smaller}
+
+```{r}
+nature |>
+  select(contains("Who was the")) |>
+  glimpse()
+```
+
+## Demographics {.smaller}
+
++-------------------------------------------------------------------------+------------------------------------------------------------------+----------------------+--------------------+-----------------------------------------------------------------------+
+| **Question**                                                            | **Options**                                                      | **Type of question** | **Mandatory Y/N?** | **Routing**                                                           |
++=========================================================================+==================================================================+======================+====================+=======================================================================+
+| Which, if any, of the following degrees are you currently studying for? | a\) Master's degree (MA/MS/MSc/PSM or other Master's)            | Single choice        | Y                  | Ask to all                                                            |
+|                                                                         |                                                                  |                      |                    |                                                                       |
+|                                                                         | b\) Doctorate degree (PhD/DPhil/MD)                              |                      |                    | Screen out if not PhD or Masters' student i.e. must select (a b or c) |
+|                                                                         |                                                                  |                      |                    |                                                                       |
+|                                                                         | c\) Dual doctorate degree (MD-PhD, PhD-PhD or other combination) |                      |                    |                                                                       |
+|                                                                         |                                                                  |                      |                    |                                                                       |
+|                                                                         | ...                                                              |                      |                    |                                                                       |
++-------------------------------------------------------------------------+------------------------------------------------------------------+----------------------+--------------------+-----------------------------------------------------------------------+
+
+# Visualizing categorical data
+
+## Bullying/Harassment {.smaller}
+
+::: {.callout-note appearance="minimal" icon="false"}
+If you were bullied, who was the perpetrator(s)?
+:::
+
+```{r}
+nature_bullying <- nature |> 
+  select(contains("Who was the")) |> 
+  pivot_longer(cols = everything(), names_to = "Question", values_to = "person") 
+
+nature_bullying |> distinct(person) |> drop_na() 
+```
+
+. . .
+
+```{r}
+nature_bullying <- nature_bullying |>
+  mutate(
+    person = fct_relevel(person, "Supervisor", "Postdoc", "Another student", "Other academic staff member", "Online troll", "Other", "Prefer not to say")
+  )
+```
+
+## Bar chart {.smaller}
+
+```{r}
+nature_bullying |>
+  filter(!is.na(person)) |>
+  ggplot(aes(x = fct_rev(fct_infreq(person)))) +
+  geom_bar() +
+  coord_flip() +
+  labs(x = NULL, y = "Count")
+```
+
+## Pie chart
+
+```{r}
+#| echo: false
+
+nature_bullying |>
+  filter(!is.na(person)) |>
+  count(person) |>
+  ggplot(aes(x = 1, y = n, fill = person)) +
+  geom_col(width = 1, color = "white") +
+  coord_polar("y", start = 0) +
+  theme_void() +
+  scale_fill_OkabeIto()
+```
+
+## Waffle chart
+
+Using [waffle](https://github.com/hrbrmstr/waffle)
+
+```{r}
+#| echo: false
+nature_bullying |>
+  filter(!is.na(person)) |>
+  count(person) |>
+  ggplot(aes(fill = person, values = n)) +
+  geom_waffle(
+    n_rows = 50, size = 0.33, 
+    color = "white", flip = TRUE, na.rm = TRUE
+  ) +
+  labs(fill = str_wrap("Who was the perpetrator(s)?", 20)) +
+  coord_equal() +
+  theme_void() +
+  theme_enhance_waffle() +
+  scale_fill_OkabeIto()
+```
+
+## Proportional waffle chart
+
+Waffles work best when they are square -- makes it easier to compare parts to whole which is the purpose of the chart
+
+```{r}
+#| echo: false
+
+nature_bullying |>
+  filter(!is.na(person)) |>
+  count(person) |>
+  ggplot(aes(fill = person, values = n)) +
+  geom_waffle(
+    n_rows = 10, size = 0.33, 
+    color = "white", flip = TRUE, make_proportional = TRUE,
+    na.rm = TRUE
+  ) +
+  labs(fill = str_wrap("Who was the perpetrator(s)?", 30)) +
+  coord_equal() +
+  theme_void() + 
+  theme_enhance_waffle() +
+  scale_fill_OkabeIto()
+```
+
+## Proportional waffle chart, take 2
+
+With a bit of fudging...
+
+```{r}
+#| echo: false
+#| fig-width: 4
+
+nature_bullying |>
+  filter(!is.na(person)) |>
+  count(person) |>
+  mutate(
+    prop = n / sum(n),
+    n_norm = 100 * prop,
+    n_norm = ceiling(n_norm),
+    n_norm = if_else(person == "Supervisor", 96, n_norm)
+  ) |>
+  ggplot(aes(fill = person, values = n_norm)) +
+  geom_waffle(
+    n_rows = 10, size = 1,
+    color = "white", flip = TRUE, make_proportional = TRUE,
+    na.rm = TRUE
+  ) +
+  labs(fill = str_wrap("Who was the perpetrator(s)?", 30)) +
+  coord_equal() +
+  theme_void() +
+  theme_enhance_waffle() +
+  scale_fill_OkabeIto()
+```
+
+## Let's actually make these figures!
+
+Code Demo.
+
+# Visualizing Likert data
+
+## Monetary concerns
+
+```{r}
+nature |>
+  select(contains("To what extent")) |>
+  glimpse()
+```
+
+## Monetary concerns visualized
+
+A very rough starting point:
+
+```{r}
+#| echo: false
+#| fig-width: 7
+#| fig-asp: 0.5
+
+# Set the width of the lines to 10 characters
+wrap_width <- 15
+
+nature |>
+  select(contains("To what extent")) |>
+  pivot_longer(
+    cols = everything(),
+    names_to = "question", 
+    values_to = "response",
+  ) |>
+  mutate(question = str_remove(question, "To what extent do you agree with the following statements\\?: ")) |>
+  drop_na(response) |>
+  ggplot(aes(y = question)) +
+  geom_bar(aes(fill = fct_rev(response))) +
+  scale_fill_viridis_d(na.value = "gray") +
+  scale_y_discrete(labels = function(x) str_wrap(x, wrap_width)) +
+  labs(
+    title = "Monetary Concerns", 
+    fill = "Response", 
+    y = NULL,
+    x = "Number of responses"
+  )
+```
+
+## Let's improve!

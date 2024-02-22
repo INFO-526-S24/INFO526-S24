@@ -1,0 +1,644 @@
+---
+title: Visualizing time series data II
+subtitle: Lecture 9
+title-slide-attributes:
+  data-background-image: ../vizdata-bg.png
+  data-background-size: 800px, cover
+  data-slide-number: none
+format: revealjs
+highlight-style: a11y
+execute:
+  code-link: true
+  warning: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Warm up
+
+## Announcements
+
+-   Don't forget to watch the videos for Wednesday's lecture
+
+## Project next steps I {.smaller}
+
+-   Proposal feedback is available.
+    -   Required: Address all issues and close them.
+
+    -   Optional: Submit for regrade, by replying to the "Proposal feedback" issue and tagging me in your reply. Due 11:59pm today. Final proposal score will be midpoint of original and updated score.
+
+## Project next steps II {.smaller}
+
+-   Create a slide deck in `presentation.qmd`, replacing the placeholder text.
+-   Add your write-up to `index.qmd`, replacing the placeholder text.
+-   In both outputs, hide the code with `echo: false` prior to turning them in.
+-   Due: Monday, March 11th, 11am.
+
+## Setup {.smaller}
+
+```{r}
+#| label: setup
+#| message: false
+
+# load packages
+library(countdown)
+library(tidyverse)
+library(lubridate)
+library(janitor)
+library(colorspace)
+library(broom)
+library(fs)
+
+# set theme for ggplot2
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 14))
+
+# set width of code output
+options(width = 65)
+
+# set figure parameters for knitr
+knitr::opts_chunk$set(
+  fig.width = 7, # 7" width
+  fig.asp = 0.618, # the golden ratio
+  fig.retina = 3, # dpi multiplier for displaying HTML output on retina
+  fig.align = "center", # center align figures
+  dpi = 300 # higher dpi, sharper image
+)
+```
+
+# Working with dates
+
+## AQI levels
+
+The previous graphic in tibble form, to be used later...
+
+```{r}
+aqi_levels <- tribble(
+  ~aqi_min, ~aqi_max, ~color,    ~level,
+  0,        50,       "#D8EEDA", "Good",
+  51,       100,      "#F1E7D4", "Moderate",
+  101,      150,      "#F8E4D8", "Unhealthy for sensitive groups",
+  151,      200,      "#FEE2E1", "Unhealthy",
+  201,      300,      "#F4E3F7", "Very unhealthy",
+  301,      400,      "#F9D0D4", "Hazardous"
+)
+```
+
+## AQI data
+
+-   Source: [EPA's Daily Air Quality Tracker](https://www.epa.gov/outdoor-air-quality-data/air-data-daily-air-quality-tracker)
+
+-   2016 - 2022 AQI (Ozone and PM2.5 combined) for Tucson, AZ core-based statistical area (CBSA), one file per year
+
+-   2016 - 2022 AQI (Ozone and PM2.5 combined) for San Francisco-Oakland-Hayward, CA CBSA, one file per year
+
+## 2022 Tucson, AZ {.smaller}
+
+```{r}
+#| include: false
+
+options(dplyr.print_min = 3, dplyr.print_max = 3)
+```
+
+```{r}
+#| include: false
+
+tuc_2022 <- read_csv(
+  here::here("slides/09/", "data/tucson/ad_aqi_tracker_data-2022.csv"),
+  na = c(".", "")
+)
+```
+
+```{r}
+#| eval: false
+
+tuc_2022 <- read_csv(
+  here::here("data/tucson/ad_aqi_tracker_data-2022.csv"),
+  na = c(".", "")
+)
+```
+
+```{r}
+tuc_2022 <- tuc_2022 |>
+  janitor::clean_names() |>
+  mutate(date = mdy(date))
+
+tuc_2022
+```
+
+```{r}
+#| include: false
+
+options(dplyr.print_min = 3, dplyr.print_max = 3)
+```
+
+## Visualizing Tucson AQI
+
+```{r}
+#| label: tuc-2022-2
+#| echo: false
+
+aqi_levels <- aqi_levels |>
+  mutate(aqi_mid = ((aqi_min + aqi_max) / 2))
+
+tuc_2022 |>
+  filter(!is.na(aqi_value)) |>
+  ggplot(aes(x = date, y = aqi_value, group = 1)) +
+  geom_rect(
+    data = aqi_levels,
+    aes(
+      ymin = aqi_min, ymax = aqi_max,
+      xmin = as.Date(-Inf), xmax = as.Date(Inf),
+      fill = color, y = NULL, x = NULL
+    )
+  ) +
+  geom_line(linewidth = 1) +
+  scale_fill_identity() +
+  scale_x_date(
+    name = NULL, date_labels = "%b",
+    limits = c(ymd("2022-01-01"), ymd("2023-03-01"))
+  ) +
+  geom_text(
+    data = aqi_levels,
+    aes(x = ymd("2023-02-28"), y = aqi_mid, label = level),
+    hjust = 1, size = 6, fontface = "bold", color = "white"
+  ) +
+  annotate(
+    geom = "text",
+    x = c(ymd("2022-01-01"), ymd("2023-03-01")), y = -100,
+    label = c("2022", "2023"), size = 4
+  ) +
+  coord_cartesian(clip = "off", ylim = c(0, 400)) +
+  labs(
+    x = NULL, y = "AQI",
+    title = "Ozone and PM2.5 Daily AQI Values",
+    subtitle = "Tucson, AZ",
+    caption = "\nSource: EPA Daily Air Quality Tracker"
+  ) +
+  theme(
+    plot.title.position = "plot",
+    panel.grid.minor.y = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    plot.margin = unit(c(1, 1, 3, 1), "lines")
+  )
+```
+
+## Another visualization of Tucson AQI
+
+::: task
+Recreate the following visualization.
+:::
+
+```{r}
+#| label: tuc-2022-3
+#| echo: false
+
+tuc_2022 |>
+  filter(!is.na(aqi_value)) |>
+  ggplot(aes(x = date, y = aqi_value, group = 1)) +
+  geom_line(linewidth = 1) +
+  scale_x_date(
+    name = NULL, date_labels = "%b",
+    limits = c(ymd("2022-01-01"), ymd("2023-03-01"))
+  ) +
+  scale_y_continuous(breaks = c(0, 50, 100, 150, 200, 300, 400)) +
+  geom_text(
+    data = aqi_levels,
+    aes(x = ymd("2023-02-28"), y = aqi_mid, label = level, color = darken(color, 0.3)),
+    hjust = 1, size = 6, fontface = "bold"
+  ) +
+  scale_color_identity() +
+  annotate(
+    geom = "text",
+    x = c(ymd("2022-01-01"), ymd("2023-03-01")), y = -80,
+    label = c("2022", "2023"), size = 4
+  ) +
+  coord_cartesian(clip = "off", ylim = c(0, 400)) +
+  labs(
+    x = NULL, y = "AQI",
+    title = "Ozone and PM2.5 Daily AQI Values",
+    subtitle = "Tucson, AZ",
+    caption = "\nSource: EPA Daily Air Quality Tracker"
+  ) +
+  theme(
+    plot.title.position = "plot",
+    panel.grid.minor.y = element_blank(),
+    panel.grid.minor.x = element_blank()
+  )
+```
+
+````{=html}
+<!-- 
+
+## Livecoding {.smaller}
+
+Reveal below for code developed during live coding session.
+
+```{r}
+#| ref.label: tuc-2022-3
+#| fig-show: hide
+#| code-fold: true
+```
+
+-->
+````
+
+## Highlights
+
+-   The **lubridate** package is useful for converting to dates from character strings in a given format, e.g. `mdy()`, `ymd()`, etc.
+
+-   The **colorspace** package is useful for programmatically darkening / lightening colors
+
+-   `scale_x_date`: Set `date_labels` as `"%b %y"` for month-2 digit year, `"%D"` for date format such as `%m/%d/%y`, etc. See help for `strptime()` for more.
+
+-   `scale_color_identity()` or `scale_fill_identity()` can be useful when your data already represents aesthetic values that ggplot2 can handle directly. By default doesn't produce a legend.
+
+# Calculating cumulatives
+
+## Cumulatives over time
+
+-   When visualizing time series data, a somewhat common task is to calculate cumulatives over time and plot them
+
+-   In our example we'll calculate the number of days with "good" AQI ($\le$ 50) and plot that value on the y-axis and the date on the x-axis
+
+```{r}
+#| include: false
+
+options(dplyr.print_min = 5, dplyr.print_max = 5)
+```
+
+## Calculating cumulatives
+
+Step 1. Arrange your data
+
+```{r}
+tuc_2022 |>
+  select(date, aqi_value) |>
+  filter(!is.na(aqi_value)) |>
+  arrange(date)
+```
+
+## Calculating cumulatives
+
+Step 2. Identify good days
+
+```{r}
+tuc_2022 |>
+  select(date, aqi_value) |>
+  filter(!is.na(aqi_value)) |>
+  arrange(date) |>
+  mutate(good_aqi = if_else(aqi_value <= 50, 1, 0))
+```
+
+## Calculating cumulatives
+
+Step 3. Sum over time
+
+```{r}
+tuc_2022 |>
+  select(date, aqi_value) |>
+  filter(!is.na(aqi_value)) |>
+  arrange(date) |>
+  mutate(
+    good_aqi = if_else(aqi_value <= 50, 1, 0),
+    cumsum_good_aqi = cumsum(good_aqi)
+  )
+```
+
+## Plotting cumulatives {.smaller}
+
+::: panel-tabset
+### Plot
+
+```{r}
+#| label: tucson-aqi-3
+#| echo: false
+#| fig.asp: 0.5
+
+tuc_2022 |>
+  select(date, aqi_value) |>
+  filter(!is.na(aqi_value)) |>
+  arrange(date) |>
+  mutate(
+    good_aqi = if_else(aqi_value <= 50, 1, 0),
+    cumsum_good_aqi = cumsum(good_aqi)
+  ) |>
+  ggplot(aes(x = date, y = cumsum_good_aqi, group = 1)) +
+  geom_line() +
+  scale_x_date(date_labels = "%b %Y") +
+  labs(
+    x = NULL, y = "Number of days",
+    title = "Cumulative number of good AQI days (AQI < 50)",
+    subtitle = "Tucson, AZ",
+    caption = "\nSource: EPA Daily Air Quality Tracker"
+  ) +
+  theme(plot.title.position = "plot")
+```
+
+### Code
+
+```{r}
+#| ref.label: tucson-aqi-3
+#| fig-show: hide
+```
+:::
+
+# Detrending
+
+## Detrending
+
+-   Detrending is removing prominent long-term trend in time series to specifically highlight any notable deviations
+
+-   Let's demonstrate using multiple years of AQI data
+
+## Multiple years of Tucson, AZ data {.smaller}
+
+```{r}
+#| include: false
+
+tuc_files <- fs::dir_ls(here::here("slides/09/", "data/tucson"))
+```
+
+```{r}
+#| eval: false
+
+tuc_files <- fs::dir_ls(here::here("data/tucson"))
+tuc_files
+```
+
+```{r}
+#| echo: false
+tuc_files
+```
+
+## Reading multiple files {.smaller}
+
+```{r}
+#| message: false
+
+tuc <- read_csv(tuc_files, na = c(".", ""))
+
+tuc <- tuc |>
+  janitor::clean_names() |>
+  mutate(
+    date = mdy(date),
+    good_aqi = if_else(aqi_value <= 50, 1, 0)
+  ) |>
+  filter(!is.na(aqi_value)) |>
+  arrange(date) |>
+  mutate(cumsum_good_aqi = cumsum(good_aqi), .after = aqi_value)
+
+tuc
+```
+
+## Plot trend since 2016 {.smaller}
+
+::: panel-tabset
+### Plot
+
+```{r}
+#| label: tuc-3
+#| echo: false
+#| fig-asp: 0.5
+#| warning: false
+
+tuc |>
+  ggplot(aes(x = date, y = cumsum_good_aqi, group = 1)) +
+  geom_smooth(method = "lm", color = "pink") +
+  geom_line() +
+  scale_x_date(
+    expand = expansion(mult = 0.02),
+    date_labels = "%Y"
+  ) +
+  labs(
+    x = NULL, y = "Number of days",
+    title = "Cumulative number of good AQI days (AQI < 50)",
+    subtitle = "Tucson, AZ",
+    caption = "\nSource: EPA Daily Air Quality Tracker"
+  ) +
+  theme(plot.title.position = "plot")
+```
+
+### Code
+
+```{r}
+#| ref.label: tuc-3
+#| fig-show: hide
+#| code-line-numbers: "6|7"
+```
+:::
+
+## Detrend
+
+Step 1. Fit a simple linear regression
+
+```{r}
+m <- lm(cumsum_good_aqi ~ date, data = tuc)
+
+m
+```
+
+## Detrend
+
+Step 2. Augment the data with model results (using `broom::augment()`)
+
+```{r}
+tuc_aug <- augment(m)
+
+tuc_aug
+```
+
+## Detrend
+
+Step 3. Divide the observed value of `cumsum_good_aqi` by the respective value in the long-term trend (i.e., `.fitted`)
+
+```{r}
+tuc_aug <- tuc_aug |>
+  mutate(ratio = cumsum_good_aqi / .fitted, .after = .fitted)
+
+
+tuc_aug
+```
+
+## Visualize detrended data
+
+::: panel-tabset
+### Plot
+
+```{r}
+#| label: tuc-4
+#| echo: false
+#| fig-asp: 0.5
+
+tuc_aug |>
+  ggplot(aes(x = date, y = ratio, group = 1)) +
+  geom_hline(yintercept = 1, color = "gray") +
+  geom_line() +
+  scale_x_date(
+    expand = expansion(mult = 0.1),
+    date_labels = "%Y"
+  ) +
+  labs(
+    x = NULL, y = "Number of days\n(detrended)",
+    title = "Cumulative number of good AQI days (AQI < 50)",
+    subtitle = "Tucson, AZ",
+    caption = "\nSource: EPA Daily Air Quality Tracker"
+  ) +
+  theme(plot.title.position = "plot")
+```
+
+### Code
+
+```{r}
+#| ref.label: tuc-4
+#| fig-show: hide
+```
+:::
+
+## Air Quality in Tucson
+
+<br><br>
+
+::: hand
+barely anything interesting happening!
+:::
+
+. . .
+
+::: hand
+let's look at data from somewhere with a bit more "interesting" air quality data...
+:::
+
+## Read in multiple years of SF data {.smaller}
+
+```{r}
+#| include: false
+sf_files <- fs::dir_ls(here::here("slides/09/", "data/san-francisco"))
+```
+
+```{r}
+#| eval: false
+
+sf_files <- fs::dir_ls(here::here("data/san-francisco"))
+```
+
+```{r}
+#| message: false
+
+sf <- read_csv(sf_files, na = c(".", ""))
+
+sf <- sf |>
+  janitor::clean_names() |>
+  mutate(
+    date = mdy(date),
+    good_aqi = if_else(aqi_value <= 50, 1, 0)
+  ) |>
+  filter(!is.na(aqi_value)) |>
+  arrange(date) |>
+  mutate(cumsum_good_aqi = cumsum(good_aqi), .after = aqi_value)
+
+sf
+```
+
+## Plot trend since 2016 {.smaller}
+
+::: panel-tabset
+### Plot
+
+```{r}
+#| label: sf-1
+#| echo: false
+#| fig-asp: 0.5
+#| warning: false
+
+sf |>
+  ggplot(aes(x = date, y = cumsum_good_aqi, group = 1)) +
+  geom_smooth(method = "lm", color = "pink") +
+  geom_line() +
+  scale_x_date(
+    expand = expansion(mult = 0.07),
+    date_labels = "%Y"
+  ) +
+  labs(
+    x = NULL, y = "Number of days",
+    title = "Cumulative number of good AQI days (AQI < 50)",
+    subtitle = "San Francisco-Oakland-Hayward, CA",
+    caption = "\nSource: EPA Daily Air Quality Tracker"
+  ) +
+  theme(plot.title.position = "plot")
+```
+
+### Code
+
+```{r}
+#| ref.label: sf-1
+#| fig-show: hide
+```
+:::
+
+## Detrend
+
+1.  Fit a simple linear regression
+
+```{r}
+m_sf <- lm(cumsum_good_aqi ~ date, data = sf)
+```
+
+. . .
+
+2.  Augment the data with model results
+
+```{r}
+sf_aug <- augment(m_sf)
+```
+
+. . .
+
+3.  Divide the observed value of `cumsum_good_aqi` by the respective value in the long-term trend (i.e., `.fitted`)
+
+```{r}
+sf_aug <- sf_aug |>
+  mutate(ratio = cumsum_good_aqi / .fitted, .after = .fitted)
+```
+
+## Visualize detrended data
+
+::: panel-tabset
+### Plot
+
+```{r}
+#| label: sf-2
+#| echo: false
+#| fig-asp: 0.5
+
+sf_aug |>
+  ggplot(aes(x = date, y = ratio, group = 1)) +
+  geom_hline(yintercept = 1, color = "gray") +
+  geom_line() +
+  scale_x_date(
+    expand = expansion(mult = 0.07),
+    date_labels = "%Y"
+  ) +
+  labs(
+    x = NULL, y = "Number of days\n(detrended)",
+    title = "Cumulative number of good AQI days (AQI < 50)",
+    subtitle = "San Francisco-Oakland-Hayward, CA",
+    caption = "\nSource: EPA Daily Air Quality Tracker"
+  ) +
+  theme(plot.title.position = "plot")
+```
+
+### Code
+
+```{r}
+#| ref.label: sf-2
+#| fig-show: hide
+```
+:::
+
+## Detrending
+
+-   In step 2 we fit a very simple model
+
+-   Depending on the complexity you're trying to capture you might choose to fit a much more complex model
+
+-   You can also decompose the trend into multiple trends, e.g. monthly, long-term, seasonal, etc.

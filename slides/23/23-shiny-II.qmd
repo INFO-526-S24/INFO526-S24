@@ -1,0 +1,72 @@
+---
+title: Interactive reporting + visualization with Shiny II
+subtitle: Lecture 23
+title-slide-attributes:
+  data-background-image: ../vizdata-bg.png
+  data-background-size: 800px, cover
+  data-slide-number: none
+format: revealjs
+highlight-style: a11y
+execute:
+  code-link: true
+  warning: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Warm up
+
+## Announcements
+
+-   Course and TA evaluations
+    -   If we can get to \>=90% participation for both, each person gets +5 points on their lowest (not dropped) homework score.
+    -   Current participation rate: TA evals 8.5% and course evals 5.9%.
+-   [Project 1s are posted on the course website](https://vizdata.org/student-work/project-1.html). I will remove the scores from the repos after the semester ends.
+-   Also posted are your [thank you cards](https://vizdata.org/student-work/thank-you.html) and [ugly plots](https://vizdata.org/student-work/ugly-plot.html)!
+
+# From last time
+
+## Ultimate goal
+
+::: {.medium .center-align}
+[https://minecr.shinyapps.io/manager-survey](https://minecr.shinyapps.io/manager-survey/)
+:::
+
+```{r echo = FALSE}
+knitr::include_app("https://minecr.shinyapps.io/manager-survey/", height ="550px")
+```
+
+# Interactive reporting with Shiny
+
+## Livecoding
+
+::: task
+Code along in `manager-survey/app.R`. (Part 2)
+:::
+
+<br>
+
+Highlights:
+
+-   Data pre-processing outside of the app
+-   Tabsets
+-   Validation
+
+# Interactive visualizations with Shiny
+
+## Livecoding
+
+::: task
+Code along in `manager-survey/app.R`. (Part 3)
+:::
+
+<br>
+
+Highlights:
+
+-   Conditional panels
+-   Linked brushing
+
+## Reference
+
+The code for the app can be found [here](https://github.com/INFO526-DataViz/shiny-ex-2).

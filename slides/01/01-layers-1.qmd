@@ -1,0 +1,559 @@
+---
+title: Deep dive into ggplot2 layers - I
+subtitle: Lecture 1
+title-slide-attributes:
+  data-background-image: ../vizdata-bg.png
+  data-background-size: 800px, cover
+  data-slide-number: none
+format: revealjs
+highlight-style: a11y
+execute:
+  code-link: true
+---
+
+# Warm up
+
+## Announcements
+
+-   A note on readings for this week: some of it is review so feel free to skim those parts.
+-   RQ 1 is due Friday (Jan 26)
+
+## Setup
+
+```{r}
+#| label: setup
+#| message: false
+#| code-line-numbers: "|1-4|6-7|9-10|12-19"
+
+# load packages
+library(tidyverse)
+library(here)
+library(countdown)
+
+# set theme for ggplot2
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 14))
+
+# set width of code output
+options(width = 65)
+
+# set figure parameters for knitr
+knitr::opts_chunk$set(
+  fig.width = 7,        # 7" width
+  fig.asp = 0.618,      # the golden ratio
+  fig.retina = 3,       # dpi multiplier for displaying HTML output on retina
+  fig.align = "center", # center align figures
+  dpi = 300             # higher dpi, sharper image
+)
+```
+
+# A/B testing
+
+## Data: Sale prices of houses in Tucson
+
+::: columns
+::: {.column width="50%"}
+-   Data on houses for sale <br> in Tucson, AZ, around July 2023
+
+-   Scraped from Zillow
+
+-   Source: `tucsonHousing.csv`
+:::
+
+::: {.column width="50%"}
+![](images/tucsonHome.jpeg){fig-alt="Modernist house in Tucson AZ" fig-align="right" width="675"}
+:::
+:::
+
+## `slides/data/tucsonHousing.csv`
+
+```{r}
+library(tidyverse)
+library(here)
+
+tucsonHousing <- read_csv(here(
+  "slides", "01", "data" ,"tucsonHousing.csv"))
+
+glimpse(tucsonHousing)
+```
+
+## A simple visualization
+
+::: panel-tabset
+## Code
+
+```{r}
+#| label: simple-viz
+#| fig-show: hide
+
+ggplot(tucsonHousing, aes(x = area, y = price)) +
+  geom_point(alpha = 0.7, size = 2) +
+  geom_smooth(method = "lm", se = FALSE, size = 0.7) +
+  labs(
+    x = "Area (square feet)",
+    y = "Sale price (USD)",
+    title = "Price and area of houses in Tucson"
+  )
+```
+
+## Plot
+
+```{r}
+#| ref.label: simple-viz
+#| echo: false
+#| fig-asp: 0.5
+```
+:::
+
+## New variable: `decade_built`
+
+```{r}
+tucsonHousing <- tucsonHousing |>
+  mutate(decade_built = (year_built %/% 10) * 10)
+
+tucsonHousing |>
+  select(year_built, decade_built)
+```
+
+## New variable: `decade_built_cat`
+
+```{r}
+tucsonHousing <- tucsonHousing |>
+  mutate(
+    decade_built_cat = case_when(
+      decade_built <= 1950 ~ "1950 or before",
+      decade_built >= 2000 ~ "2000 or after",
+      TRUE ~ as.character(decade_built)
+    )
+  )
+
+tucsonHousing |>
+  count(decade_built_cat)
+```
+
+## A slightly more complex visualization
+
+::: panel-tabset
+## Code
+
+```{r}
+#| label: more-complex-viz
+#| fig-show: hide
+
+ggplot(
+  tucsonHousing,
+  aes(x = area, y = price, color = decade_built_cat)
+) +
+  geom_point(alpha = 0.7, show.legend = FALSE) +
+  geom_smooth(method = "lm", se = FALSE, size = 0.5, show.legend = FALSE) +
+  facet_wrap(~decade_built_cat) +
+  labs(
+    x = "Area (square feet)",
+    y = "Sale price (USD)",
+    color = "Decade built",
+    title = "Price and area of houses in Tucson"
+  )
+```
+
+## Plot
+
+```{r}
+#| ref.label: more-complex-viz
+#| echo: false
+#| fig-asp: 0.5
+```
+:::
+
+## A/B testing {.center}
+
+::: task
+In the next two slides, the same plots are created with different "cosmetic" choices. Examine the plots two given (Plot A and Plot B), and indicate your preference by voting for one of them in the Vote tab.
+:::
+
+## Test 1
+
+::: panel-tabset
+## Plot A
+
+```{r}
+#| label: bad-taste
+#| echo: false
+#| fig-asp: 0.5
+
+ggplot(
+  tucsonHousing,
+  aes(x = area, y = price, color = decade_built_cat)
+) +
+  geom_point(alpha = 0.7, show.legend = FALSE) +
+  geom_smooth(method = "lm", se = FALSE, size = 0.5, show.legend = FALSE) +
+  facet_wrap(~decade_built_cat) +
+  labs(
+    x = "Area (square feet)",
+    y = "Sale price (USD)",
+    color = "Decade built",
+    title = "Price and area of houses in Tucson",
+  ) +
+  theme_dark(base_size = 16) + #<<
+  scale_color_manual(values = c("yellow", "blue", "orange", "red", "green", "white")) + #<<
+  theme(
+    text = element_text(color = "red", face = "bold.italic"),
+    plot.background = element_rect(fill = "yellow")
+  )
+```
+
+## Plot B
+
+```{r}
+#| label: better-taste-minimal-viridis
+#| echo: false
+#| fig-asp: 0.5
+
+ggplot(
+  tucsonHousing,
+  aes(x = area, y = price, color = decade_built_cat)
+) +
+  geom_point(alpha = 0.7, show.legend = FALSE) +
+  geom_smooth(method = "lm", se = FALSE, size = 0.5, show.legend = FALSE) +
+  facet_wrap(~decade_built_cat) +
+  labs(
+    x = "Area (square feet)",
+    y = "Sale price (USD)",
+    color = "Decade built",
+    title = "Price and area of houses in Tucson"
+  ) +
+  scale_color_viridis_d(end = 0.9)
+```
+:::
+
+## Test 2
+
+::: panel-tabset
+## Plot A
+
+```{r}
+#| ref.label: better-taste-minimal-viridis
+#| echo: false
+#| fig-asp: 0.5
+```
+
+## Plot B
+
+```{r}
+#| label: better-taste-gray-rainbow
+#| echo: false
+#| fig-asp: 0.5
+
+ggplot(
+  tucsonHousing,
+  aes(x = area, y = price, color = decade_built_cat)
+) +
+  geom_point(alpha = 0.7, show.legend = FALSE) +
+  geom_smooth(method = "lm", se = FALSE, size = 0.5, show.legend = FALSE) +
+  facet_wrap(~decade_built_cat) +
+  labs(
+    x = "Area (square feet)",
+    y = "Sale price (USD)",
+    color = "Decade built",
+    title = "Price and area of houses in Tucson"
+  ) +
+  theme_gray(base_size = 16)
+```
+:::
+
+# What makes figures bad?
+
+## Bad taste
+
+```{r}
+#| ref.label: bad-taste
+#| echo: false
+```
+
+## Data-to-ink ratio {.smaller}
+
+Tufte strongly recommends maximizing the **data-to-ink ratio** this in the Visual Display of Quantitative Information (Tufte, 1983).
+
+::: columns
+::: {.column width="50%"}
+> Graphical excellence is the well-designed presentation of interesting data---a matter of substance, of statistics, and of design ... \[It\] consists of complex ideas communicated with clarity, precision, and efficiency. ... \[It\] is that which gives to the viewer the greatest number of ideas in the shortest time with the least ink in the smallest space ... \[It\] is nearly always multivariate ... And graphical excellence requires telling the truth about the data. (Tufte, 1983, p. 51).
+:::
+
+::: {.column width="50%"}
+![](images/tufte-visual-display-cover.png){fig-alt="Cover of The Visual Display of Quantitative Information" width="400"}
+:::
+:::
+
+## 
+
+::: task
+Which of the plots has higher data-to-ink ratio?
+:::
+
+```{r}
+#| label: mean-area-decade
+#| include: false
+
+mean_area_decade <- tucsonHousing |>
+  group_by(decade_built_cat) |>
+  summarise(mean_area = mean(area))
+
+mean_area_decade
+```
+
+::: panel-tabset
+## Plot A
+
+```{r}
+#| label: mean-area-decade-bar
+#| echo: false
+#| fig-asp: 0.5
+
+ggplot(
+  mean_area_decade,
+  aes(y = decade_built_cat, x = mean_area)
+) +
+  geom_col() +
+  labs(
+    x = "Mean area (square feet)", y = "Decade built",
+    title = "Mean area of houses in Tucson, by decade built"
+  )
+```
+
+## Plot B
+
+```{r}
+#| label: mean-area-decade-scatter
+#| echo: false
+#| fig-asp: 0.5
+
+ggplot(
+  mean_area_decade,
+  aes(y = decade_built_cat, x = mean_area)
+) +
+  geom_point(size = 4) +
+  labs(
+    x = "Mean area (square feet)", y = "Decade built",
+    title = "Mean area of houses in Tucson, by decade built"
+  )
+```
+:::
+
+## A deeper look {.center}
+
+::: hand
+at the plotting code
+:::
+
+## Summary statistics
+
+```{r}
+#| ref.label:  mean-area-decade
+```
+
+## Barplot
+
+::: panel-tabset
+## Code
+
+```{r}
+#| ref.label: mean-area-decade-bar
+#| fig-show: hide
+#| code-line-numbers: "|5"
+```
+
+## Plot
+
+```{r}
+#| ref.label: mean-area-decade-bar
+#| echo: false
+#| fig-asp: 0.5
+```
+:::
+
+## Scatterplot
+
+::: panel-tabset
+## Code
+
+```{r}
+#| ref.label: mean-area-decade-scatter
+#| fig-show: hide
+#| code-line-numbers: "|5"
+```
+
+## Plot
+
+```{r}
+#| ref.label: mean-area-decade-scatter
+#| echo: false
+#| fig-asp: 0.5
+```
+:::
+
+## Lollipop chart -- a happy medium?
+
+```{r}
+#| echo: false
+
+ggplot(
+  mean_area_decade,
+  aes(y = decade_built_cat, x = mean_area)
+) +
+  geom_point(size = 4) +
+  geom_segment(
+    aes(
+      x = 0, xend = mean_area,
+      y = decade_built_cat, yend = decade_built_cat
+    )
+  ) +
+  labs(
+    x = "Mean area (square feet)", y = "Decade built",
+    title = "Mean area of houses in Tucson, by decade built"
+  )
+```
+
+## Bad data
+
+::: panel-tabset
+## Original
+
+![](images/healy-democracy-nyt-version.png){fig-alt="Faceted plot showing the average importance of democracy in 6 countries over time." fig-align="center" width="665"}
+
+## Improved
+
+![](images/healy-democracy-voeten-version-2.png){fig-alt="Faceted plot showing the average importance of democracy in 6 countries over time." fig-align="center" width="675"}
+
+::: aside
+Healy, Data Visualization: A practical introduction. [Chapter 1](https://socviz.co/lookatdata.html). Figures 1.8 and 1.9.
+:::
+:::
+
+## Bad perception
+
+![](images/healy-perception-curves.png){fig-alt="Aspect ratios affect our perception of rates of change, modeled after an example by William S. Cleveland."}
+
+::: aside
+Healy, Data Visualization: A practical introduction. [Chapter 1](https://socviz.co/lookatdata.html). Figure 1.12.
+:::
+
+# Aesthetic mappings in ggplot2
+
+## A second look: lollipop chart
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| label: mean-area-decade-lollipop-layer
+#| echo: false
+#| fig-asp: 0.5
+
+ggplot(
+  mean_area_decade,
+  aes(y = decade_built_cat, x = mean_area)
+) +
+  geom_point(size = 4) +
+  geom_segment(aes(
+    x = 0, xend = mean_area,
+    y = decade_built_cat, yend = decade_built_cat
+  )) +
+  labs(
+    x = "Mean area (square feet)",
+    y = "Decade built",
+    title = "Mean area of houses in Tucson, by decade built"
+  )
+```
+
+## Code
+
+```{r}
+#| ref.label: mean-area-decade-lollipop-layer
+#| fig-show: hide
+```
+:::
+
+## Activity: Spot the differences \| {.smaller}
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| label: mean-area-decade-lollipop-global
+#| echo: false
+#| fig-asp: 0.5
+
+ggplot(
+  mean_area_decade,
+  aes(y = decade_built_cat, x = mean_area)
+) +
+  geom_point(size = 4) +
+  geom_segment(aes(
+    xend = 0,
+    yend = decade_built_cat
+  )) +
+  labs(
+    x = "Mean area (square feet)",
+    y = "Decade built",
+    title = "Mean area of houses in Tucson, by decade built"
+  )
+```
+
+## Code
+
+```{r}
+#| ref.label: mean-area-decade-lollipop-global
+#| fig-show: hide
+```
+
+## Discussion
+
+Can you spot the differences between the code here and the one provided in the previous slide? Are there any differences in the resulting plot? Work in a pair (or group) to answer.
+:::
+
+```{r echo = FALSE}
+countdown(minutes = 3, color_background = "white")
+```
+
+## Global vs. layer-specific aesthetics
+
+-   Aesthetic mappings can be supplied in the initial `ggplot()` call, in individual layers, or in some combination of both.
+
+-   Within each layer, you can add, override, or remove mappings.
+
+-   If you only have one layer in the plot, the way you specify aesthetics doesn't make any difference. However, the distinction is important when you start adding additional layers.
+
+## Activity: Spot the differences II {.smaller}
+
+::: task
+Do you expect the following plots to be the same or different? If different, how? Discuss in a pair (or group) without running the code and sketch the resulting plots based on what you think the code will produce.
+:::
+
+::: task
+## Plot
+
+```{r}
+#| label: spot-differences-2
+#| fig-show: "hide"
+
+# Plot A
+ggplot(tucsonHousing, aes(x = area, y = price)) +
+  geom_point(aes(color = decade_built_cat))
+
+# Plot B
+ggplot(tucsonHousing, aes(x = area, y = price)) +
+  geom_point(color = "blue")
+
+# Plot C
+ggplot(tucsonHousing, aes(x = area, y = price)) +
+  geom_point(color = "#a493ba")
+```
+:::
+
+```{r echo = FALSE}
+countdown(minutes = 3, color_background = "white")
+```
+
+## Wrap up
+
+::: task
+Think back to all the plots you saw in the lecture, without flipping back through the slides. Which plot first comes to mind? Describe it in words.
+:::

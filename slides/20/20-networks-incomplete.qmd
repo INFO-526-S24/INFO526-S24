@@ -1,0 +1,234 @@
+---
+title: Networks
+subtitle: Lecture 20
+title-slide-attributes:
+  data-background-image: ../vizdata-bg.png
+  data-background-size: 800px, cover
+  data-slide-number: none
+format: revealjs
+highlight-style: a11y
+execute:
+  code-link: true
+  warning: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Warm up
+
+## Setup {.smaller}
+
+```{r}
+#| label: setup
+#| message: false
+
+# load packages
+library(tidyverse)
+library(tidytext)
+library(ggtext)
+library(glue)
+library(ggwordcloud)
+library(ggraph)
+library(igraph)
+
+# set theme for ggplot2
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 14))
+
+# set width of code output
+options(width = 65)
+
+# set figure parameters for knitr
+knitr::opts_chunk$set(
+  fig.width = 7, # 7" width
+  fig.asp = 0.618, # the golden ratio
+  fig.retina = 3, # dpi multiplier for displaying HTML output on retina
+  fig.align = "center", # center align figures
+  dpi = 300 # higher dpi, sharper image
+)
+```
+
+# Text data
+
+##  {.smaller}
+
+```{r}
+#| echo: false
+#| message: false
+love_actually <- read_csv(here::here("slides", "20", "data/love-actually.csv"))
+```
+
+::: task
+Do you recognize the following text?
+:::
+
+<br>
+
+> Whenever I get gloomy with the state of the world, I think about the arrivals gate at Heathrow airport. General opinion started to make out that we live in a world of hatred and greed, but I don't see that. Seems to me that love is everywhere. Often it's not particularly dignified or newsworthy but it's always there. Fathers and sons, mothers and daughters, husbands and wives, boyfriends, girlfriends, old friends. When the planes hit the Twin Towers, as far as I know, none of the phone calls from people on board were messages of hate or revenge, they were all messages of love. If you look for it, I've got a sneaky feeling, you'll find that love actually is all around.
+
+## Text as data
+
+Text can be represented as data in a variery of ways:
+
+-   String: Character vector
+
+-   Corpus: Raw strings annotated with additional metadata and details
+
+-   Document-term matrix: Sparse matrix describing a collection (i.e., a corpus) of documents with one row for each document and one column for each term, with word counts (or another measure of how common the word is in that text) as values
+
+## Tidy text {.smaller}
+
+-   Each row is a **token**
+    -   A token can be a word, bigram (two words), ngram (n words), sentence, paragraph, etc.
+-   Each column is a variable
+-   Each type of observational unit is a table
+
+```{r}
+love_actually |>
+  slice_head(n = 6)
+```
+
+## Tokenize into words {.smaller}
+
+With `tidytext::unnest_tokens()`:
+
+```{r}
+love_actually |>
+  unnest_tokens(
+    output = word,    # first argument is output
+    input = dialogue, # second argument is input
+    token = "words"   # third argument is token, with default "words"
+    )
+```
+
+## Most common words {.smaller}
+
+::: task
+Why do these words appear so commonly in Love Actually?
+:::
+
+```{r}
+love_actually |>
+  unnest_tokens(word, dialogue) |>
+  count(word, sort = TRUE)
+```
+
+## Stop words {.smaller}
+
+-   In computing, stop words are words which are filtered out before or after processing of natural language data (text)
+
+-   They usually refer to Most common words in a language, but there is not a single list of stop words used by all natural language processing tools
+
+::: columns
+::: {.column width="50%"}
+**English**
+
+```{r}
+get_stopwords(language = "[Ee]nglish")
+```
+:::
+
+::: {.column width="50%"}
+**Spanish**
+
+```{r}
+get_stopwords(language = "[Ss]panish")
+```
+:::
+:::
+
+## Most common words
+
+```{r}
+love_actually %>%
+  unnest_tokens(word, dialogue) %>%
+  anti_join(stop_words) %>%
+  count(word, sort = TRUE)
+```
+
+## Portuguese?!
+
+```{r}
+love_actually %>%
+  filter(str_detect(dialogue, "[Pp]ortuguese"))
+```
+
+## Data cleaning
+
+-   Remove language identifiers
+
+```{r}
+love_actually <- love_actually %>%
+  mutate(dialogue = str_remove(dialogue, "(Portuguese)"))
+```
+
+-   Take another look
+
+```{r}
+love_actually %>%
+  filter(str_detect(dialogue, "[Pp]ortuguese"))
+```
+
+## Most common words
+
+without "Portuguese"
+
+```{r}
+love_actually %>%
+  unnest_tokens(word, dialogue) %>%
+  anti_join(stop_words) %>%
+  count(word, sort = TRUE)
+```
+
+## Visualizing Most common words (top 10) {.smaller}
+
+```{r}
+#| echo: false
+#| message: false
+love_actually %>%
+  unnest_tokens(word, dialogue) %>%
+  anti_join(stop_words) %>%
+  count(word, sort = TRUE) %>%
+  slice_head(n = 10) %>% 
+  ggplot(aes(y = word, x = n)) +
+  geom_col()
+```
+
+
+## Visualizing Most common words (freq) {.smaller}
+
+```{r}
+#| echo: false
+#| message: false
+love_actually %>%
+  unnest_tokens(word, dialogue) %>%
+  anti_join(stop_words) %>%
+  count(word, sort = TRUE) %>%
+  slice_head(n = 10) %>% 
+  ggplot(aes(y = fct_reorder(word, n), x = n)) +
+  geom_col()
+```
+
+
+## Visualizing Most common words (color) {.smaller}
+
+```{r}
+#| echo: false
+#| message: false
+love_actually %>%
+  unnest_tokens(word, dialogue) %>%
+  anti_join(stop_words) %>%
+  count(word, sort = TRUE) %>%
+  slice_head(n = 10) %>%
+  ggplot(aes(y = fct_reorder(word, n), x = n)) +
+  geom_col(fill = "#BD2D2A") + 
+  labs(
+    x = "Count", y = NULL,
+    title = "Most common words in Love Actually"
+  )
+```
+
+## Visualizing the most common words
+
+Use `ggtext::element_textbox_simple()` to add color to title
+
+

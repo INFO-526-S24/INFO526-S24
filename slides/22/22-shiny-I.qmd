@@ -1,0 +1,272 @@
+---
+title: Interactive reporting + visualization with Shiny I
+subtitle: Lecture 22
+title-slide-attributes:
+  data-background-image: ../vizdata-bg.png
+  data-background-size: 800px, cover
+  data-slide-number: none
+format: revealjs
+highlight-style: a11y
+execute:
+  code-link: true
+  warning: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Warm up
+
+## Announcements
+
+-   Peer evals are next week (survey to be announced soon)
+-   HW 06 is due Dec 6th, 11:59pm
+
+## Setup {.smaller}
+
+```{r}
+#| label: setup
+#| message: false
+
+# load packages
+library(countdown)
+library(tidyverse)
+library(gganimate)
+
+# set theme for ggplot2
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 14))
+
+# set width of code output
+options(width = 65)
+
+# set figure parameters for knitr
+knitr::opts_chunk$set(
+  fig.width = 7, # 7" width
+  fig.asp = 0.618, # the golden ratio
+  fig.retina = 3, # dpi multiplier for displaying HTML output on retina
+  fig.align = "center", # center align figures
+  dpi = 300 # higher dpi, sharper image
+)
+```
+
+# From last time
+
+## The racing bar chart
+
+```{r}
+#| label: freedom-race
+#| cache: true
+#| echo: false
+#| message: false
+#| warning: false
+#| out-width: "80%"
+
+freedom <- read_csv(here::here("slides/22", "data/freedom.csv"), na = "-")
+
+countries_to_plot <- freedom %>%
+  rowwise() %>%
+  mutate(sd = sd(c_across(contains("cl_")), na.rm = TRUE)) %>%
+  ungroup() %>%
+  arrange(desc(sd)) %>%
+  relocate(country, sd) %>%
+  slice_head(n = 15) %>%
+  pull(country)
+
+freedom_to_plot <- freedom %>%
+  filter(country %in% countries_to_plot) %>%
+  drop_na()
+
+freedom_ranked <- freedom_to_plot %>%
+  select(country, contains("cl_")) %>%
+  pivot_longer(
+    cols = -country,
+    names_to = "year",
+    values_to = "civil_liberty",
+    names_prefix = "cl_",
+    names_transform = list(year = as.numeric)
+  ) %>%
+  group_by(year) %>%
+  mutate(rank_in_year = rank(civil_liberty, ties.method = "first")) %>%
+  ungroup() %>%
+  mutate(is_turkey = if_else(country == "Turkey", TRUE, FALSE))
+
+freedom_faceted_plot <- freedom_ranked %>%
+  ggplot(aes(x = civil_liberty, y = factor(rank_in_year))) +
+  geom_col(aes(fill = is_turkey), show.legend = FALSE) +
+  scale_fill_manual(values = c("gray", "red")) +
+  facet_wrap(~year) +
+  scale_x_continuous(
+    limits = c(-5, 7),
+    breaks = 1:7
+  ) +
+  geom_text(
+    hjust = "right",
+    aes(label = country),
+    x = -1
+  ) +
+  theme(
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    axis.text.y = element_blank()
+  ) +
+  labs(x = NULL, y = NULL)
+
+freedom_bar_race <- freedom_faceted_plot +
+  facet_null() +
+  geom_text(
+    x = 5, y = 1,
+    hjust = "left",
+    aes(label = as.character(year)),
+    size = 10
+  ) +
+  aes(group = country) +
+  transition_time(as.integer(year)) +
+  labs(
+    title = "Civil liberties rating, {frame_time}",
+    subtitle = "1: Highest degree of freedom - 7: Lowest degree of freedom"
+  )
+
+animate(
+  freedom_bar_race,
+  fps      = 2,
+  nframes  = 30,
+  width    = 900,
+  height   = 560,
+  renderer = gifski_renderer()
+  )
+anim_save("gifs/freedom_bar_race.gif")
+```
+
+## Making of the racing bar chart
+
+```{r}
+#| ref.label: "freedom-race"
+#| message: false
+#| warning: false
+#| eval: false
+#| code-line-numbers: "|30-50|53|54-59|61|63|67-74|75"
+```
+
+# Shiny: High level view
+
+## Shiny {.center}
+
+Every Shiny app has a webpage that the user visits, <br> and behind this webpage there is a computer that serves this webpage by running R.
+
+```{r echo = FALSE, out.width = "80%"}
+knitr::include_graphics("images/high-level-1.png")
+```
+
+## Shiny {.center}
+
+When running your app locally, the computer serving your app is your computer.
+
+```{r echo = FALSE, out.width = "100%"}
+knitr::include_graphics("images/high-level-2.png")
+```
+
+## Shiny {.center}
+
+When your app is deployed, the computer serving your app is a web server.
+
+```{r echo = FALSE, out.width = "100%"}
+knitr::include_graphics("images/high-level-3.png")
+```
+
+## Shiny {.center}
+
+```{r echo = FALSE, out.width = "100%"}
+knitr::include_graphics("images/high-level-4.png")
+```
+
+## Demo
+
+::: columns
+::: {.column width="50%"}
+::: task
+-   Clone the [`shiny-ex`](https://github.com/INFO526-DataViz/shiny-ex) repo.
+-   Launch the app by opening the `app.R` file and clicking on *Run App*.
+-   Close the app by clicking the stop icon
+-   Select view mode in the drop down menu next to Run App
+:::
+:::
+
+::: {.column width="50%"}
+```{r echo = FALSE, fig.align = "center", out.width = "100%"}
+knitr::include_app("https://gallery.shinyapps.io/goog-trend-index/", height = "650px")
+```
+:::
+:::
+
+# Anatomy of a Shiny app
+
+## What's in an app?
+
+::: columns
+::: {.column width="50%"}
+```{r eval = FALSE}
+library(shiny)
+ui <- fluidPage()
+
+
+server <- function(
+    input, 
+    output, 
+    session) {
+  ...
+}
+
+
+shinyApp(
+  ui = ui, 
+  server = server
+  )
+```
+:::
+
+::: {.column width="50%"}
+-   **User interface** controls the layout and appearance of app
+
+-   **Server function** contains instructions needed to build app
+:::
+:::
+
+## Data: Ask a manager
+
+Source: Ask a Manager Survey via [TidyTuesday](https://github.com/rfordatascience/tidytuesday/tree/master/data/2021/2021-05-18)
+
+> This data does not reflect the general population; it reflects Ask a Manager readers who self-selected to respond, which is a very different group (as you can see just from the demographic breakdown below, which is very white and very female).
+
+Some findings [here](https://www.askamanager.org/2021/05/some-findings-from-24000-peoples-salaries.html).
+
+## Data: `manager`
+
+```{r message = FALSE}
+manager <- read_csv(here::here("slides/22", "data/survey.csv"))
+manager
+```
+
+## Ultimate goal
+
+::: {.medium .center-align}
+[https://minecr.shinyapps.io/manager-survey](https://minecr.shinyapps.io/manager-survey/)
+:::
+
+```{r echo = FALSE}
+knitr::include_app("https://minecr.shinyapps.io/manager-survey/", height ="550px")
+```
+
+# Interactive reporting with Shiny
+
+## Livecoding
+
+::: task
+Code along in `manager-survey/app.R`. We will do part 1 today, parts 2-3 Monday.
+:::
+
+<br>
+
+Highlights:
+
+-   Data pre-processing
+-   Basic reactivity

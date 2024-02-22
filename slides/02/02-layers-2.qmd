@@ -1,0 +1,384 @@
+---
+title: Deep dive into ggplot2 layers - II
+subtitle: Lecture 2
+title-slide-attributes:
+  data-background-image: ../vizdata-bg.png
+  data-background-size: 800px, cover
+  data-slide-number: none
+format: revealjs
+highlight-style: a11y
+execute:
+  code-link: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Warm up
+
+## Announcements
+
+-   Thank you for filling out the survey!
+
+-   At this point everyone should be:
+
+    -   On Slack, in public channels for #general, #homework, #course-questions, #project-1, #project-2, #quizzes, and #random
+    -   Make sure your profile photo/avatar and name matches between GitHub and Slack.
+
+-   RQ 1 is due Friday, Jan 26
+
+-   HW 1 is live on the course website, due Monday (Jan 29).
+
+## Setup {.smaller}
+
+```{r}
+#| label: setup
+#| message: false
+
+# load packages
+library(tidyverse)
+library(countdown)
+library(palmerpenguins)
+library(ggrepel)
+library(here)
+library(waffle)
+library(scales)
+
+# set theme for ggplot2
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 14))
+
+# set width of code output
+options(width = 65)
+
+# set figure parameters for knitr
+knitr::opts_chunk$set(
+  fig.width = 7,        # 7" width
+  fig.asp = 0.618,      # the golden ratio
+  fig.retina = 3,       # dpi multiplier for displaying HTML output on retina
+  fig.align = "center", # center align figures
+  dpi = 300             # higher dpi, sharper image
+)
+
+# read in tucsonHousing.csv
+tucsonHousing <- read_csv(here(
+  "slides", "01", "data" ,"tucsonHousing.csv"))
+```
+
+## From last time
+
+```{r}
+#| label: data-prep
+
+tucsonHousing <- tucsonHousing |>
+  mutate(
+    decade_built = (year_built %/% 10) * 10,
+    decade_built_cat = case_when(
+      decade_built <= 1950 ~ "1950 or before",
+      decade_built >= 2000 ~ "2000 or after",
+      TRUE ~ as.character(decade_built)
+    )
+  )
+
+mean_area_decade <- tucsonHousing |>
+  group_by(decade_built_cat) |>
+  summarise(mean_area = mean(area))
+```
+
+# Geoms
+
+## Geoms
+
+-   Geometric objects, or **geoms** for short, perform the actual rendering of the layer, controlling the type of plot that you create
+
+-   You can think of them as "the geometric shape used to represent the data"
+
+## One variable
+
+-   Discrete:
+
+    -   `geom_bar()`: display distribution of discrete variable.
+
+-   Continuous
+
+    -   `geom_histogram()`: bin and count continuous variable, display with bars
+
+    -   `geom_density()`: smoothed density estimate
+
+    -   `geom_dotplot()`: stack individual points into a dot plot
+
+    -   `geom_freqpoly()`: bin and count continuous variable, display with lines
+
+## Aside
+
+Always use "typewriter text" (monospace font) when writing function names, and follow with `()`, e.g.,
+
+-   `geom_freqpoly()`
+
+-   `mean()`
+
+-   `lm()`
+
+## `geom_dotplot()`
+
+::: task
+What does each point represent? How are their locations determined? What do the x and y axes represent?
+:::
+
+```{r}
+#| fig-asp: 0.5
+
+ggplot(tucsonHousing, aes(x = price)) +
+  geom_dotplot(binwidth = 50000)
+```
+
+## Comparing across groups {.smaller}
+
+::: task
+Which of the following allows for easier comparison across groups?
+:::
+
+::: panel-tabset
+## Histogram
+
+```{r}
+#| fig-asp: 0.4
+
+ggplot(tucsonHousing, aes(x = price, fill = decade_built_cat)) +
+  geom_histogram(binwidth = 100000)
+```
+
+## Frequency polygon
+
+```{r}
+#| fig-asp: 0.4
+
+ggplot(tucsonHousing, aes(x = price, color = decade_built_cat)) +
+  geom_freqpoly(binwidth = 100000, size = 1)
+```
+:::
+
+## Two variables - both continuous
+
+-   `geom_point()`: scatterplot
+
+-   `geom_quantile()`: smoothed quantile regression
+
+-   `geom_rug()`: marginal rug plots
+
+-   `geom_smooth()`: smoothed line of best fit
+
+-   `geom_text()`: text labels
+
+## Two variables - show density
+
+-   `geom_bin2d()`: bin into rectangles and count
+
+-   `geom_density2d()`: smoothed 2d density estimate
+
+-   `geom_hex()`: bin into hexagons and count
+
+## `geom_hex()`
+
+Not very helpful for `r nrow(tucsonHousing)` observations:
+
+```{r}
+ggplot(tucsonHousing, aes(x = area, y = price)) +
+  geom_hex()
+```
+
+## `geom_hex()`
+
+More helpful for `r nrow(diamonds)` observations:
+
+```{r}
+ggplot(diamonds, aes(x = carat, y = price)) +
+  geom_hex()
+```
+
+## `geom_hex()` and warnings
+
+-   Requires installing the [**hexbin**](https://cran.r-project.org/web/packages/hexbin/index.html) package separately!
+
+```{r}
+#| eval: false
+
+install.packages("hexbin")
+```
+
+-   Otherwise you might see
+
+<!-- -->
+
+```         
+Warning: Computation failed in `stat_binhex()`
+```
+
+## Two variables
+
+-   At least one discrete
+
+    -   `geom_count()`: count number of point at distinct locations
+
+    -   `geom_jitter()`: randomly jitter overlapping points
+
+-   One continuous, one discrete
+
+    -   `geom_col()`: a bar chart of pre-computed summaries
+
+    -   `geom_boxplot()`: boxplots
+
+    -   `geom_violin()`: show density of values in each group
+
+## `geom_jitter()` {.smaller}
+
+::: task
+How are the following three plots different?
+:::
+
+::: panel-tabset
+## Plot A
+
+```{r}
+#| fig-asp: 0.4
+
+ggplot(tucsonHousing, aes(x = bed, y = price)) +
+  geom_point()
+```
+
+## Plot B
+
+```{r}
+#| fig-asp: 0.4
+
+ggplot(tucsonHousing, aes(x = bed, y = price)) +
+  geom_jitter()
+```
+
+## Plot C
+
+```{r}
+#| fig-asp: 0.4
+
+ggplot(tucsonHousing, aes(x = bed, y = price)) +
+  geom_jitter()
+```
+:::
+
+## `geom_jitter()` and `set.seed()` {.smaller}
+
+::: panel-tabset
+## Plot A
+
+```{r}
+#| fig-asp: 0.4
+
+set.seed(1234)
+
+ggplot(tucsonHousing, aes(x = bed, y = price)) +
+  geom_jitter()
+```
+
+## Plot B
+
+```{r}
+#| fig-asp: 0.4
+
+set.seed(1234)
+
+ggplot(tucsonHousing, aes(x = bed, y = price)) +
+  geom_jitter()
+```
+:::
+
+## Two variables {.smaller}
+
+-   One time, one continuous
+    -   `geom_area()`: area plot
+    -   `geom_line()`: line plot
+    -   `geom_step()`: step plot
+-   Display uncertainty:
+    -   `geom_crossbar()`: vertical bar with center
+    -   `geom_errorbar()`: error bars
+    -   `geom_linerange()`: vertical line
+    -   `geom_pointrange()`: vertical line with center
+-   Spatial
+    -   `geom_sf()`: for map data (more on this later...)
+
+## Average price per year built {.smaller}
+
+```{r}
+mean_price_year <- tucsonHousing |>
+  group_by(year_built) |>
+  summarise(
+    n = n(),
+    mean_price = mean(price),
+    sd_price = sd(price)
+    )
+
+mean_price_year
+```
+
+## `geom_line()`
+
+```{r}
+ggplot(mean_price_year, aes(x = year_built, y = mean_price)) +
+  geom_line()
+```
+
+## `geom_area()`
+
+```{r}
+ggplot(mean_price_year, aes(x = year_built, y = mean_price)) +
+  geom_area()
+```
+
+## `geom_step()`
+
+```{r}
+ggplot(mean_price_year, aes(x = year_built, y = mean_price)) +
+  geom_step()
+```
+
+## Let's clean things up a bit!
+
+::: panel-tabset
+## Code
+
+```{r}
+#| label: clean-up
+#| fig-show: hide
+ggplot(tucsonHousing, aes(x = area, y = price)) +
+  geom_point(alpha = 0.6, size = 2, color = "#012169") +
+  scale_x_continuous(labels = label_number(big.mark = ",")) +
+  scale_y_continuous(labels = label_dollar(scale = 1/1000, suffix = "K")) +
+  labs(
+    x = "Area (square feet)",
+    y = "Sale price (USD)",
+    title = "Sale prices of homes in Tucson",
+    subtitle = "As of November 2020",
+    caption = "Source: Zillow.com"
+  )
+```
+
+## Plot
+
+```{r}
+#| ref.label: clean-up
+#| echo: false
+#| code-line-numbers: "|3-4"
+#| fig.asp: 0.55
+```
+:::
+
+## Three variables
+
+-   `geom_contour()`: contours
+-   `geom_tile()`: tile the plane with rectangles
+-   `geom_raster()`: fast version of `geom_tile()` for equal sized tiles
+
+## `geom_tile()`
+
+```{r}
+#| fig.asp: 0.55
+ggplot(tucsonHousing, aes(x = bed, y = bath)) +
+ geom_tile(aes(fill = price))
+```
