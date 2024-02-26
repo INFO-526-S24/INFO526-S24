@@ -1,0 +1,526 @@
+---
+title: Dashboards I
+subtitle: Lecture 24
+title-slide-attributes:
+  data-background-image: ../vizdata-bg.png
+  data-background-size: 800px, cover
+  data-slide-number: none
+format: revealjs
+highlight-style: a11y
+execute:
+  code-link: true
+  warning: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Warm up
+
+## Announcements
+
+-   Course and TA evaluations
+    -   If we can get to \>=90% participation for both, each person gets +5 points on their lowest (not dropped) homework score.
+    -   Current participation rate: TA evals 8.5% and course evals 5.9%.
+
+# Dashboards
+
+## Dashboards
+
+**2006:**
+
+::: incremental
+-   Visually display most important information on one screen
+
+-   Monitored by a glance
+:::
+
+**2020+:**
+
+::: incremental
+-   Reactive to user needs & questions
+
+-   Regularly updating
+
+-   Produces reports
+:::
+
+## Several (common) tools
+
+::: columns
+::: {.column width="50%"}
+![](images/shiny.png){fig-align="center" width="173"}
+:::
+
+::: {.column width="50%"}
+![](images/powerBI.png){fig-align="center" width="200"}
+:::
+:::
+
+![](images/tableau.png){fig-align="center" width="506"}
+
+## Key performance indicators (KPIs)
+
+**Benchmarks**
+
+-   **Outcomes**
+
+    ::: incremental
+    -   🌮 Increase customer satisfaction
+
+    -   🚹 🚺 Address inequity in salaries
+
+    -   🦕 Grow audience & Patreon subscribers
+    :::
+
+## Key performance indicators (KPIs) {.smaller}
+
+**Project measurements**
+
+-   **Inputs**
+
+    ::: incremental
+    -   🌮 Ingredient costs, labor costs
+
+    -   🚹 🚺 Employee data, salary data
+
+    -   🦕 Viewership/subscribers
+    :::
+
+-   **Process**
+
+    ::: incremental
+    -   🌮 Speedy service, product consistency
+
+    -   🚹 🚺 Contract amounts, raises + promotions
+
+    -   🦕 Speed of production, number of revisions
+    :::
+
+-   **Outcome**
+
+    ::: incremental
+    -   🌮 Good tacos in minimal time
+
+    -   🚹 🚺 Individuals with unequal pay
+
+    -   🦕 Interesting and educational videos
+    :::
+
+## Key performance indicators (KPIs) {.smaller}
+
+::: columns
+::: {.column width="50%"}
+::: fragment
+**Lagging KPI:**
+
+-   Performance indicator of something that has happened
+
+![](images/lagging.jpg){fig-align="center" width="250"}
+:::
+:::
+
+::: {.column width="50%"}
+::: fragment
+**Leading KPI:**
+
+-   Performance indicator that signals something to come
+
+![](images/leading.jpg){fig-align="center" width="250"}
+:::
+:::
+:::
+
+## Dashboards
+
+**Named after car dashboards**
+
+![](images/dashboard.jpg){fig-align="center" width="640"}
+
+## Dashboard visualizations {.smaller}
+
+**Gauge plot**: They are all what Edward Tufte would call "low data to ink" plots (and which he would hate)
+
+-   Speedometers = low-information donut plot where only one number means anything about the data.
+
+-   The other numbers & colors are there to provide context and meaning for that data point.
+
+-   For all of these, you could cover up the dial and just leave the number and you'd have the same info.
+
+## Making gauge plots {.smaller}
+
+```{r}
+#| code-fold: true
+#| message: false
+library(plotly)
+
+fig <- plot_ly(
+    domain = list(x = c(0, 1), y = c(0, 1)),
+    value = 270,
+    title = list(text = "Speed"),
+    type = "indicator",
+    mode = "gauge+number") 
+fig <- fig %>%
+  layout(margin = list(l=20,r=30))
+
+fig
+```
+
+## Making gauge plots II {.smaller}
+
+```{r}
+#| code-fold: true
+#| message: false
+fig <- plot_ly(
+  domain = list(x = c(0, 1), y = c(0, 1)),
+  value = 450,
+  title = list(text = "Speed"),
+  type = "indicator",
+  mode = "gauge+number+delta",
+  delta = list(reference = 380),
+  gauge = list(
+    axis =list(range = list(NULL, 500)),
+    steps = list(
+      list(range = c(0, 250), color = "lightgray"),
+      list(range = c(250, 400), color = "gray")),
+    threshold = list(
+      line = list(color = "red", width = 4),
+      thickness = 0.75,
+      value = 490))) 
+fig <- fig %>%
+  layout(margin = list(l=20,r=30))
+
+fig
+```
+
+## Bullet charts {.smaller}
+
+**Similar to battery charts**:
+
+-   Essentially stacked bar plot
+
+-   Gray/"uncharged" group
+
+-   Colored/"charged" proportion group
+
+-   Adds to 100
+
+::: fragment
+```{r}
+#| code-fold: true
+fig <- plot_ly(
+  type = "indicator",
+  mode = "number+gauge+delta",
+  gauge = list(shape = "bullet"),
+  delta = list(reference = 300),
+  value = 220,
+  domain = list(x = c(0, 1), y = c(0, 1)),
+  title= list(text = "Profit"),
+  height = 150,
+  width = 400)
+
+fig
+```
+:::
+
+## Value boxes
+
+![](images/value-boxes.png){fig-align="center"}
+
+::: incremental
+-   Shows key information
+
+-   Digestible
+
+-   Uses **Icons**
+:::
+
+## Icons {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](images/icons.jpg){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+-   Common car warning lights
+
+-   Do all make sense without a label?
+
+-   With dashboards you can have hover-over labels or include text, but only while that icon still likely retains meaning
+
+-   Icons lose & gain meaning much faster than you would expect
+
+::: fragment
+::: columns
+::: {.column width="50%"}
+![](images/heart.png){fig-align="center" width="97"}
+:::
+
+::: {.column width="50%"}
+Started being used for romantic love in the 1400's
+:::
+:::
+:::
+:::
+:::
+
+## Quarto dashboards
+
+-   Similar structure to what we've been using!
+
+-   Simpler / more straightforward than Shiny
+
+-   Aesthetically pleasing
+
+# Dashboard layout
+
+## **Navigation**
+
+![](images/navigation-toolbar.png){fig-align="center"}
+
+``` yaml
+title: "Palmer Penguins"
+author: "Cobblepot Analytics"
+format: 
+  dashboard:
+    logo: images/penguins.png
+    nav-buttons: [linkedin, twitter, github]
+```
+
+## Layout
+
+::: columns
+::: {.column width="50%"}
+``` yaml
+title: "Palmer Penguins"
+author: "Cobblepot Analytics"
+format: dashboard
+```
+
+```` markdown
+## Row {height=70%}
+
+```{R}
+```
+
+## Row {height=30%}
+
+```{R}
+```
+
+```{R}
+```
+````
+:::
+
+::: {.column width="50%"}
+![](images/chart-focal-top.png){fig-align="center" width="462"}
+:::
+:::
+
+## Orientation
+
+::: columns
+::: {.column width="50%"}
+``` yaml
+title: "Diamonds Explorer"
+author: "Cobblepot Analytics"
+format: 
+  dashboard:
+    orientation: columns
+```
+
+```` markdown
+## Column {height=60%}
+
+```{R}
+```
+
+## Column {height=40%}
+
+```{R}
+```
+
+```{R}
+```
+````
+:::
+
+::: {.column width="50%"}
+![](images/chart-focal-left.png){fig-align="center" width="488"}
+:::
+:::
+
+## Scrolling
+
+::: columns
+::: {.column width="50%"}
+``` yaml
+title: "Diamonds Explorer"
+author: "Cobblepot Analytics"
+format: 
+  dashboard:
+    scrolling: true
+```
+
+```` markdown
+## Column {height=60%}
+
+```{R}
+```
+
+## Column {height=40%}
+
+```{R}
+```
+
+```{R}
+```
+````
+:::
+
+::: {.column width="50%"}
+![](images/chart-stack-scrolling.png){fig-align="center" width="488"}
+:::
+:::
+
+## Pages {.smaller}
+
+``` yaml
+title: "Palmer Penguins"
+format: dashboard
+```
+
+```` markdown
+# Bills 
+
+```{R}
+```
+
+# Flippers {orientation="columns" scrolling="true"}
+
+## Column
+
+```{R}
+```
+
+```{R}
+```
+
+## Column 
+
+```{R}
+```
+````
+
+## Tabsets
+
+::: columns
+::: {.column width="50%"}
+``` yaml
+title: "Palmer Penguins"
+format: dashboard
+```
+
+```` markdown
+## Row
+
+```{R}
+```
+
+## Row {.tabset}
+
+```{R}
+#| title: Chart 2
+```
+
+```{R}
+#| title: Chart 3
+```
+````
+:::
+
+::: {.column width="50%"}
+![](images/chart-tabset-row.png){fig-align="center" width="488"}
+:::
+:::
+
+## Tabsets
+
+::: columns
+::: {.column width="50%"}
+``` yaml
+title: "Palmer Penguins"
+format: dashboard
+```
+
+```` markdown
+## Row {height=70%}
+
+```{python}
+```
+
+## Row {height=30%}
+
+### Column {.tabset}
+
+```{python}
+#| title: Chart 2
+```
+
+```{python}
+#| title: Chart 3
+```
+
+### Column
+
+```{python}
+```
+````
+:::
+
+::: {.column width="50%"}
+![](images/chart-tabset-card.png){fig-align="center" width="488"}
+:::
+:::
+
+## Cards {.smaller}
+
+Created automatically for cells & markdown content that are within rows/columns:
+
+```` markdown
+## Column {width=40%}
+
+```{R}
+```
+
+```{R}
+```
+````
+
+Can also just contain markdown via `.card`
+
+```` markdown
+## Column {width=40%}
+
+```{R}
+```
+
+::: {.card}
+This text will be displayed within a card
+:::
+
+```{R}
+```
+````
+
+## More
+
+The above and more can be found [here](https://quarto.org/docs/dashboards/layout.html)!
+
+## Next time
+
+```{r}
+#| echo: false
+knitr::include_app("https://mine-cetinkaya-rundel.github.io/ld-dashboard/", height ="600px")
+```

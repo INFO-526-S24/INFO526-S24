@@ -18,7 +18,7 @@ editor_options:
 
 ## Announcements I
 
-Presentations Monday Oct 16 in lecture:
+Presentations Monday Mar 11 in lecture:
 
 -   Bring a laptop to fill out feedback forms
 
@@ -34,7 +34,7 @@ We might go over by 10 mins max for lecture.
 
 -   Take note of Project 2 presentation date: must be in class in person to present or present live via Zoom in case of isolation
 
--   New teams to be announced next week
+-   New teams to be announced following presentations
 
 ## Lessons from HW 02 {.smaller}
 
@@ -42,7 +42,7 @@ We might go over by 10 mins max for lecture.
 
     -   Several instances of no written narrative
 
-    -   "Default theme" means `theme_gray`
+    -   Narrative means interpreting the trends from the plot
 
 -   **Colors are important**
 
@@ -427,30 +427,6 @@ salesStates |>
 https://bl.ocks.org/susielu/23dc3082669ee026c552b85081d90976
 :::
 
-# Project workflow overview
-
-## First, some Inspiration
-
-<br><br>
-
-::: task
-Visualize the data at [\[url\]](https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-02-21/bob_ross.csv) using ggplot2.
-:::
-
-## Demo {.smaller}
-
--   Rendering individual documents
--   Write-up:
-    -   Cross referencing
-    -   Citations
--   Presentation:
-    -   Pauses
-    -   Smaller text
--   Website:
-    -   Rendering site
-    -   Making sure your website reflects your latest changes
-    -   Customizing the look of your website.
-
 # Plot layout
 
 ## Sample plots
@@ -660,4 +636,4 @@ Learn more at [https://patchwork.data-imaginist.com](https://patchwork.data-imag
 
 <br>
 
-Look into the source code at [https://github.com/INFO526-DataViz/INFO526-F23/slides](https://github.com/INFO526-DataViz/INFO526-F23/tree/main/slides).
+Look into the source code at [https://github.com/INFO-526-S24/INFO526-S24/slides/](https://github.com/INFO-526-S24/INFO526-S24/tree/main/slides).

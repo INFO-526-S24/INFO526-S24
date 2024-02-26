@@ -1,0 +1,45 @@
+---
+title: Dashboards II
+subtitle: Lecture 25
+title-slide-attributes:
+  data-background-image: ../vizdata-bg.png
+  data-background-size: 800px, cover
+  data-slide-number: none
+format: revealjs
+highlight-style: a11y
+execute:
+  code-link: true
+  warning: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Warm up
+
+## Announcements
+
+-   Course and TA evaluations
+    -   If we can get to \>=90% participation for both, each person gets +5 points on their lowest (not dropped) homework score.
+    -   Current participation rate: TA evals 8.5% and course evals 5.9%.
+-   Project 1s are posted on the course website. I will remove the scores from the repos after the semester ends.
+-   Also posted are your thank you cards and ugly plots!
+
+# From last time
+
+## Ultimate goal
+
+::: {.medium .center-align}
+https://mine-cetinkaya-rundel.github.io/ld-dashboard/
+:::
+
+```{r echo = FALSE}
+knitr::include_app("https://mine-cetinkaya-rundel.github.io/ld-dashboard/", height ="600px")
+```
+
+# Dashboards
+
+## Livecoding
+
+::: task
+Code along in `ex-25/dashboard.qmd`.
+:::

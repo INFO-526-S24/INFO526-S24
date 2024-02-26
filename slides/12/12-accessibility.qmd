@@ -18,7 +18,8 @@ editor_options:
 
 ## Announcements
 
--   HW 3 is due Wednesday
+-   Project 01 Presentations Monday Mar 11 during class
+-   Project 01 Write-ups due Monday Mar 11 11:59pm
 
 ## Setup {.smaller}
 

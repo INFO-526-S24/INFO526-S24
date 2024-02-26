@@ -1,0 +1,18 @@
+{
+  "hash": "e0d93678b7779e507df33399f32c98fe",
+  "result": {
+    "markdown": "---\ntitle: Dashboards II\nsubtitle: Lecture 25\ntitle-slide-attributes:\n  data-background-image: ../vizdata-bg.png\n  data-background-size: 800px, cover\n  data-slide-number: none\nformat: revealjs\nhighlight-style: a11y\nexecute:\n  code-link: true\n  warning: true\neditor_options: \n  chunk_output_type: console\n---\n\n\n# Warm up\n\n## Announcements\n\n-   Course and TA evaluations\n    -   If we can get to \\>=90% participation for both, each person gets +5 points on their lowest (not dropped) homework score.\n    -   Current participation rate: TA evals 8.5% and course evals 5.9%.\n-   Project 1s are posted on the course website. I will remove the scores from the repos after the semester ends.\n-   Also posted are your thank you cards and ugly plots!\n\n# From last time\n\n## Ultimate goal\n\n::: {.medium .center-align}\nhttps://mine-cetinkaya-rundel.github.io/ld-dashboard/\n:::\n\n\n::: {.cell}\n<iframe src=\"https://mine-cetinkaya-rundel.github.io/ld-dashboard/?showcase=0\" width=\"960\" height=\"600px\" data-external=\"1\"></iframe>\n:::\n\n\n# Dashboards\n\n## Livecoding\n\n::: task\nCode along in `ex-25/dashboard.qmd`.\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
