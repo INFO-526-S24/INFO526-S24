@@ -18,7 +18,13 @@ editor_options:
 
 ## Announcements
 
--   Project presentations are Monday! Come see me during office hours or schedule an office hour with me.
+-   Project 1 feedback is posted
+
+-   Scores for all assignments so far will be on D2L soon
+
+-   Project 2 groups have been announced, repos will be assigned by the end of the week
+
+-   Take a note of the deadlines for the rest of the semester
 
 ## Setup {.smaller}
 

@@ -145,7 +145,7 @@ nurses <- read_csv("data/nurses.csv") |> janitor::clean_names()
 names(nurses)
 ```
 
-## Alt text for bar charts
+## Alt text for bar charts {.smaller}
 
 ```{r echo = FALSE}
 nurses_subset <- nurses |>
@@ -196,7 +196,7 @@ nurses_subset |>
 
 -   The figure is a bar chart titled "Total employed Registered Nurses" that displays the numbers of registered nurses in three states (California, New York, and North Carolina) over a 20 year period, with data recorded in three time points (2000, 2010, and 2020). In each state, the numbers of registered nurses increase over time. The following numbers are all approximate. California started off with 200K registered nurses in 2000, 240K in 2010, and 300K in 2020. New York had 150K in 2000, 160K in 2010, and 170K in 2020. Finally North Carolina had 60K in 2000, 90K in 2010, and 100K in 2020.
 
-## Alt text for line graphs
+## Alt text for line graphs {.smaller}
 
 ::: columns
 ::: {.column width="50%"}

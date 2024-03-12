@@ -4,13 +4,21 @@ title: "Homework 2"
 
 For any exercise where you're writing code, insert a code chunk and make sure to label the chunk. Use a short and informative label. For any exercise where you're creating a plot, make sure to label all axes, legends, etc. and give it an informative title. For any exercise where you're including a description and/or interpretation, use full sentences. Make a commit at least after finishing each exercise, or better yet, more frequently. Push your work regularly to GitHub, and make sure all checks pass.
 
-1.  **A new day, a new plot, a new geom.** The goal of this exercise is to learn about a new type of plot (ridgeline plot) and to learn how to make it.
+## Question 1
+
+**A new day, a new plot, a new geom.** 
+
+The goal of this exercise is to learn about a new type of plot (ridgeline plot) and to learn how to make it.
 
     Use the `geom_density_ridges()` function from the **ggridges** package to make a ridge plot of of Airbnb review scores of Edinburgh neighborhoods. The neighborhoods should be ordered by their median review scores. The data can be found in the **dsbox** package, and it's called `edibnb`. Also include an interpretation for your visualization. You should review feedback from your Homework 1 to make sure you capture anything you may have missed previously.
 
     *(Note:* This is not a geom we introduced in class, so seeing an example of it in action will be helpful. Read the package README at <https://wilkelab.org/ggridges> and/or the introduction vignette at <https://wilkelab.org/ggridges/articles/introduction.html>. There is more information than you need for this question in the vignette; the first section on Geoms should be sufficient to help you get started.)
 
-2.  **Foreign Connected PACs.** Only American citizens (and immigrants with green cards) can contribute to federal politics, but the American divisions of foreign companies can form political action committees (PACs) and collect contributions from their American employees. (Source: <https://www.opensecrets.org/political-action-committees-pacs/foreign-connected-pacs/2020>).
+## Question 2
+
+**Foreign Connected PACs.** 
+
+Only American citizens (and immigrants with green cards) can contribute to federal politics, but the American divisions of foreign companies can form political action committees (PACs) and collect contributions from their American employees. (Source: <https://www.opensecrets.org/political-action-committees-pacs/foreign-connected-pacs/2020>).
 
     In this exercise you will work with data from contributions to US political parties from foreign-connected PACs. The data is stored in CSV files in the `data` directory of your repository/project. There are 11 files, each for an election cycle between 2000 and 2022. You can load all of the data at once using the code below.
 
@@ -54,7 +62,12 @@ For any exercise where you're writing code, insert a code chunk and make sure to
 
     -   Finally, remake the same visualization, but for a different country. I recommend you choose a country with a substantial number of contributions to US politics. Interpret the new visualization that you make.
 
-3.  **Hop on.** We have two datasets we'll work with in this exercise:
+
+## Question 3
+
+**Hop on.** 
+
+We have two datasets we'll work with in this exercise:
 
     -   `data/rdu-flights-2020.csv`: All flights out of RDU (Raleigh-Durham airport) in 2020.
 
@@ -72,7 +85,11 @@ For any exercise where you're writing code, insert a code chunk and make sure to
 
     -   Time to get creative! Create another plot that displays some flight patterns in 2020. Your plot should be based on the joined `rdu_flights_planes` dataset and the new variable you created, `size`, must be one of the variables you represented. You're free to choose any other variables you want for your plot. Along with your plot, provide an interpretation.
 
-4.  **Expect More. Plot More.** Make the following image (it's the logo for the retail store [Target](https://www.target.com/)) using ggplot2. Write a few sentences describing your approach.
+## Question 4
+
+**Expect More. Plot More.** 
+
+Make the following image (it's the logo for the retail store [Target](https://www.target.com/)) using ggplot2. Write a few sentences describing your approach.
 
     <img src="images/target-1.png" width="90%"/>
 
@@ -88,4 +105,8 @@ For any exercise where you're writing code, insert a code chunk and make sure to
 
     -   There are many ways you can do this, feel free to discuss with classmates but fight the urge to adopt their approach. Instead, try to come up with your unique one.
 
-5.  **Mirror, mirror on the wall, who's the ugliest of them all?** Make a plot of the variables in the `penguins` dataset from the **palmerpenguins** package. Your plot should use at least two variables, but more is fine too. First, make the plot using the default theme and color scales. Then, update the plot to be as ugly as possible. You will probably want to play around with theme options, colors, fonts, etc. The ultimate goal is the ugliest possible plot, and the sky is the limit!
+## Question 5
+
+**Mirror, mirror on the wall, who's the ugliest of them all?** 
+
+Make a plot of the variables in the `penguins` dataset from the **palmerpenguins** package. Your plot should use at least two variables, but more is fine too. First, make the plot using the default theme and color scales. Then, update the plot to be as ugly as possible. You will probably want to play around with theme options, colors, fonts, etc. The ultimate goal is the ugliest possible plot, and the sky is the limit!

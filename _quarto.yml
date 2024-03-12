@@ -73,18 +73,20 @@ website:
             text: Project 1 
           - href: student-work/project-1.qmd
             text: Project 1 Examples
-          #- href: project/project-2.qmd
-           # text: Project 2
+          - href: project/project-2.qmd
+            text: Project 2
           - href: project/project-tips-resources.qmd
             text: Tips & Resources
       - section: "Homework"
         contents:
+          #- href: homework/hw-0.qmd
+            #text: HW 00
           - href: homework/hw-01.qmd
             text: HW 01
           - href: homework/hw-02.qmd
             text: HW 02
-          #- href: homework/hw-03.qmd
-            #text: HW 03
+          - href: homework/hw-03.qmd
+            text: HW 03
           #- href: homework/hw-04.qmd
             #text: HW 04
           #- href: homework/hw-05.qmd

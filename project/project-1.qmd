@@ -51,7 +51,7 @@ Each team will review the proposals of two other teams. The peer review will be 
 
 **The reviewer / reviewee assignments are as follows**:
 
-```{r, echo=FALSE}
+```{r}
 #| message: false
 #| echo: false
 if (!require(pacman))
@@ -100,13 +100,15 @@ Your presentation should generally follow the same structure as your write-up. E
 
 #### **The reviewer / reviewee assignments for presentation peer-review are as follows**:
 
-```{r, echo=FALSE}
-# Create a dataframe
-reviewer <- c("Aes-thetics Squad", "DataInk Drinkers", "ggplotGurus", "R-tisans of Visuals", "The Plotting Pandas", "ScatterPlot Sorcerers")
-reviewee <- c("The Plotting Pandas", "ggplotGurus", "ScatterPlot Sorcerers", "Aes-thetics Squad", "R-tisans of Visuals", "DataInk Drinkers")
-
-df <- data.frame(reviewer, reviewee)
-gt(df) 
+```{r}
+#| message: false
+#| echo: false
+if (!require(pacman))
+  install.packages("pacman")
+pacman::p_load(tidyverse,
+               gt)
+p1_pr <- read_csv("project-1-peer-review.csv")
+gt(p1_pr) 
 ```
 
 Also find the rubric [here](https://datavizaz.org/project/project-1#reviewee-tasks).
@@ -150,7 +152,7 @@ The following folders and files in your project repository:
 +------------------------------------------------------------------------+--------------------------------------------------+
 | Reproducibility, style, and organization[^5]                           | 10 pts                                           |
 +------------------------------------------------------------------------+--------------------------------------------------+
-| [Within team peer evaluation](https://forms.gle/oh8Rjhjx3HnCM54s9)[^6] | 10 pts                                           |
+| [Within team peer evaluation](https://forms.gle/AHBjXu68mhKs3XbJ7)[^6] | 10 pts                                           |
 +------------------------------------------------------------------------+--------------------------------------------------+
 | Between team peer evaluation[^7]                                       | 10 pts                                           |
 +------------------------------------------------------------------------+--------------------------------------------------+

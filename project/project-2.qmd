@@ -38,31 +38,29 @@ Most importantly, be prepared to brainstorm a bunch of ideas and discard them un
 
 ## Workflow
 
--   Week 1 of project (week of Oct 16): Pick a focus for your project.
+-   Week 1 of project (week of Mar 18): Pick a focus for your project.
 
--   Week 2 of project (week of Oct 23): Work on developing your project proposal and setting up the structure for your repository.
+-   Week 2 of project (week of Mar 25): Work on developing your project proposal and setting up the structure for your repository.
 
--   Week 3 of project (week of Oct 30): Finalize your project proposal + Conduct peer review on project proposals
+-   Week 3 of project (week of Apr 01): Finalize your project proposal + Conduct peer review on project proposals
 
--   Week 5 of project (week of Nov 6): Continue working on your project, and optionally, submit in an updated version of your proposal.
+-   Week 5 of project (week of Apr 08): Continue working on your project, and optionally, submit in an updated version of your proposal.
 
--   Week 6 of project (week of Nov 13): Continue working on your project, incorporating feedback from proposals.
+-   Week 6 of project (week of Apr 15): Continue working on your project, incorporating feedback from proposals.
 
--   Week 7 of project (week of Nov 20): Continue working on your project.
+-   Week 7 of project (week of Apr 22): Continue working on your project.
 
--   Week 8 of project (week of Nov 27): Continue working on your project.
+-   Week 8 of project (week of Apr 29): Conduct peer code review.
 
--   Week 9 of project (week of Dec 04): Conduct peer code review.
-
--   Week 10 of project (week of Dec 11 - finals week): Present projects and turn in final write-up.
+-   Week 9 of project (week of May 06 - finals week): Present projects and turn in final write-up.
 
 ## Due dates
 
--   Proposals for peer review: due Wed, Nov 1 at 1pm.
--   Peer review of proposals: Wed, Nov 1 in class
--   Revised proposals for instructor review: due Fri, Nov 3 at 5pm.
--   Peer review of code: Wed, Dec 04 in class
--   Write-up and presentation: due Tues, Dec 12, 3:30pm (scheduled final date)
+-   Proposals for peer review: due Mon, Apr 01 at 1pm.
+-   Peer review of proposals: Mon, Apr 01 in class
+-   Revised proposals for instructor review: due Fri, Apr 05 at 5pm.
+-   Peer review of code: Wed, May 01 in class
+-   Write-up and presentation: due Mon, May 06, 10:30am - 12:30pm (scheduled final date)
 
 ## Deliverables
 
@@ -100,12 +98,12 @@ Once you receive feedback from your peers, you should address them. You should d
 
 #### Peer review assignments
 
-The peer review assignments for **proposal peer reviews** are as follows:
+The peer review assignments for **proposal peer reviews** are as follows (TBD):
 
 ```{r}
 #| echo: false
 #| message: false
-#| eval: true
+#| eval: false
 
 p2_pr <- read_csv("project-2-peer-review.csv")
 gt(p2_pr)
@@ -115,6 +113,7 @@ The peer review assignments for **code peer reviews** are as follows (TBD):
 
 ```{r}
 #| echo: false
+#| message: false
 #| eval: false
 
 p2_pr |>
